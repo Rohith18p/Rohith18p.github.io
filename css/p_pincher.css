@@ -119,6 +119,31 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
 }
 
+/* Image Container: Two Images in Custom Proportions */
+.img-container {
+    display: flex; /* Enable flexbox for horizontal layout */
+    justify-content: space-between; /* Add spacing between images */
+    align-items: center; /* Align images vertically if heights vary */
+    margin-top: 20px; /* Adjust vertical spacing */
+    gap: 20px; /* Add space between images */
+}
+
+.img-container img:first-child {
+    width: 30%; /* First image takes up 30% of the container width */
+    margin-left: 130px;
+    height: 500px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
+}
+
+.img-container img:last-child {
+    width: 30%; /* Second image takes up 70% of the container width */
+    margin-right: 130px;
+    height: 500px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
+}
+
 /* Text Container: Full-Width Text */
 .text-container {
     flex: 1 1 100%; /* Text fills full width */
