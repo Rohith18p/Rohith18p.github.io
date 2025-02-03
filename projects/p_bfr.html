@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanisms</title>
+    <link rel="stylesheet" href="../css/p_bfr.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">Ball Following Robot</h1>
+            <hr class="transparent-line">
+            <div class="content-layout">
+                <div class="image-container">
+                    <img src="../images/image1.png" alt="Project Image" class="project-image">
+                </div>
+                <div class="text-container">
+                    <h2>Details</h2>
+                    <p>This project demonstrates integration across computer vision, IoT-based control, and robotics, showcasing real-time decision-making for autonomous tracking applications.</p>
+                    <p>I developed a compact ball-following robot capable of autonomously tracking and approaching a target ball using vision-based control. 
+                        The robot uses a mobile phone mounted on its chassis to capture real-time video, which is streamed online to an external system for processing.</p>
+                </div>
+            </div>
+            <div class="full-text-container">
+                <p>The system employs contour detection algorithms to isolate the ball from the video feed by masking it within the frame. 
+                    The centroid of the detected ball is calculated, and its position relative to the center of the screen determines the robot’s movement. 
+                    If the ball is to the left of the center, the robot turns left and if the ball is to the right, the robot turns right.
+                    The robot continues to track and approach the ball until the detected ball’s size surpasses a predefined threshold, indicating proximity, at which point the robot stops. 
+                    A NodeMCU controller manages motor operations, receiving commands from the external system over Wi-Fi.</p>
+            </div>
+            <div class="full-image-container">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>

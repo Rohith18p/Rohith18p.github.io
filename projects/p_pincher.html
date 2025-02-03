@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanisms</title>
+    <link rel="stylesheet" href="../css/p_pincher.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">RTABMap SLAM with SPOT</h1>
+            <hr class="transparent-line">
+            <div class="text-container">
+                <p><strong style="font-size: 1.35em;"><em>Introduction:</em></strong></p>
+                <p>This project demonstrates an intelligent pick-and-place system using the PincherX100 5DOF robotic manipulator, integrating MATLAB simulations, 
+                    trajectory planning, inverse kinematics, and obstacle avoidance techniques. The implementation progressed through three key stages, 
+                    transitioning from simulation to real-world application, with the incorporation of advanced path-planning algorithms.</p>
+                
+                <p><strong style="font-size: 1.35em;"><em>Stage 1: MATLAB Simulation</em></strong></p>
+                <p>The first stage involved simulating the pick-and-place task using MATLAB. The object and goal positions were predefined, enabling controlled experimentation. Key steps included:</p>
+                <p>1. Trajectory Planning: Generating smooth waypoint paths to transition between positions.
+                <br>2. Inverse Kinematics (IK): Using MATLAB’s IK solver to calculate the joint positions corresponding to each waypoint.
+                <br>3. Simulation Execution: Feeding the calculated joint positions to a virtual PincherX100 model to successfully perform the pick-and-place task.</p>
+                
+                <p><strong style="font-size: 1.35em;"><em>Stage 2: Real-World Implementation</em></strong></p>
+                <p>The second stage translated the MATLAB simulation logic to the physical PincherX100 manipulator. The system was enhanced with a vision setup comprising an overhead camera and 
+                    AprilTags to dynamically detect object, goal, and obstacle positions.</p>
+                <p>Trajectory Generation: A generalized cubic polynomial function was implemented to create smooth and abrupt-free paths for each phase Start-to-object location, object-to-goal, goal-to-home.</p>
+                <p>Execution: The calculated trajectories were fed to the PincherX100 manipulator, enabling precise pick-and-place actions.</p>
+            </div>
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="text-container">
+                <p><strong style="font-size: 1.35em;"><em>Stage 3: Obstacle Avoidance</em></strong></p>
+                <p><strong style="font-size: 1.0em;"><em>Geometric Method:</em></strong></p>
+                <p>Marked the obstacle’s center and defined a large circle with a safety offset. Generated a trajectory comprising of 
+                    A straight line from the current position to the circle’s boundary, A curve along the circle until exiting at the next intersection with the line.
+                    A straight line to the goal position. A straight line to the goal position.</p>
+                <p><strong style="font-size: 1.0em;"><em>A* Method:</em></strong></p>
+                <p>Represented the workspace as a grid, marking obstacles as restricted zones.
+                    Used the A* algorithm to compute an optimal collision-free path from the current position to the goal.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="text-container">
+                <p><strong style="font-size: 1.35em;"><em>Inverse Kinematics Approaches:</em></strong></p>
+                <p>To enhance flexibility and optimize manipulator performance, three inverse kinematics (IK) methods were utilized:</p>
+                <p>1. Default Solver: Leveraged the built-in solver for quick implementation.
+                <br>2. Analytical Solution: Derived a closed-form solution tailored to the 5DOF manipulator.
+                <br>3. Gradient Descent: Implemented to compute optimal joint configurations for desired positions, ensuring smooth and precise movements.</p>
+                <p><strong style="font-size: 1.0em;"><em>Conclusion:</em></strong></p>
+                <p>This project successfully integrated simulation, vision systems, trajectory planning, and obstacle avoidance, demonstrating the versatility of the PincherX100 manipulator.
+                    By employing advanced methodologies such as A* and geometric planning, the system achieved reliable and adaptive pick-and-place functionality.
+                    The combination of analytical solutions and optimization techniques further optimized the manipulator’s performance.</p>
+            </div>
+        </div>
+        
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>

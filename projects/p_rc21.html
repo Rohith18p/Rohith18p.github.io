@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanisms</title>
+    <link rel="stylesheet" href="../css/p_rc21.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">Robocon 2021</h1>
+            <hr class="transparent-line">
+            <div class="text-container">
+                <p>As part of the Robocon 2021 competition, I contributed to the design and development of two robots—one autonomous and one manual—to execute the tasks outlined in the “Throwing Arrows” theme. Our solution showcased innovation, precision, and teamwork, earning a perfect score of 100/100 in the evaluation of our idea and design.</p>
+            </div>
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="text-container">
+                <p>The manual robot was engineered for precise navigation and control, equipped with a robust throwing mechanism to launch arrows accurately into scoring zones. It was designed for agility and seamless operator interaction to handle dynamic challenges on the competition field.</p>
+                <p>The autonomous robot featured advanced sensors and a programmed control system to identify targets, calculate optimal angles, and throw arrows with precision. It utilized a combination of pneumatic systems and servo motors to ensure consistent performance.</p>
+                <p>Our collaborative robot design was tailored to work efficiently within the constraints of the rules, achieving excellent synchronization between the manual and autonomous robots. The project demonstrated our team’s ability to integrate mechanical, electronic, and software systems into a cohesive and high-performing solution.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <!-- <div class="footer-text">
+                <strong>Work on mechanisms is due publication. Resources will be made available shortly.</strong>
+            </div> -->
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>

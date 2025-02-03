@@ -1,0 +1,421 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('../images/background_img.png') no-repeat center center fixed; /* Fallback background */
+    background-size: cover;
+    color: #fff;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+#box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: none; /* Prevent the fallback background from affecting the dynamic one */
+}
+
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #04788a;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 70px; /* Offset for fixed navbar */
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.0em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+section {
+    padding: 25px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* About Me Section */
+#about-me {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#about-me h1 {
+    font-size: 3.0em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.image-placeholder {
+    margin: 20px 0;
+}
+
+.image-placeholder img {
+    width: 250px; /* Adjust size as needed */
+    height: 250px; /* Make the image square */
+    border-radius: 50%; /* Makes the image circular */
+    /*border: 5px solid #ffffff; /* Optional: Add a border around the image */
+    object-fit: cover; /* Ensures the image fits perfectly in the circle */
+}
+
+.about-text {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/*--------------------------------------------------------------------------*/
+/* Experience Section */
+#experience {
+    text-align: center;
+    padding: 40px 20px;
+    color: white; /* All text in white */
+}
+
+#experience h1 {
+    font-size: 3.0em;
+    margin-bottom: 20px;
+}
+
+#experience h2 {
+    font-size: 2em;
+    margin: 20px 0 10px;
+    color: white;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Experience Section */
+.experience-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tile-content {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Center-align logo and text vertically */
+}
+
+.company-logo {
+    flex: 1; /* Occupies 1/3 of the tile */
+    text-align: center;
+}
+
+.company-logo img {
+    width: 100%; /* Scales to fit 1/3 of the tile */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain;
+}
+
+.experience-text {
+    flex: 2; /* Occupies 2/3 of the tile */
+    text-align: left;
+}
+
+.experience-text h3 {
+    font-size: 1.4em;
+    margin: 0;
+    padding-bottom: 5px; /* Adjusts spacing below the role title */
+}
+
+.experience-text p {
+    font-size: 1.2em;
+    margin-top: 1px; /* Adds space between paragraphs */
+    margin-bottom: 7px;
+    line-height: 1.5;
+}
+
+.dropdown-content {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+    text-align: left; /* Left-align text */
+    font-size: var(--dropdown-font-size, 1em); /* Parameter for font size */
+}
+
+.dropdown-content ul {
+    list-style-type: square; /* Adds bullet points */
+    padding-left: 20px; /* Indent bullets */
+}
+
+.dropdown-content li {
+    margin-bottom: 5px; /* Adds spacing between items */
+}
+
+
+/*--------------------------------------------------------------------------*/
+
+/* skills */
+.skill {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.progress {
+    background: #444;
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.bar {
+    height: 100%;
+    background: #4caf50;
+    border-radius: 10px;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/*--------------------------------------------------------------------------*/
+/* Projects */
+.project-row {
+    display: flex;
+    justify-content: center;
+    gap: 75px; /* Horizontal gap between placeholders */
+    margin: 30px 0 80px 0; /* Increased vertical gap between rows */
+    flex-wrap: wrap; /* Allows wrapping for rows with fewer projects */
+}
+
+.project {
+    text-decoration: none;
+    color: #fff;
+    width: 250px; /* Adjusted width for a better layout with glass tile */
+    height: auto; /* Adjusted to accommodate text content */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 10px;
+    padding: 15px; /* Inner padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.project img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image dimensions */
+    border-radius: 10px;
+    object-fit: cover; /* Keeps the image proportional */
+}
+
+.project p {
+    margin-top: 10px; /* Adds spacing between the image and text */
+    font-size: 20px; /* Increases font size slightly for better readability */
+}
+
+.subheading {
+    font-size: 2em;
+    margin: 30px 0;
+    text-align: center; /* Align text to the right */
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+}
+
+/* Back Button */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button a:hover {
+    background-color: #089db4;
+}
+
+/*--------------------------------------------------------------------------*/
+/* Contact */
+#contact {
+    text-align: center;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center; /* Center align all icons */
+    align-items: center;
+    gap: 30px; /* Adjust space between icons */
+    margin-top: 20px;
+}
+
+.contact-row a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.contact-row a:hover {
+    color: #7fcec5; /* Change color on hover */
+}
+
+.contact-row i {
+    font-size: 36px; /* Icon size */
+}
+
+/* Publications Section */
+#publications h1 {
+    text-align: center; /* Center-align the main heading */
+    font-size: 3.0em; /* Adjust heading size */
+    margin-bottom: 30px;
+}
+
+#publications .subsection h2 {
+    text-align: left; /* Left-align subsection headings */
+    font-size: 1.5em; /* Adjust subsection heading size */
+    margin-top: 30px; /* Add spacing above subsections */
+    margin-bottom: 15px;
+}
+
+#publications ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+#publications .publication-item {
+    display: flex; /* Use flexbox for alignment */
+    align-items: flex-start; /* Align icon with the top of the text */
+    gap: 15px; /* Space between icon and text */
+    margin-bottom: 15px; /* Space between items */
+}
+
+#publications .icon {
+    flex-shrink: 0; /* Prevent the icon from resizing */
+    font-size: 1.5em; /* Set the size of the icon */
+    margin-top: 5px; /* Optional: Align icon visually */
+}
+
+#publications .text {
+    line-height: 1.6; /* Adjust line height for better readability */
+    flex: 1; /* Allow text to take up remaining space */
+    text-align: left;
+}
+
+#publications .text a {
+    display: block; /* Ensure the hyperlink starts on a new line */
+    margin-top: 5px; /* Add space above the hyperlink */
+    color: #0066cc; /* Optional: Set link color */
+    text-decoration: underline; /* Underline the link */
+}
+
+/* Achievements Section */
+#achievements h1 {
+    text-align: center; /* Center-align the heading */
+    font-size: 3em; /* Adjust heading size */
+    margin-bottom: 40px;
+}
+
+#achievements ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+#achievements .achievement-item {
+    margin-bottom: 30px; /* Space between items */
+}
+
+#achievements .achievement-item div {
+    display: flex;
+    align-items: center; /* Align icon and name in the same line */
+}
+
+#achievements .achievement-item i {
+    margin-right: 10px; /* Space between icon and name */
+    font-size: 1.3em; /* Adjust the icon size */
+}
+
+#achievements .achievement-item b {
+    margin-right: 15px; /* Add space between name and content */
+    font-size: 1.3em; /* Adjust the icon size */
+}
+
+#achievements .achievement-item t {
+    margin-right: 15px; /* Add space between name and content */
+    font-size: 0.80em; /* Adjust the icon size */
+}
+
+#achievements .achievement-content {
+    margin-left: 47px; /* Indentation for the content */
+    font-size: 1.1em; /* Adjust the content font size */
+    margin-top: 10px; /* Space between name and content */
+}
+
+
+

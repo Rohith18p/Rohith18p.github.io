@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanisms</title>
+    <link rel="stylesheet" href="../css/p_rc20.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">Robocon 2020</h1>
+            <hr class="transparent-line">
+            <div class="text-container">
+                <p>As part of the Robocon 2020 competition, I collaborated with my team to design and develop two manual robots for the “Robo Rugby” theme. 
+                    Our innovative approach and meticulous design earned us a perfect score of 100/100 for idea and design evaluation during the national assessment.</p>
+                <p>The competition challenged teams to design robots capable of simulating a rugby match. 
+                    Robots needed to pick up and pass rugby balls, navigate the field, and score goals by successfully placing the balls in designated scoring zones.  </p>       
+            </div>
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="text-container">
+                <p><strong style="font-size: 1.35em;"><em>Robot 1: Ball Carrier</em></strong></p>
+                <p>The first robot was designed as a ball carrier, capable of picking up rugby balls from the starting area and delivering them to the scoring zones. 
+                    The robot featured a mechanically robust gripping system for secure ball handling and precise release, ensuring consistent performance. 
+                    Its agile drive system allowed for rapid movement across the field, minimizing time delays.</p>
+                <p><strong style="font-size: 1.35em;"><em>Robot 2: Goal Scorer</em></strong></p>
+                <p>The second robot was optimized for scoring tasks. 
+                    Equipped with a specialized mechanism for receiving rugby balls and a goal-shooting system, it could accurately place the balls into designated scoring zones. 
+                    The robots efficient maneuvering capabilities and precise control mechanisms ensured high accuracy during gameplay.</p>
+                <p>Both robots were designed to work in coordination, adhering strictly to the rules of the game while optimizing task completion. 
+                    The project highlighted our ability to integrate mechanical design, control systems, and game strategy to achieve an optimal solution for the competition. 
+                    Our design philosophy prioritized reliability, precision, and efficiency, which were critical in earning full marks for idea and design.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>

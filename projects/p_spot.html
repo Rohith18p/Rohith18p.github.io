@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanisms</title>
+    <link rel="stylesheet" href="../css/p_spot.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">RTABMap SLAM with SPOT</h1>
+            <hr class="transparent-line">
+            <div class="text-container">
+                <p><strong style="font-size: 1.2em;"><em>SPOT setup:</em></strong></p>
+                <p>To perform SLAM with Boston Dynamics Spot, the initial setup focused on collecting data from its 
+                    five stereo vision cameras (providing RGB and depth images), a Velodyne LiDAR payload, and Spot’s internal odometry. 
+                    Direct data transfer via WiFi was impractical due to bandwidth limitations, as the connection was already used for robot control.</p>
+                <p>To overcome this, a Jetson Orion Nano was connected to Spot’s I/O interface, bypassing WiFi constraints. 
+                    Custom ROS launch files were deployed on the Jetson to acquire data from the cameras, LiDAR, and odometry. 
+                    The collected data was stored on an external hard drive connected to the Jetson. For remote operation, 
+                    the Jetson was accessed via SSH from a workstation to run the ROS launch files and manage data collection.</p>  
+                    
+                <p><strong style="font-size: 1.35em;"><em>Data Collection:</em></strong></p>
+                <p>To gather data for SLAM, multiple recording sessions were conducted in an indoor environment. 
+                    Each session involved manually controlling the robot through a predefined path to capture diverse spatial data. 
+                    The paths included navigating around various obstacles such as tables, looping around structural elements like railings, and returning to the starting point to ensure closed-loop trajectories.
+                    During these sessions, sensor data from Spot’s stereo vision cameras, LiDAR, and odometry were recorded. Each session lasted for approximately two minutes, 
+                    providing comprehensive datasets that included RGB and depth images, LiDAR point clouds, and precise odometry</p>
+            </div>
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="text-container">
+                <p><strong style="font-size: 1.35em;"><em>Simultaneous Localization And Mapping: (SLAM)</em></strong></p>
+                <p>To perform SLAM, I implemented RTABMap, building its library from binaries to customize it for the collected data. The default setup was not compatible with our dataset, requiring initial preprocessing. 
+                    I utilized RTABMap’s time synchronization functionality to align RGB and depth image data from all cameras, LiDAR, and odometry, ensuring seamless integration of sensor inputs.</p>
+                <p>With the data synchronized, I ran the RTABMap SLAM algorithm in various configurations. Using only LiDAR data yielded a detailed and accurate 3D map. 
+                    However, running the algorithm with a single RGB and depth feed from Spot’s rear camera produced inconsistent results due to environmental challenges like reflective floors and featureless walls, which limited the effectiveness of image-based mapping.</p>
+                <p>Currently, I am refining the implementation by integrating data from multiple cameras alongside the LiDAR input. This approach aims to leverage the strengths of both sensor modalities, 
+                    improving the robustness and accuracy of the SLAM results for optimal performance.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>

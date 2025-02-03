@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanisms</title>
+    <link rel="stylesheet" href="../css/p_spot.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">Dead Reckoning</h1>
+            <hr class="transparent-line">
+            <div class="text-container">
+                <p><strong style="font-size: 1.2em;"><em>Introduction:</em></strong></p>
+                <p>This project aimed to implement and analyze dead reckoning using GPS and IMU data collected from a car. 
+                    By understanding the characteristics and limitations of each sensor, a pipeline was developed to estimate the car’s trajectory through data fusion and calibration. 
+                    The project was conducted using custom ROS2 driver codes to collect and process sensor data.</p>
+                    
+                <p><strong style="font-size: 1.35em;"><em>GPS:</em></strong></p>
+                <p>To thoroughly understand the behavior and limitations of GPS, I conducted experiments with a GPS puck. 
+                    Custom drivers were written to collect and analyze data for both stationary and linear motion scenarios. 
+                    These experiments helped identify performance metrics, error sources, and overall accuracy of the GPS.</p>
+                
+                <p><strong style="font-size: 1.35em;"><em>IMU:</em></strong></p>
+                <p>For the IMU component, I used a Vector VN100 10-DOF IMU. Custom ROS2 drivers were implemented to collect IMU data, and an Allan variance test was performed to characterize its noise, drift, and other error sources. 
+                    This experimentation provided critical insights into the IMU’s performance and error patterns, enabling effective calibration and data refinement.</p>
+                
+                <p><strong style="font-size: 1.35em;"><em>Dead Reckoning:</em></strong></p>
+                <p><strong style="font-size: 1.0em;"><em>Data Collection</em></strong>
+                <br>The IMU was mounted at the car’s center, and the GPS was positioned on top. Data was collected in two scenarios, 
+                    Driving in circles to calibrate the IMU’s magnetometer (removing hard iron and soft iron errors).
+                    Driving on streets to test the system in a real-world environment.</p>
+                <p><strong style="font-size: 1.0em;"><em>IMU Calibration</em></strong>
+                <br>Magnetometer errors were corrected by fitting an ellipse to the circular motion data, removing distortions caused by hard and soft iron effects.
+                    These calibration parameters were applied to the street-driving dataset.</p>
+                <p><strong style="font-size: 1.0em;"><em>Data Processing</em></strong>
+                <br>A complementary filter was used to combine IMU readings, applying high-pass and low-pass filters to eliminate noise and retain useful information.
+                    Velocity and position were derived by integrating the filtered IMU data. The gyroscope provided heading information, which was further refined using the calibrated magnetometer readings.</p>
+            </div>
+            <div class="image-container">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="text-container">
+                <p><strong style="font-size: 1.35em;"><em>Path plotting and Comparision</em></strong></p>
+                <p>The trajectory estimated from the IMU data was plotted and compared against the GPS path. This comparison provided insights into the accuracy of the dead reckoning system and highlighted areas for potential improvement.</p>
+                <p>Generally, the accuracy position estimates using inertial sensors deminishes overtime without a GPS fix due to accumulated sensor errors.</p>
+            </div>
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>
