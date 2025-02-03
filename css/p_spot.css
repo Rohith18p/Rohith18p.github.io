@@ -107,14 +107,14 @@ section {
 
 .image-container img:first-child {
     width: 50%; /* First image takes up 30% of the container width */
-    height: 400px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
 }
 
 .image-container img:last-child {
     width: 50%; /* Second image takes up 70% of the container width */
-    height: 400px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
 }
