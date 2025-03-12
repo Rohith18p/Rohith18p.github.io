@@ -46,7 +46,7 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
-    padding-top: 70px; /* Offset for fixed navbar */
+    padding-top: 30px; /* Offset for fixed navbar */
     text-align: center;
 }
 
@@ -102,23 +102,29 @@ section {
     justify-content: space-between; /* Add spacing between images */
     align-items: center; /* Align images vertically if heights vary */
     margin-top: 20px; /* Adjust vertical spacing */
-    gap: 20px; /* Add space between images */
+    gap: 02px; /* Add space between images */
 }
 
 .image-container img:first-child {
-    width: 50%; /* First image takes up 30% of the container width */
-    height: 400px; /* Maintain aspect ratio */
+    width: var(--first-child-width, 40%); /* First image width (default: 33%) */
+    height: var(--image-height, 300px); /* Adjustable height (default: 400px) */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
+}
+
+.image-container img:nth-child(2) {
+    width: var(--middle-child-width, 20%); /* Middle image width (default: 33%) */
+    height: var(--image-height, 300px); /* Adjustable height (default: 400px) */
     border-radius: 10px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
 }
 
 .image-container img:last-child {
-    width: 50%; /* Second image takes up 70% of the container width */
-    height: 400px; /* Maintain aspect ratio */
+    width: var(--last-child-width, 20%); /* Last image width (default: 33%) */
+    height: var(--image-height, 300px); /* Adjustable height (default: 400px) */
     border-radius: 10px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
 }
-
 /* Image Container: Two Images in Custom Proportions */
 .img-container {
     display: flex; /* Enable flexbox for horizontal layout */

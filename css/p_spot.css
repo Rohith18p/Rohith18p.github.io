@@ -105,18 +105,12 @@ section {
     gap: 20px; /* Add space between images */
 }
 
-.image-container img:first-child {
-    width: 50%; /* First image takes up 30% of the container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
-}
-
-.image-container img:last-child {
-    width: 50%; /* Second image takes up 70% of the container width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for styling */
+.image-container iframe {
+    width: 50%; /* Same as images */
+    height: auto; 
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Text Container: Full-Width Text */
@@ -131,6 +125,41 @@ section {
     line-height: 1.8; /* Adjust line spacing for readability */
     margin-bottom: 20px; /* Add space between paragraphs */
     text-align: left; /* Ensure text aligns to the left */
+}
+
+/* Second Layout: Image on Left, Text on Right */
+.img-text-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Image on the Left */
+.half-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.half-image-container iframe {
+    width: 100%; /* Same as images */
+    height: auto; 
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Text on the Right */
+.half-text-container {
+    flex: 1;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.8;
+    padding: 0 20px;
 }
 
 .project-heading {

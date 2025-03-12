@@ -50,43 +50,48 @@
 
     <div class="container">
         <!-- Project Content -->
+        <br>
         <section>
-            <h1 class="project-heading">RTABMap SLAM with SPOT</h1>
+            <h1 class="project-heading">Indoor SLAM with SPOT</h1>
             <hr class="transparent-line">
-            <div class="text-container">
-                <p><strong style="font-size: 1.2em;"><em>SPOT setup:</em></strong></p>
-                <p>To perform SLAM with Boston Dynamics Spot, the initial setup focused on collecting data from its 
-                    five stereo vision cameras (providing RGB and depth images), a Velodyne LiDAR payload, and Spot’s internal odometry. 
-                    Direct data transfer via WiFi was impractical due to bandwidth limitations, as the connection was already used for robot control.</p>
-                <p>To overcome this, a Jetson Orion Nano was connected to Spot’s I/O interface, bypassing WiFi constraints. 
-                    Custom ROS launch files were deployed on the Jetson to acquire data from the cameras, LiDAR, and odometry. 
-                    The collected data was stored on an external hard drive connected to the Jetson. For remote operation, 
-                    the Jetson was accessed via SSH from a workstation to run the ROS launch files and manage data collection.</p>  
+            <div class="img-text-row">
+                <div class="half-image-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/70BYekiPRKw?start=1&autoplay=1&mute=1&loop=1&playlist=70BYekiPRKw" 
+                        title="YouTube video"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="half-text-container">
+                    <p><strong style="font-size: 1.2em;"><em>SPOT Data Collection:</em></strong></p>
+                    <p>
+                        Indoor data is collected from the SPOT's five stereo vision cameras, a Velodyne LiDAR, and Spot’s internal odometry. The data is collected in multiple sessions in different indoor environments. 
+                        External Jetson Orion Nano is connected to Spot’s I/O interface for data collection as transfer via WiFi is constrained. Remote management was handled via SSH with custom ROS launch files.
+                    </p>
                     
-                <p><strong style="font-size: 1.35em;"><em>Data Collection:</em></strong></p>
-                <p>To gather data for SLAM, multiple recording sessions were conducted in an indoor environment. 
-                    Each session involved manually controlling the robot through a predefined path to capture diverse spatial data. 
-                    The paths included navigating around various obstacles such as tables, looping around structural elements like railings, and returning to the starting point to ensure closed-loop trajectories.
-                    During these sessions, sensor data from Spot’s stereo vision cameras, LiDAR, and odometry were recorded. Each session lasted for approximately two minutes, 
-                    providing comprehensive datasets that included RGB and depth images, LiDAR point clouds, and precise odometry</p>
-            </div>
-            <div class="image-container">
-                <img src="../images/p_spot2.png" alt="Image 1">
-                <img src="../images/test2.png" alt="Image 2">
+                </div>
             </div>
             <div class="text-container">
-                <p><strong style="font-size: 1.35em;"><em>Simultaneous Localization And Mapping: (SLAM)</em></strong></p>
-                <p>To perform SLAM, I implemented RTABMap, building its library from binaries to customize it for the collected data. The default setup was not compatible with our dataset, requiring initial preprocessing. 
-                    I utilized RTABMap’s time synchronization functionality to align RGB and depth image data from all cameras, LiDAR, and odometry, ensuring seamless integration of sensor inputs.</p>
-                <p>With the data synchronized, I ran the RTABMap SLAM algorithm in various configurations. Using only LiDAR data yielded a detailed and accurate 3D map. 
-                    However, running the algorithm with a single RGB and depth feed from Spot’s rear camera produced inconsistent results due to environmental challenges like reflective floors and featureless walls, which limited the effectiveness of image-based mapping.</p>
-                <p>Currently, I am refining the implementation by integrating data from multiple cameras alongside the LiDAR input. This approach aims to leverage the strengths of both sensor modalities, 
-                    improving the robustness and accuracy of the SLAM results for optimal performance.</p>
+                <p><strong style="font-size: 1.35em;"><em>Simultaneous Localization And Mapping (SLAM):</em></strong></p>
+                <p>Implemented RTAB-Map SLAM in ROS to generate detailed point clouds, as shown in the videos below. 
+                    Currently, I am working on ROMAN SLAM to fuse metric and semantic mapping, leveraging scene graph representations 
+                    for improved environment understanding and object-centric, view-invariant localization on the collected dataset.</p>
             </div>
 
             <div class="image-container">
-                <img src="../images/p_spot4.png" alt="Image 1">
-                <img src="../images/p_spot5.png" alt="Image 2">
+                <iframe 
+                    src="https://www.youtube.com/embed/SYs8a-AFXHE?autoplay=1&mute=1&loop=1&playlist=SYs8a-AFXHE" 
+                    title="YouTube video"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+                <iframe 
+                    src="https://www.youtube.com/embed/Qy5aY3uqQUU?autoplay=1&mute=1&loop=1&playlist=Qy5aY3uqQUU"
+                    title="YouTube video"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
     </div>

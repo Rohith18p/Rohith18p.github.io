@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non Prehensile Manipulation using MPPI & Isaacgym</title>
+    <link rel="stylesheet" href="../css/p_npm.css">
+
+    <style>
+        #box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Place behind all content */
+            overflow: hidden;
+        }
+
+        /* Blur Effect Layer */
+        #blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place above animation but behind content */
+            backdrop-filter: blur(5px); /* Fixed blur value */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Blur overlay -->
+    <div id="blur-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html#about-me">About Me</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#achievements">Achievements</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="../index.html#projects">Back </a>
+    </div>
+
+    <div class="container">
+        <!-- Project Content -->
+        <section>
+            <h1 class="project-heading">Non Prehensile Manipulation using MPPI & Isaacgym</h1>
+            <hr class="transparent-line">
+            <div class="content-layout">
+                <div class="image-container">
+                    <img src="../images/p_npm2.gif" alt="Project Image" class="project-image">
+                </div>
+                <div class="text-container">
+                    <h2>Details</h2>
+                    <!-- <ul>
+                        <li>A collection of novel mechanisms for anthropomorphic robots</li>
+                        <li>Work on mechanisms is due publication. Resources will be made available shortly.</li>
+                    </ul> -->
+                    <p>This project is part of my Mobile Robotics course, explores non-prehensile manipulation using Model Predictive Path Integral (MPPI) control integrating with Isaac Gym. 
+                        I aim to implement this approach across various robot platforms to evaluate its effectiveness in dynamic manipulation tasks. Details will be updated as the project progresses.</p>
+                    <p>Research Paper: <a href="https://ieeexplore.ieee.org/document/10856359" target="_blank">https://ieeexplore.ieee.org/document/10856359 </a></p>
+                    <p></p>
+
+                </div>
+            </div>
+            <div class="footer-text">
+                <strong><a href="https://autonomousrobots.nl/paper_websites/isaac-mppi" target="_blank"> Resources </a></strong> 
+            </div>
+        </section>
+    </div>
+
+    <script type="module">
+        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
+
+        // Initialize the dynamic background
+        const colorbg = new AestheticFluidBg({
+            dom: "box",
+            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
+            loop: true,
+            blur: 0.05
+        });
+    </script>
+
+</body>
+</html>
