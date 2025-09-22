@@ -3,371 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Rohith Poola | Robotics Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
-
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="#about-me">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <!-- <a href="#skills">Skills</a> -->
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <!-- Part 1: About Me -->
-        <section id="about-me">
-            <h1>About Me</h1>
-            <div class="image-placeholder">
-                <!-- Replace "placeholder.png" with your actual image file name -->
-                <img src="images/My_Pic.png" alt="Your Image">
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="profile-info">
+            <img src="images/My_Pic.png" alt="Rohith Profile Picture" class="profile-pic">
+            <!-- Optional name & tagline -->
+            <!--
+            <div class="intro-text">
+                <h1>Rohith Poola</h1>
+                <p>Robotics Engineer | Control & Perception</p>
             </div>
+            -->
+        </div>
+        <div class="scroll-down">
+            <span>&#8595;</span>
+        </div>
+    </section>
+
+   <!-- ABOUT ME SECTION -->
+    <section id="about">
+        <div class="about-content">
             <div class="about-text">
+                <h2>About Me</h2>
+                <hr class="about-underline">
+                <hr class="section-divider">
                 <p>
-                    <strong style="font-size: 1.5em;"><em>Welcome 👋🏻 </em></strong> 
-                    to my portfolio! I am 
-                    <strong style="font-size: 1.5em;">Rohith Poola</strong>
-                </p>
-                <p>
-                    I am a robotics enthusiast driven by the thrill of transforming theoretical concepts into tangible systems that come to life. 
-                    My passion lies in building robots that harmoniously integrate knowledge from diverse domains, crafting intelligent systems. 
-                    Over the years, I have honed my expertise in designing and prototyping a wide variety of robots, including manipulators, legged robots, wheeled robots, and drones. 
-                    My journey has evolved from focusing on robust mechanical designs to creating intelligent, precisely controlled autonomous systems. 
-                    Inspired by nature, my primary interest lies in developing bio-inspired robots by leveraging the synergy between advanced control strategies and reinforcement learning. 
-                    With experience in both perception and control, I aim to push the boundaries of robotics, crafting solutions that bridge innovation and functionality. 
-                </p>
-                <p> 
-                    <strong style="font-size: 1.1em;">Explore my work to see how I bring ideas to life.</strong>
+                    I’m a robotics researcher focused on developing autonomy stack that enable robots to act intelligently 
+                    and adaptively in the real world. My path into robotics began with building — mobile robots, manipulators, bionic hands, and competition-ready 
+                    platforms. These early experiences laid the foundation for deeper research into robot learning, real-time planning, SLAM, 
+                    and perception. Over the years, I’ve engineered systems that blend hardware and algorithms — from autonomous harvesters 
+                    in vertical farms to multi-robot SLAM deployments using Spot, AgileX, and Unitree robots.
                     
+                </p><br>
+                <p>
+                    Currently, at the Autonomy and Intelligence Lab at Northeastern University, I work on risk-aware trajectory planning, 
+                    and safety guaranteed control strategies with contingency planning. My work emphasizes real-world deployment 
+                    and robustness under uncertainty, combining ROS2 and hardware-in-the-loop systems. My long-term vision is to 
+                    build robust, generalizable autonomy stacks that operate safely, intelligently, and 
+                    adaptively — from structured labs to chaotic real-world environments.
                 </p>
             </div>
-        </section>
-
-        <!-- Part 2: Experience -->
-        <section id="experience">
-            <h1>Experience</h1>
-            <div class="experience-container">
-                <!-- Professional Experience -->
-                <h2>Professional Experience</h2>
-                <div class="experience-tile" data-file="projects/cg.html">
-                    <div class="tile-content">
-                        <div class="company-logo">
-                            <img src="images/cg.png" alt="Capgemini Logo">
-                        </div>
-                        <div class="experience-text">
-                            <h3>Associate 2 Software Engineer</h3>
-                            <p>Automotive - Stellantis (Client)</p>
-                            <p>Sep 2022 - Aug 2024</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-content" style="display: none;"></div>
+            <!-- <div class="about-gif">
+                <div class="terminal">
+                    <span class="prompt">$</span><span id="typed-text"></span><span class="cursor">|</span>
                 </div>
-                
-                <!-- Research Experience -->
-                <h2>Research Experience</h2>
-                <div class="experience-tile" data-file="projects/rrc.html">
-                    <div class="tile-content">
-                        <div class="company-logo">
-                            <img src="images/iiith.png" alt="Robotics Research Logo">
-                        </div>
-                        <div class="experience-text">
-                            <h3>Research Assistant (part time)</h3>
-                            <p>Robotics Research Center</p>
-                            <p>May 2022 - Jul 2024</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-content" style="display: none;"></div>
+            </div> -->
+            <div class="about-gif">
+            <div class="terminal-wrapper">
+                <div class="terminal">
+                <span class="prompt">$</span><span id="typed-text"></span><span class="cursor">|</span>
                 </div>
-
-                <div class="experience-tile" data-file="projects/rig.html">
-                    <div class="tile-content">
-                        <div class="company-logo">
-                            <img src="images/nitc.png" alt="Robotics Research Logo">
-                        </div>
-                        <div class="experience-text">
-                            <h3>Under Graduate Researcher</h3>
-                            <p>Robotics/Mechatronics Lab</p>
-                            <p>May 2019 - May 2022</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-content" style="display: none;"></div>
-                </div>
-            </div>
-        </section>
-
-        
-
-        <!-- Part 3: Projects -->
-        <section id="projects">
-            <h1>Projects</h1>
-
-            <!-- MS Section -->
-            <h2 class="subheading">M.Sc.</h2>
-            <div class="project-row">
-                <a href="projects/p_spot.html" class="project">
-                    <img src="images/p_spot1.png" alt="Project 1">
-                    <p>SLAM with SPOT <br>(Boston Dynamics)</p>
-                </a>
-                <a href="projects/p_pincher.html" class="project">
-                    <img src="images/p_pincher1.png" alt="Project 2">
-                    <p>Obstacle-Aware Manipulation</p>
-                </a>
-                <a href="projects/p_dead.html" class="project">
-                    <img src="images/p_dead.png" alt="Project 3">
-                    <p>Dead Reckoning <br> GPS + IMU</p>
-                </a>
-            </div>
-            <div class="project-row">
-                <!-- <a href="projects/p_cobra.html" class="project">
-                    <img src="images/p_hand1.jpg" alt="Project 1">
-                    <p>COBRA</p>
-                </a> -->
-                <a href="projects/p_npm.html" class="project">
-                    <img src="images/p_npm1.png" alt="Project 2">
-                    <p>Non-Prehensile Manipulation<br> (MPPI + IsaacGym)</p>
-                </a>
-                <a href="projects/p_acrobot.html" class="project">
-                    <img src="images/p_acrobot1.png" alt="Project 3">
-                    <p>Acrobot Swing up Control</p>
-                </a>
-            </div>
-
-
-            <!-- Research Assistant Section -->
-            <h2 class="subheading">RA</h2>
-            <div class="project-row">
-                <a href="projects/p_hand.html" class="project">
-                    <img src="images/p_hand1.jpg" alt="Project 1">
-                    <p>Bionic Hand</p>
-                </a>
-                <a href="projects/p_mechanisms.html" class="project">
-                    <img src="images/p_mechanism1.png" alt="Project 2">
-                    <p>Mechanisms</p>
-                </a>
-                <a href="projects/p_manipulators.html" class="project">
-                    <img src="images/p_manipulator1.png" alt="Project 3">
-                    <p>Manipulator</p>
-                </a>
-            </div>
-
-            <!-- Undergraduate Researcher Section -->
-            <h2 class="subheading">UG</h2>
-            <div class="project-row">
-                <a href="projects/p_major.html" class="project">
-                    <img src="images/p_major1.png" alt="Project 4">
-                    <p>Mobile Manipulator based Harvesting in Vertical Farms</p>
-                </a>
-                <a href="projects/p_crutch.html" class="project">
-                    <img src="images/p_crutch1.png" alt="Project 5">
-                    <p>Multi-Functional Crutch</p>
-                </a>
-                <a href="projects/p_rc21.html" class="project">
-                    <img src="images/image6.png" alt="Project 6">
-                    <p>Robocon 2021</p>
-                </a>
-            </div>
-
-            <div class="project-row">
-                <!-- <a href="projects/p_rc20.html" class="project">
-                    <img src="images/image7.png" alt="Project 7">
-                    <p>Robocon 2020</p>
-                </a> -->
-                <a href="projects/p_bases.html" class="project">
-                    <img src="images/p_bases0.png" alt="Project 7">
-                    <p>Holonomic Mobile Bases</p>
-                </a>
-                <a href="projects/p_bfr.html" class="project">
-                    <img src="images/p_bfr1.jpg" alt="Project 7">
-                    <p>Ball Following Robot</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Part 2: Skills 
-        <section id="skills">
-            <h1>Skills</h1>
-            <div class="skill">
-                <p>Python</p>
-                <div class="progress"><div class="bar" style="width: 88%;"></div></div>
-            </div>
-            <div class="skill">
-                <p>CAD</p>
-                <div class="progress"><div class="bar" style="width: 95%;"></div></div>
-            </div>
-            <div class="skill">
-                <p>C++</p>
-                <div class="progress"><div class="bar" style="width: 70%;"></div></div>
-            </div>
-            <div class="skill">
-                <p>ROS</p>
-                <div class="progress"><div class="bar" style="width: 75%;"></div></div>
-            </div>
-        </section> -->
-
-        <!-- Part 4: Publications -->
-        <section id="publications">
-            <h1>Publications</h1>
-            <div class="subsection">
-                <h2>Patents</h2>
-                <ul>
-                    <li class="publication-item">
-                        <span class="icon"><i class="fas fa-scroll"></i></span>
-                        <span class="text">
-                            Robotic System for Harvesting Crops in Vertical Farms and Method Thereof 
-                            (Patent Application Number: 202441084733)
-                        </span>
-                    </li>
-                    <li class="publication-item">
-                        <span class="icon"><i class="fas fa-scroll"></i></span>
-                        <span class="text">
-                            A Multi-Functional Crutch with Automatic Height Adjustment, Shock Absorption, and Alert Functions
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="subsection">
-                <h2>Research Papers</h2>
-                <ul>
-                    <li class="publication-item">
-                        <span class="icon"><i class="fas fa-file-alt"></i></span>
-                        <span class="text">
-                            P. Rohith, M. Thejonath, A. Manoj, A. Sudheer, “Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms.” 
-                            In: 2023 International Conference of The Robotics Society on Advances In Robotics (AIR).
-                            <a href="https://doi.org/10.1145/3610419.3610451" target="_blank">https://doi.org/10.1145/3610419.3610451</a>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Part 5: Achievements -->
-        <section id="achievements">
-            <h1>ACHIEVEMENTS</h1>
-            <ul>
-                <li class="achievement-item">
-                    <div>
-                        <i class="fas fa-graduation-cap"></i> <b>Fellowship</b> <t>(Dec 2021 - May 2022)</t>
-                    </div>
-                    <div class="achievement-content">
-                        Recipient of AGNI Fellowship from IIT Palakkad for the project "Robot-Based Automation for Vertical Farming"
-                    </div>
-                </li>
-                <li class="achievement-item">
-                    <div>
-                        <i class="fas fa-graduation-cap"></i> <b>Scholarship</b> <t>(Aug 2018 - May 2022)</t>
-                    </div>
-                    <div class="achievement-content">
-                        Foundation For Excellence (FFE) scholarship awardee for B-Tech program for Academic Excellence
-                    </div>
-                </li>
-                <br>
-                <li class="achievement-item">
-                    <div>
-                        <i class="fas fa-trophy"></i> <b>Kaggle competition</b>
-                    </div>
-                    <div class="achievement-content">
-                        Ranked 37 out of 3685 teams in the "Cassava leaf disease detection in plants" competition
-                    </div>
-                </li>
-                <li class="achievement-item">
-                    <div>
-                        <i class="fas fa-trophy"></i> <b>Robocon 2020</b>
-                    </div>
-                    <div class="achievement-content">
-                        Scored 100/100 points for solution idea and design of the robots. Ranked 1 out of 95 teams nationwide
-                    </div>
-                </li>
-                <li class="achievement-item">
-                    <div>
-                        <i class="fas fa-trophy"></i> <b>YIP 2019-20</b>
-                    </div>
-                    <div class="achievement-content">
-                        Won in Young Innovators Program for the project 'Multi-Functional Crutch' in assistive technologies among 45 teams
-                    </div>
-                </li>
-                <li class="achievement-item">
-                    <div>
-                        <i class="fas fa-trophy"></i> <b>Al'leviate 2019-20</b>
-                    </div>
-                    <div class="achievement-content">
-                        Won in Al'leviate competition by IIT Madras for the project 'Multi-purpose Table for bedridden patients'.
-                    </div>
-                </li>       
-            </ul>
-        </section>
-
-
-
-
-        <!-- Part 5: Contact -->
-        <section id="contact">
-            <h1>CONTACT</h1>
-            <div class="contact-row">
-                <a href="mailto:rohith18p@gmail.com" target="_blank">
+                <div class="contact-icons-inline">
+                <a href="mailto:poola.r@northeastern.edu" target="_blank" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <!--
-                <a href="tel:+1234567890" target="_blank">
-                    <i class="fas fa-phone"></i>
-                </a>
-                -->
-                <a href="https://linkedin.com/in/myprofile" target="_blank">
+                <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/myprofile" target="_blank">
+                <a href="https://github.com/rohith18p" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
+                <a href="https://drive.google.com/file/d/1_MLck9owBeWnSa0E2mP3yk4duMXLLHDV/view?usp=drive_link" target="_blank" title="Resume">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                </div>
             </div>
-        </section>
+            </div>
+        </div>
+    </section>
 
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience-section" class="white-section">
+        <div class="experience-container">
+            <!-- LEFT SIDEBAR -->
+            <div class="experience-sidebar">
+                <div class="experience-icon-circle">
+                    <span class="experience-icon">&#9881;</span>
+                </div>
+                <h2>Experience</h2>
+            </div>
+
+            <!-- RIGHT EXPERIENCE CONTENT -->
+            <div class="experience-content">
+                <h3>Professional</h3>
+
+                <!-- PROFESSIONAL TILE -->
+                <div class="experience-tile" data-file="projects/cg.html">
+                    <div class="tile-logo">
+                        <img src="images/cg.png" alt="Capgemini Logo">
+                    </div>
+                    <div class="tile-details">
+                        <p><strong>Associate 2 Software Engineer</strong></p>
+                        <p>Capgemini – Stellantis</p>
+                        <p>Sep 2022 - Aug 2024</p>
+                    </div>
+                </div>
+                <br>
+                <h3>Research</h3>
+
+                <!-- RESEARCH TILE 1 -->
+                <div class="experience-tile" data-file="projects/nail.html">
+                    <div class="tile-logo">
+                        <img src="images/neu.png" alt="NU Logo">
+                    </div>
+                    <div class="tile-details">
+                        <p><strong>Research Assistant</strong></p>
+                        <p>Autonomy & Intelligence Lab</p>
+                        <p>Apr 2025 - Present</p>
+                    </div>
+                </div>
+
+                <!-- RESEARCH TILE 2 -->
+                <div class="experience-tile" data-file="projects/rrc.html">
+                    <div class="tile-logo">
+                        <img src="images/iiith.png" alt="IIITH Logo">
+                    </div>
+                    <div class="tile-details">
+                        <p><strong>Graduate Researcher (Part time)</strong></p>
+                        <p>Robotics Research Center</p>
+                        <p>May 2022 - Jul 2024</p>
+                    </div>
+                </div>
+
+                <!-- RESEARCH TILE 3 -->
+                <div class="experience-tile" data-file="projects/rig.html">
+                    <div class="tile-logo">
+                        <img src="images/nitc.png" alt="NITC Logo">
+                    </div>
+                    <div class="tile-details">
+                        <p><strong>Under Graduate Researcher</strong></p>
+                        <p>Robotics Lab</p>
+                        <p>May 2019 - May 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects-section" class="white-section">
+        <div class="projects-container">
+
+            <h2 class="projects-title">Projects</h2>
+
+            <!-- CATEGORY: M Sc -->
+            <div class="project-category">
+                <h3 class="project-category-title">M.Sc.</h3>
+                <hr class="project-subdivider">
+                <div class="project-grid">
+                    <!-- <div class="project-tile" data-file="projects/p_cmppi.html">
+                        <p class="project-title">Contingency MPPI</p>
+                        <img src="images/p_cmppi1.png" alt="CMPPI Project">
+                    </div> -->
+                    <div class="project-tile" data-file="projects/p_spot.html">
+                        <p class="project-title">SLAM with SPOT</p>
+                        <img src="images/p_spot1.png" alt="SPOT Project">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_pincher.html">
+                        <p class="project-title">Obstacle-Aware Manipulation</p>
+                        <img src="images/p_pincher1.png" alt="Pincher Project">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_dead.html">
+                        <p class="project-title">Dead Reckoning (GPS + IMU)</p>
+                        <img src="images/p_dead1.png" alt="Dead Reckoning">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_npm.html">
+                        <p class="project-title">Non-Prehensile Manipulation (MPPI + IssacGym)</p>
+                        <img src="images/p_npm1.png" alt="SPOT Project">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_acrobot.html">
+                        <p class="project-title">Acrobot Swing up Control</p>
+                        <img src="images/p_acrobot1.png" alt="Pincher Project">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY: RA -->
+            <div class="project-category">
+                <h3 class="project-category-title">RA</h3>
+                <hr class="project-subdivider">
+                <div class="project-grid">
+                    <div class="project-tile" data-file="projects/p_hand.html">
+                        <p class="project-title">Bionic Hand</p>
+                        <img src="images/p_hand1.jpg" alt="Bionic Hand">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_mechanisms.html">
+                        <p class="project-title">Mechanisms</p>
+                        <img src="images/p_mechanism1.png" alt="Mechanisms">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_manipulators.html">
+                        <p class="project-title">Manipulator</p>
+                        <img src="images/p_manipulator1.png" alt="Manipulator">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY: UG -->
+            <div class="project-category">
+                <h3 class="project-category-title">UG</h3>
+                <hr class="project-subdivider">
+                <div class="project-grid">
+                    <div class="project-tile" data-file="projects/p_major.html">
+                        <p class="project-title">Vertical Farm Harvester</p>
+                        <img src="images/p_major01.png" alt="Farm Project">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_rc21.html">
+                        <p class="project-title">Robocon 2021</p>
+                        <img src="images/p_rc21.jpg" alt="RC21">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_bases.html">
+                        <p class="project-title">Holonomic Mobile Bases</p>
+                        <img src="images/p_bases01.png" alt="Bases">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_bfr.html">
+                        <p class="project-title">Ball Following Robot</p>
+                        <img src="images/p_bfr01.png" alt="BFR">
+                    </div>
+                    <div class="project-tile" data-file="projects/p_crutch.html">
+                        <p class="project-title">Multi-Functional Crutch</p>
+                        <img src="images/p_crutch01.png" alt="Crutch">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h1>Publications</h1>
+
+        <div class="subsection">
+            <h2>Patents</h2>
+            <ul>
+            <li class="publication-item">
+                <span class="icon"><i class="fas fa-scroll"></i></span>
+                <span class="text">
+                Robotic System for Harvesting Crops in Vertical Farms and Method Thereof  
+                <br><small>(Patent Application Number: 202441084733)</small>
+                </span>
+            </li>
+            <li class="publication-item">
+                <span class="icon"><i class="fas fa-scroll"></i></span>
+                <span class="text">
+                A Multi-Functional Crutch with Automatic Height Adjustment, Shock Absorption, and Alert Functions
+                </span>
+            </li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h2>Research Papers</h2>
+            <ul>
+            <li class="publication-item">
+                <span class="icon"><i class="fas fa-file-alt"></i></span>
+                <span class="text">
+                P. Rohith, M. Thejonath, A. Manoj, A. Sudheer —  
+                <em>“Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms.”</em>
+                <br>
+                <small>In: AIR 2023 (Advances in Robotics)</small>
+                <a href="https://doi.org/10.1145/3610419.3610451" target="_blank">https://doi.org/10.1145/3610419.3610451</a>
+                </span>
+            </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills-section" class="dark-section">
+        <div class="section-heading">
+            <h2>My Skills</h2>
+            <p>A short list of valuable skills I possess.</p>
+            <hr class="section-underline">
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-tile">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3>Programming Languages</h3>
+                <p>Python, C++, Matlab, bash</p>
+            </div>
+            <div class="skill-tile">
+                <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Simulation</h3>
+                <p>Gazebo, PyBullet, Isaac-Sim, Isaac-Lab</p>
+            </div>
+            <div class="skill-tile">
+                <div class="skill-icon"><i class="fa-solid fa-file-code"></i></div>
+                <h3>Software / General Tools</h3>
+                <p>ROS2, Git, Docker, PyTorch, TensorFlow</p>
+            </div>
+            <div class="skill-tile">
+                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Sensors and Hardware</h3>
+                <p>LiDAR, Stereo Cameras, RTK GPS, IMU, Encoders, NVIDIA-Jetson, Raspberry-Pi</p>
+            </div>
+            <div class="skill-tile">
+                <div class="skill-icon"><i class="fas fa-drafting-compass"></i></div>
+                <h3>CAD</h3>
+                <p>SolidWorks, Fusion 360, Onshape</p>
+            </div>
+            <div class="skill-tile">
+                <div class="skill-icon"><i class="fas fa-microscope"></i></div>
+                <h3>Manufacturing</h3>
+                <p>3D Printing (FDM, SLA, SLS), CNC Machining, Laser Cutting</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
+
+    <!-- POPUP MODAL WRAPPER -->
+    <div id="popup-overlay">
+        <div id="popup-modal">
+            <span id="popup-close">&times;</span>
+            <div id="popup-content">
+                <!-- Loaded content goes here -->
+            </div>
+        </div>
     </div>
+    <script src="js/main.js"></script>
 
-    <script type="module">
-        import { AestheticFluidBg } from "./js/AestheticFluidBg.module.js";
+    <script>
+        const textArray = [
+        " Hi !!",
+        " I am <strong>Rohith Poola. </strong>",
+        " Welcome to my Website 👋🏻"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingDelay = 100;
+        const erasingDelay = 100;
+        const newTextDelay = 300;
+        const typedText = document.getElementById("typed-text");
 
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            //colors: ["#064d66","#0093c5","#005a7e","#00364a","#0095c5","#008cb4"],
-            //colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            colors: ["#004d65","#00364a","#004d65","#004d65","#004d65","#00364a"],
-            loop: true,
-            blur: 0.05
+        function type() {
+            const currentText = textArray[textIndex];
+
+            if (!isDeleting) {
+                typedText.innerHTML = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex < currentText.length) {
+                    setTimeout(type, typingDelay);
+                } else {
+                    isDeleting = true;
+                    setTimeout(type, newTextDelay);
+                }
+            } else {
+                typedText.innerHTML = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex > 0) {
+                    setTimeout(type, erasingDelay);
+                } else {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                    setTimeout(type, typingDelay);
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (textArray.length) setTimeout(type, newTextDelay);
         });
     </script>
-
-    <script src="js/main.js"></script>
 </body>
 </html>

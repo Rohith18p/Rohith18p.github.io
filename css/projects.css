@@ -1,0 +1,65 @@
+.project-detail-content {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--text-dark);
+  padding: 20px;
+  text-align: center;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  margin-top: -40px;
+}
+
+.project-caption {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-top: -5px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.project-divider {
+  border: none;
+  height: 2px;
+  width: 250px;
+  background-color: var(--divider);
+  margin: 0 auto 30px auto;
+}
+
+/* Flexible image container */
+.project-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* Image inside project tile popup */
+.project-images img {
+  max-height: 250px;
+  max-width: 350px;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-video {
+  height: 250px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Text description */
+.project-description {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-dark);
+}

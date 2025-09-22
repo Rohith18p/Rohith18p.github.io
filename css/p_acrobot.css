@@ -137,7 +137,7 @@ ul {
     text-align: center;
     font-size: 1.2em;
     color: #fff;
-    padding: 10px;
+    padding: 1px;
     background-color: rgba(0, 0, 0, 0.25); /* Transparent box around footer text */
     border-radius: 10px; /* Optional: Rounded corners for the box */
 }

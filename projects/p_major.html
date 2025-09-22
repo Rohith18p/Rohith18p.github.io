@@ -1,115 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanisms</title>
-    <link rel="stylesheet" href="../css/p_major.css">
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">Autonomous Robot Harvester for Vertical Farms</h2>
+  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <hr class="project-divider">
 
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
+  <div class="project-images">
+    <img src="images/p_major2.png" alt="Project Image 1">
+    <img src="images/p_major3.gif" alt="Project Image 2">
+  </div>
 
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html#about-me">About Me</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#achievements">Achievements</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-
-    <!-- Back Button -->
-    <div class="back-button">
-        <a href="../index.html#projects">Back </a>
-    </div>
-
-    <div class="container">
-        <!-- Project Content -->
-        <section>
-            <h1 class="project-heading">Mobile Robotic Manipulator based Harvesting in vertical farms</h1>
-            <hr class="transparent-line">
-            <!-- <div class="content-layout">
-                <div class="image-container">
-                    <img src="../images/image1.png" alt="Project Image" class="project-image">
-                </div>
-                <div class="text-container">
-                    <h2>Details</h2>
-                    <-!-- <ul>
-                        <li>A collection of novel mechanisms for anthropomorphic robots</li>
-                        <li>Work on mechanisms is due publication. Resources will be made available shortly.</li>
-                    </ul> --/>
-                    <p>As part of a groundbreaking research project, I developed a mobile robotic manipulator to automate harvesting tasks in vertical farms, a promising solution for sustainable agriculture. 
-                        The system integrates a 5-DOF serial manipulator mounted on a mecanum-wheeled mobile base, equipped with a novel multipurpose end-effector. 
-                        This end-effector combines a gripper with adaptable fingers and a precision cutting mechanism for efficient and safe vegetable harvesting.</p>
-                    <p> Using a Kinect depth camera, the robot performs real-time detection and localization of crops, solving inverse kinematics to ensure precise motion control. 
-                        The system operates across vertical farm layers via a lift mechanism, optimizing space and reducing labor costs.</p>
-                    <p>A prototype of a vertical farm and the robot was developed and tested, successfully demonstrating the automated harvesting of brinjal crops. 
-                        Future plans include incorporating IoT-based monitoring for environmental conditions and expanding capabilities to planting and inspection tasks, enhancing the efficiency of modern farming systems.</p>
-                </div>
-            </div> -->
-
-            
-            
-            <div class="text-container">
-                    <!-- <ul>
-                        <li>A collection of novel mechanisms for anthropomorphic robots</li>
-                        <li>Work on mechanisms is due publication. Resources will be made available shortly.</li>
-                    </ul> -->
-                    <p>As part of a groundbreaking research project, I developed a mobile robotic manipulator to automate harvesting tasks in vertical farms, a promising solution for sustainable agriculture. 
-                        The system integrates a 5-DOF serial manipulator mounted on a mecanum-wheeled mobile base, equipped with a novel multipurpose end-effector. 
-                        This end-effector combines a gripper with adaptable fingers and a precision cutting mechanism for efficient and safe vegetable harvesting.</p>
-                    <p> Using a Kinect depth camera, the robot performs real-time detection and localization of crops, solving inverse kinematics to ensure precise motion control. 
-                        The system operates across vertical farm layers via a lift mechanism, optimizing space and reducing labor costs.</p>
-                    <p>A prototype of a vertical farm and the robot was developed and tested, successfully demonstrating the automated harvesting of brinjal crops. 
-                        Future plans include incorporating IoT-based monitoring for environmental conditions and expanding capabilities to planting and inspection tasks, enhancing the efficiency of modern farming systems.</p>
-            </div>
-
-            <div class="image-container">
-                <img src="../images/p_major2.png" alt="Image 1">
-                <img src="../images/p_major3.gif" alt="Image 2">
-            </div>
-            <!-- <div class="footer-text">
-                <strong>Work on mechanisms is due publication. Resources will be made available shortly.</strong>
-            </div> -->
-        </section>
-    </div>
-
-    <script type="module">
-        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
-
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            loop: true,
-            blur: 0.05
-        });
-    </script>
-
-</body>
-</html>
+  <div class="project-description">
+    <p>
+        A mobile robotic manipulator is deveoloped to automate harvesting tasks in vertical farms. 
+        The system features a 5-DOF manipulator mounted on a mecanum-wheeled base, equipped with a custom multipurpose 
+        end-effector that combines adaptive gripping and precision cutting mechanism for safe and efficient crop handling.
+    </p>
+    <br>
+    <p>
+        Using a Kinect depth camera, the robot performs real-time crop detection and localization, traverse through multiple 
+        vertical layers via a lift mechanism. A working prototype, paired with a scaled vertical farm model, successfully demonstrated 
+        the autonomous harvesting of brinjal crops.
+    </p>
+  </div>
+</div>

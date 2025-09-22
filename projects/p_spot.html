@@ -1,112 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanisms</title>
-    <link rel="stylesheet" href="../css/p_spot.css">
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">SLAM with SPOT</h2>
+  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <hr class="project-divider">
 
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
+  <div class="project-images">
+    <!-- <img src="images/test.png" alt="Project Image 1"> -->
+    <iframe
+        class="project-video"
+        src="https://www.youtube.com/embed/70BYekiPRKw?start=1&autoplay=1&mute=1&loop=1&playlist=70BYekiPRKw"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+    <iframe
+        class="project-video"
+        src="https://www.youtube.com/embed/SYs8a-AFXHE?autoplay=1&mute=1&loop=1&playlist=SYs8a-AFXHE"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+    <!-- <img src="images/p_major2.png" alt="Project Image 1">
+    <img src="images/p_major3.gif" alt="Project Image 2"> -->
+  </div>
 
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html#about-me">About Me</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#achievements">Achievements</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-
-    <!-- Back Button -->
-    <div class="back-button">
-        <a href="../index.html#projects">Back </a>
-    </div>
-
-    <div class="container">
-        <!-- Project Content -->
-        <br>
-        <section>
-            <h1 class="project-heading">Indoor SLAM with SPOT</h1>
-            <hr class="transparent-line">
-            <div class="img-text-row">
-                <div class="half-image-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/70BYekiPRKw?start=1&autoplay=1&mute=1&loop=1&playlist=70BYekiPRKw" 
-                        title="YouTube video"
-                        frameborder="0"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="half-text-container">
-                    <p><strong style="font-size: 1.2em;"><em>SPOT Data Collection:</em></strong></p>
-                    <p>
-                        Indoor data is collected from the SPOT's five stereo vision cameras, a Velodyne LiDAR, and Spot’s internal odometry. The data is collected in multiple sessions in different indoor environments. 
-                        External Jetson Orion Nano is connected to Spot’s I/O interface for data collection as transfer via WiFi is constrained. Remote management was handled via SSH with custom ROS launch files.
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="text-container">
-                <p><strong style="font-size: 1.35em;"><em>Simultaneous Localization And Mapping (SLAM):</em></strong></p>
-                <p>Implemented RTAB-Map SLAM in ROS to generate detailed point clouds, as shown in the videos below. 
-                    Currently, I am working on ROMAN SLAM to fuse metric and semantic mapping, leveraging scene graph representations 
-                    for improved environment understanding and object-centric, view-invariant localization on the collected dataset.</p>
-            </div>
-
-            <div class="image-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/SYs8a-AFXHE?autoplay=1&mute=1&loop=1&playlist=SYs8a-AFXHE" 
-                    title="YouTube video"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-                <iframe 
-                    src="https://www.youtube.com/embed/Qy5aY3uqQUU?autoplay=1&mute=1&loop=1&playlist=Qy5aY3uqQUU"
-                    title="YouTube video"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
-    </div>
-
-    <script type="module">
-        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
-
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            loop: true,
-            blur: 0.05
-        });
-    </script>
-
-</body>
-</html>
+  <div class="project-description">
+    <p>
+      This project involved large-scale indoor data collection using Boston Dynamics Spot, equipped with five stereo cameras, 
+      a Velodyne LiDAR, and Spot’s internal odometry. Data was recorded across multiple environments, with an external 
+      Jetson Orion Nano handling collection through Spot’s I/O interface. Remote operation was managed via SSH with custom 
+      ROS launch files. For mapping, RTAB-Map SLAM is implemented in ROS, generating detailed 3D point clouds from the collected datasets. 
+    </p>
+  </div>
+</div>

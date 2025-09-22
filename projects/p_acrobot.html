@@ -1,92 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acrobot</title>
-    <link rel="stylesheet" href="../css/p_acrobot.css">
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">Acrobot Swing-up Control</h2>
+  <!-- <p class="project-caption">caption</p> -->
+  <hr class="project-divider">
 
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
+  <div class="project-images">
+    <img src="images/p_acrobot2.gif" alt="Project Image 1">
+  </div>
 
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html#about-me">About Me</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#achievements">Achievements</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-
-    <!-- Back Button -->
-    <div class="back-button">
-        <a href="../index.html#projects">Back </a>
-    </div>
-
-    <div class="container">
-        <!-- Project Content -->
-        <section>
-            <h1 class="project-heading">Acrobot Swing up Control</h1>
-            <hr class="transparent-line">
-            <div class="content-layout">
-                <div class="image-container">
-                    <img src="../images/p_acrobot1.gif" alt="Project Image" class="project-image">
-                </div>
-                <div class="text-container">
-                    <h2>Details</h2>
-                    <!-- <ul>
-                        <li>A collection of novel mechanisms for anthropomorphic robots</li>
-                        <li>Work on mechanisms is due publication. Resources will be made available shortly.</li>
-                    </ul> -->
-                    <p>This project is part of my Control Systems course, focuses on achieving swing-up control of an Acrobot using energy-based control and Linear Quadratic Regulator (LQR) in Drake. 
-                        Through this work, I aim to deepen my understanding of underactuated systems and their stabilization. Project details will be updated as progress continues.</p>
-                    <p>Research Paper: <a href="https://ieeexplore.ieee.org/document/350934" target="_blank">https://ieeexplore.ieee.org/document/350934 </a></p>
-                    
-                </div>
-            </div>
-            <div class="footer-text">
-                <p>Citation: <a href="https://gymnasium.farama.org/environments/classic_control/acrobot/" target="_blank"> https://gymnasium.farama.org/environments/classic_control/acrobot/ </a>
-                </p>
-            </div>
-        </section>
-    </div>
-
-    <script type="module">
-        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
-
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            loop: true,
-            blur: 0.05
-        });
-    </script>
-
-</body>
-</html>
+  <div class="project-description">
+    <p>
+        The goal of this project was to design a control strategy that enables an Acrobot to perform a swing-up maneuver 
+        from the downward stable position to the unstable upright position, and then stabilize at the top. This project 
+        demonstrates the integration of energy shaping, optimal control, and switching strategies on a highly non-linear system.
+    </p>
+    <br>
+    <p>
+        An energy-based controller was implemented to gradually increase the Acrobot’s total energy, bringing it to the 
+        upright configuration. Once near the top, control was switched to a Linear Quadratic Regulator (LQR), designed from 
+        the linearized dynamics around the equilibrium point, to stabilize the system. 
+    </p>
+  </div>
+</div>

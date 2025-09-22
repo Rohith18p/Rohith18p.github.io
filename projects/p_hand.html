@@ -1,89 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanisms</title>
-    <link rel="stylesheet" href="../css/p_hand.css">
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">Bionic Hand</h2>
+  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <hr class="project-divider">
 
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
+  <div class="project-images">
+    <img src="images/ARHARC.gif" alt="Project Image 1">
+  </div>
 
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html#about-me">About Me</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#achievements">Achievements</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-
-    <!-- Back Button -->
-    <div class="back-button">
-        <a href="../index.html#projects">Back </a>
-    </div>
-
-    <div class="container">
-        <!-- Project Content -->
-        <section>
-            <h1 class="project-heading">Bionic Dexterous Hand</h1>
-            <hr class="transparent-line">
-            <div class="content-layout">
-                <div class="image-container">
-                    <img src="../images/ARHARC.gif" alt="Project Image" class="project-image">
-                </div>
-                <div class="text-container">
-                    <h2>Details</h2>
-                    <!-- <ul>
-                        <li>A collection of novel mechanisms for anthropomorphic robots</li>
-                        <li>Work on mechanisms is due publication. Resources will be made available shortly.</li>
-                    </ul> -->
-                    <p>A Fully Dexterous hand is developed and performed in-hand manpulation and pick-place.</p>
-                    <p>Work on Bionic hand is due publication. Resources will be made available shortly.</p>
-                </div>
-            </div>
-            <div class="footer-text">
-                <strong>Work on Dexterous Hand is due publication. Resources will be made available shortly.</strong>
-            </div>
-        </section>
-    </div>
-
-    <script type="module">
-        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
-
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            loop: true,
-            blur: 0.05
-        });
-    </script>
-
-</body>
-</html>
+  <div class="project-description">
+    <p>
+        Developed a fully dexterous robotic hand capable of in-hand manipulation and pick-and-place tasks, 
+        implementing and testing various control algorithms. The prototype features three fingers at a 1:1.5 scale 
+        of the human hand, actuated with Dynamixel motors, along with a custom thumb mechanism enabling abduction 
+        and adduction for enhanced dexterity.
+    </p>
+    <br>
+  </div>
+  <div class="footer-text">
+    <strong>Work on Bionic hand is due publication. Resources will be made available shortly</strong>
+  </div>
+</div>

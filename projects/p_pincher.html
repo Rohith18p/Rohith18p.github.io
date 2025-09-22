@@ -1,117 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanisms</title>
-    <link rel="stylesheet" href="../css/p_pincher.css">
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">Obstacle Aware Manipulation</h2>
+  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <hr class="project-divider">
 
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
+  <div class="project-images">
+    <img src="images/p_pincher2.gif" alt="Project Image 1">
+    <img src="images/p_pincher5.gif" alt="Project Image 2">
+    <img src="images/p_pincher4.gif" alt="Project Image 3">
+  </div>
 
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html#about-me">About Me</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#achievements">Achievements</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-
-    <!-- Back Button -->
-    <div class="back-button">
-        <a href="../index.html#projects">Back </a>
-    </div>
-
-    <div class="container">
-        <!-- Project Content -->
-        <section>
-            <h1 class="project-heading">Obstacle-Aware Manipulation with PincherX100</h1>
-            <hr class="transparent-line">
-            <div class="text-container">
-                <!-- <p><strong style="font-size: 1.35em;"><em>Introduction:</em></strong></p>
-                <p>This project demonstrates an intelligent pick-and-place system using the PincherX100 5DOF robotic manipulator, integrating MATLAB simulations, 
-                    trajectory planning, inverse kinematics, and obstacle avoidance techniques. The implementation progressed through three key stages, 
-                    transitioning from simulation to real-world application, with the incorporation of advanced path-planning algorithms.</p>
-                 -->
-                <p><strong style="font-size: 1.35em;"><em>Stage 1 - MATLAB Simulation:</em></strong> 
-                    Generated trajectory with waypoints for smooth paths to transition between start to goal. Calculated the joint positions corresponding to each waypoint using Multiple Inverse Kinematics approaches - Analytical solution, Builtin solver, Gradient Descent.
-                    Implemented Obstacle Avoidance using Geometric approach to generate collision-free paths. Defined a safety-offset circle around obstacles and generated a trajectory with a straight-line, a curved path along the circle, and a final straight line to the goal.
-                    In addition generated collision free paths using A* method by modeling the workspace as a grid, marking obstacles as restricted zones, and computed an optimal collision-free path.
-                </p>
-                <!-- <br>2. Inverse Kinematics (IK): Using MATLAB’s IK solver to calculate the joint positions corresponding to each waypoint.
-                <br>3. Simulation Execution: Feeding the calculated joint positions to a virtual PincherX100 model to successfully perform the pick-and-place task.</p>
-                 -->
-                <p><strong style="font-size: 1.35em;"><em>Stage 2 - Real-World Implementation:</em></strong> A vision setup comprising an overhead camera and AprilTags to dynamically detect object, goal, and obstacle positions is used. Trajectories obtained by implementing afore mentioned methods were fed to 
-                    the PincherX100 manipulator for precise pick-and-place actions.</p>
-            </div>
-            <div class="image-container">
-                <img src="../images/p_pincher2.gif" alt="Image 1">
-                <img src="../images/p_pincher5.gif" alt="Image 2">
-                <img src="../images/p_pincher4.gif" alt="Image 3">
-            </div>
-            <!-- <div class="text-container">
-                <p><strong style="font-size: 1.35em;"><em>Stage 3: Obstacle Avoidance</em></strong></p>
-                <p><strong style="font-size: 1.0em;"><em>Geometric Method:</em></strong> Defined a safety-offset circle around obstacles and generated a trajectory with a straight-line approach, a curved path along the circle, and a final straight line to the goal.</p>
-                <p><strong style="font-size: 1.0em;"><em>A* Method:</em></strong>Modeled the workspace as a grid, marking obstacles as restricted zones, and used A* to compute an optimal collision-free path.</p>
-            </div>
-
-            <div class="img-container">
-                <img src="../images/p_pincher5.gif" alt="Image 3">
-                <img src="../images/p_pincher4.gif" alt="Image 4">
-            </div>
-            <div class="text-container">
-                <p><strong style="font-size: 1.35em;"><em>Inverse Kinematics Approaches:</em></strong></p>
-                <p>To enhance flexibility and optimize manipulator performance, three inverse kinematics (IK) methods were utilized:</p>
-                <p>1. Default Solver: Leveraged the built-in solver for quick implementation.
-                <br>2. Analytical Solution: Derived a closed-form solution tailored to the 5DOF manipulator.
-                <br>3. Gradient Descent: Implemented to compute optimal joint configurations for desired positions, ensuring smooth and precise movements.</p>
-                <p><strong style="font-size: 1.0em;"><em>Conclusion:</em></strong></p>
-                <p>This project successfully integrated simulation, vision systems, trajectory planning, and obstacle avoidance, demonstrating the versatility of the PincherX100 manipulator.
-                    By employing advanced methodologies such as A* and geometric planning, the system achieved reliable and adaptive pick-and-place functionality.
-                    The combination of analytical solutions and optimization techniques further optimized the manipulator’s performance.</p>
-            </div> -->
-        </div>
-        
-        </section>
-    </div>
-
-    <script type="module">
-        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
-
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            loop: true,
-            blur: 0.05
-        });
-    </script>
-
-</body>
-</html>
+  <div class="project-description">
+    <p>
+        This project focused on trajectory planning and obstacle avoidance for robotic manipulation. 
+        In simulation, smooth paths were generated between start and goal positions using multiple inverse kinematics 
+        approaches (analytical, solver-based, and gradient descent). Obstacle avoidance was implemented through geometric 
+        methods with safety offsets as well as an A* grid-based planner to compute optimal collision-free trajectories.
+    </p>
+    <br>
+    <!-- <p>
+        In the real-world stage, an overhead vision system with AprilTags was used to dynamically detect objects, 
+        goals, and obstacles. The computed trajectories were then executed on the PincherX-100 manipulator, enabling precise 
+        and collision-free pick-and-place operations.
+    </p> -->
+  </div>
+</div>

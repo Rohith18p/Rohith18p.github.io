@@ -1,12 +1,10 @@
-document.querySelectorAll(".experience-tile").forEach(tile => {
-    tile.addEventListener("click", function () {
-        const dropdown = this.querySelector(".dropdown-content");
-
-        // Toggle visibility of the dropdown content
-        if (dropdown.style.display === "none" || dropdown.style.display === "") {
+function setupPopupListeners(selector) {
+    document.querySelectorAll(selector).forEach(tile => {
+        tile.addEventListener("click", function () {
             const file = this.getAttribute("data-file");
+            const overlay = document.getElementById("popup-overlay");
+            const content = document.getElementById("popup-content");
 
-            // Fetch and display the content
             fetch(file)
                 .then(response => {
                     if (!response.ok) {
@@ -15,16 +13,35 @@ document.querySelectorAll(".experience-tile").forEach(tile => {
                     return response.text();
                 })
                 .then(data => {
-                    dropdown.innerHTML = data;
-                    dropdown.style.display = "block"; // Show the content
+                    content.innerHTML = data;
+                    overlay.style.display = "flex";
                 })
                 .catch(error => {
-                    console.error("Error loading the content:", error);
-                    dropdown.innerHTML = "<p style='color: red;'>Failed to load content. Please try again.</p>";
-                    dropdown.style.display = "block"; // Show error message
+                    console.error("Error loading content:", error);
+                    content.innerHTML = "<p style='color:red;'>Failed to load content.</p>";
+                    overlay.style.display = "flex";
                 });
-        } else {
-            dropdown.style.display = "none"; // Hide the content
-        }
+
+            // Close button
+            const closeBtn = document.getElementById("popup-close");
+            closeBtn.onclick = () => {
+                overlay.style.display = "none";
+                content.innerHTML = "";
+            };
+
+            // Click outside modal closes it
+            overlay.onclick = (e) => {
+                if (e.target === overlay) {
+                    overlay.style.display = "none";
+                    content.innerHTML = "";
+                }
+            };
+        });
     });
+}
+
+// Setup for both Experience and Project tiles
+window.addEventListener("DOMContentLoaded", () => {
+    setupPopupListeners(".experience-tile");
+    setupPopupListeners(".project-tile");
 });

@@ -1,97 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanisms</title>
-    <link rel="stylesheet" href="../css/p_bases.css">
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">Holonomic Mobile Bases</h2>
+  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <hr class="project-divider">
 
-    <style>
-        #box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Place behind all content */
-            overflow: hidden;
-        }
+  <div class="project-images">
+    <img src="images/p_bases2.png" alt="Project Image 1">
+    <img src="images/p_bases3.png" alt="Project Image 1">
+    <img src="images/p_bases4.png" alt="Project Image 2">
+  </div>
 
-        /* Blur Effect Layer */
-        #blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place above animation but behind content */
-            backdrop-filter: blur(5px); /* Fixed blur value */
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Blur overlay -->
-    <div id="blur-overlay"></div>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html#about-me">About Me</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#achievements">Achievements</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-
-    <!-- Back Button -->
-    <div class="back-button">
-        <a href="../index.html#projects">Back </a>
-    </div>
-
-    <div class="container">
-        <!-- Project Content -->
-        <section>
-            <h1 class="project-heading">Holonomic Mobile Robot Bases</h1>
-            <hr class="transparent-line">
-
-            <div class="text-container">
-                    <p>I developed three distinct mobile bases to cater to different robotic applications, each tested extensively to ensure optimal performance.</p>
-                    <p><strong style="font-size: 1.2em;"><em>1. Four-Wheeled Mecanum Drive:</em></strong> Designed for omnidirectional movement, this base utilizes mecanum wheels to achieve smooth navigation in any direction, including lateral and diagonal motion.</p>
-                    <p><strong style="font-size: 1.2em;"><em>2. Four-Wheeled Omni Wheel Drive:</em></strong> Built for enhanced maneuverability, this base employs omni-wheels, offering 360-degree movement while maintaining stability and control.</p>
-                    <p><strong style="font-size: 1.2em;"><em>3. Three-Wheeled Omni Wheel Drive:</em></strong> A compact and efficient design, the tri-wheel base enables full 360-degree control with a unique motor configuration 
-                        that differs from conventional 4-wheel systems, ensuring precise movement even in constrained spaces.</p>
-            </div>
-
-            <div class="image-container">
-                <img src="../images/p_bases1.png" alt="Image 1">
-                <img src="../images/p_bases2.png" alt="Image 2">
-                <img src="../images/p_bases3.png" alt="Image 3">
-            </div>
-            <div class="text-container">
-                    <p>All bases are powered by encoder motors, allowing for accurate feedback and control. I implemented PID control algorithms for precise motion management, 
-                        utilizing a PS joystick or RC controller for user-friendly operation. The combination of encoder feedback and PID tuning resulted in highly responsive and smooth navigation across all platforms.</p>
-                    <p>Particularly noteworthy is the tri-wheel omni drive, where achieving precise 360-degree control presented unique challenges due to its distinct motor configuration. 
-                        By optimizing motor control algorithms, I successfully ensured seamless omnidirectional movement with the same level of accuracy as its 4-wheel counterparts.</p>
-                    <p>These mobile bases demonstrate versatility and reliability, making them suitable for a variety of robotic applications, from autonomous navigation to industrial automation. 
-                        The project showcases my expertise in mechatronics, control systems, and motion dynamics. </p>
-            </div>
-            <!-- <div class="footer-text">
-                <strong>Work on mechanisms is due publication. Resources will be made available shortly.</strong>
-            </div> -->
-        </section>
-    </div>
-
-    <script type="module">
-        import { AestheticFluidBg } from "../js/AestheticFluidBg.module.js";
-
-        // Initialize the dynamic background
-        const colorbg = new AestheticFluidBg({
-            dom: "box",
-            colors: ["#064d66","#007399","#00779e","#006185","#006385","#007899"],
-            loop: true,
-            blur: 0.05
-        });
-    </script>
-
-</body>
-</html>
+  <div class="project-description">
+    <p>
+        I designed and developed three holonomic bases tailored for different robotic applications: 
+        a four-wheeled mecanum drive for smooth omnidirectional motion, a four-wheeled omni drive for enhanced maneuverability 
+        and stability, and a compact three-wheeled omni drive optimized for precise control in constrained spaces.
+    </p>
+    <br>
+    <p>
+        All platforms were powered by encoder motors with PID control, ensuring accurate feedback and highly responsive navigation, 
+        operated via joystick or RC controller. Especially for the tri-wheel omni drive, I overcame unique 
+        control challenges to achieve seamless 360° mobility comparable to conventional 4-wheel systems. These works highlight 
+        my expertise in mechatronics, motion control, and robotics system design
+    </p>
+  </div>
+</div>
