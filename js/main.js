@@ -45,3 +45,21 @@ window.addEventListener("DOMContentLoaded", () => {
     setupPopupListeners(".experience-tile");
     setupPopupListeners(".project-tile");
 });
+
+function openPopupFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get("project");
+
+    if (projectId) {
+        const tile = document.getElementById(projectId);
+        if (tile) {
+            tile.click(); // simulate click to open popup
+        }
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    setupPopupListeners(".experience-tile");
+    setupPopupListeners(".project-tile");
+    openPopupFromURL(); // 🔁 Check for ?project=... on page load
+});
