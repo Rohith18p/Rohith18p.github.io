@@ -25,10 +25,48 @@ body {
     color: #000;
 }
 
+/* === STICKY NAVBAR === */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(49, 49, 50, 0.75); /* semi-transparent dark gray */
+  backdrop-filter: blur(6px); /* soft blur behind */
+  z-index: 10000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: flex-end; /* ⬅️ RIGHT-ALIGNED */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-list li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: var(--primary-accent, #00bcd4);
+}
+
+
 /* HERO SECTION */
 #hero {
     position: relative;
-    height: 60vh; /* now it's only half the screen height */
+    height: 550px; /* now it's only half the screen height */
     width: 100%;
     overflow: hidden;
 }
@@ -662,6 +700,5 @@ body {
 .contact-icons-inline a:hover {
     color: var(--primary-accent, #00aaff);
 }
-
 
 

@@ -5,23 +5,19 @@
   <hr class="project-divider">
 
   <div class="project-images">
-    <img src="images/p_pincher2.gif" alt="Project Image 1">
-    <img src="images/p_pincher5.gif" alt="Project Image 2">
-    <img src="images/p_pincher4.gif" alt="Project Image 3">
+    <img src="images/p_cmppi2.gif" alt="Project Image 1">
   </div>
 
   <div class="project-description">
     <p>
-        This project focused on trajectory planning and obstacle avoidance for robotic manipulation. 
-        In simulation, smooth paths were generated between start and goal positions using multiple inverse kinematics 
-        approaches (analytical, solver-based, and gradient descent). Obstacle avoidance was implemented through geometric 
-        methods with safety offsets as well as an A* grid-based planner to compute optimal collision-free trajectories.
+      This project implements Contingency-MPPI, a motion planning framework that embeds contingency planning within a standard 
+      Model Predictive Path Integral (MPPI) controller to ensure safety in dynamic environments. At each step, the planner generates 
+      both a nominal trajectory and a contingency backup path to a safe region, enabling robust responses to sudden changes.
+    </p><br>
+    <p>
+      I further implemented occlusion-based safe zone detection, allowing the robot to plan dynamically around unseen areas rather than 
+      relying on predefined safe zones. Validated in simulation and hardware with LiDAR-inertial localization, Contingency-MPPI 
+      achieved real-time, risk-aware trajectory planning with improved safety and adaptability.
     </p>
-    <br>
-    <!-- <p>
-        In the real-world stage, an overhead vision system with AprilTags was used to dynamically detect objects, 
-        goals, and obstacles. The computed trajectories were then executed on the PincherX-100 manipulator, enabling precise 
-        and collision-free pick-and-place operations.
-    </p> -->
   </div>
 </div>
