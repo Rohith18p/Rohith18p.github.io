@@ -92,10 +92,10 @@ class Particle {
     constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.size = Math.random() * 2 + 0.5; // Slightly smaller, star-like
+        this.speedX = Math.random() * 0.2 - 0.1; // Slower movement
+        this.speedY = Math.random() * 0.2 - 0.1; // Slower movement
+        this.opacity = Math.random() * 0.6 + 0.1; // More varying opacity
     }
 
     update() {
@@ -109,7 +109,12 @@ class Particle {
     }
 
     draw() {
-        ctx.fillStyle = `rgba(0, 217, 255, ${this.opacity})`;
+        // Twinkling effect: vary opacity slightly over time
+        this.opacity += (Math.random() - 0.5) * 0.02;
+        if (this.opacity < 0.1) this.opacity = 0.1;
+        if (this.opacity > 0.8) this.opacity = 0.8;
+        
+        ctx.fillStyle = `rgba(163, 194, 240, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -117,7 +122,7 @@ class Particle {
 }
 
 const particles = [];
-const particleCount = 80;
+const particleCount = 120; // More particles for a starry sky
 
 for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
@@ -131,7 +136,8 @@ function connectParticles() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 150) {
-                ctx.strokeStyle = `rgba(0, 217, 255, ${0.2 * (1 - distance / 150)})`;
+                // Fainter constellation lines
+                ctx.strokeStyle = `rgba(163, 194, 240, ${0.1 * (1 - distance / 150)})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
@@ -372,6 +378,6 @@ document.querySelectorAll('a, button, .project-card, .experience-card').forEach(
 */
 
 // === CONSOLE MESSAGE ===
-console.log('%c🤖 Robotics Portfolio', 'color: #00d9ff; font-size: 20px; font-weight: bold;');
-console.log('%cBuilding Intelligent Autonomous Systems', 'color: #a855f7; font-size: 14px;');
-console.log('%cInterested in collaboration? Let\'s connect!', 'color: #00ff88; font-size: 12px;');
+console.log('%c🤖 Robotics Portfolio', 'color: #ffffff; font-size: 20px; font-weight: bold;');
+console.log('%cBuilding Intelligent Autonomous Systems', 'color: #cccccc; font-size: 14px;');
+console.log('%cInterested in collaboration? Let\'s connect!', 'color: #888888; font-size: 12px;');
