@@ -3,383 +3,670 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohith Poola | Robotics Portfolio</title>
+    <title>Rohith Poola — Robotics Researcher</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- ── NAVBAR ──────────────────────────────── -->
     <header id="navbar">
-        <nav class="nav-container">
+        <a href="#hero" class="nav-brand">RP</a>
+        <nav>
             <ul class="nav-list">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience-section">Experience</a></li>
-            <li><a href="#projects-section">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience-section">Experience</a></li>
+                <li><a href="#projects-section">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills-section">Skills</a></li>
             </ul>
         </nav>
     </header>
-    <a href="https://rohith18p.github.io/#projects-section" target="_blank">Go to Projects</a>
-    <!-- HERO SECTION -->
+
+    <!-- ── HERO ────────────────────────────────── -->
     <section id="hero">
         <div class="hero-bg"></div>
-        <div class="profile-info">
-            <img src="images/My_Pic.png" alt="Rohith Profile Picture" class="profile-pic">
-            <!-- Optional name & tagline -->
-            <!--
-            <div class="intro-text">
-                <h1>Rohith Poola</h1>
-                <p>Robotics Engineer | Control & Perception</p>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-eyebrow">Robotics Researcher &amp; Engineer</p>
+                <h1 class="hero-name">Rohith Poola</h1>
+                <div class="hero-terminal-line">
+                    <span class="prompt">$</span>
+                    <span id="typed-text"></span><span class="cursor">|</span>
+                </div>
+                <div class="hero-links">
+                    <a href="mailto:poola.r@northeastern.edu" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/rohith18p" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1_MLck9owBeWnSa0E2mP3yk4duMXLLHDV/view?usp=drive_link" target="_blank" title="Resume / CV">
+                        <i class="fas fa-file-alt"></i>
+                    </a>
+                </div>
             </div>
-            -->
+
+            <div class="hero-image">
+                <img src="images/My_Pic.png" alt="Rohith Poola" class="profile-pic">
+            </div>
         </div>
-        <div class="scroll-down">
-            <span>&#8595;</span>
-        </div>
+
+        <a href="#about" class="scroll-hint" aria-label="Scroll down">
+            <span class="scroll-line"></span>
+        </a>
     </section>
 
-   <!-- ABOUT ME SECTION -->
+    <!-- ── ABOUT ────────────────────────────────── -->
     <section id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <hr class="about-underline">
-                <hr class="section-divider">
-                <p>
-                    I’m a robotics researcher focused on developing autonomy stack that enable robots to act intelligently 
-                    and adaptively in the real world. My path into robotics began with building — mobile robots, manipulators, bionic hands, and competition-ready 
-                    platforms. These early experiences laid the foundation for deeper research into robot learning, real-time planning, SLAM, 
-                    and perception. Over the years, I’ve engineered systems that blend hardware and algorithms — from autonomous harvesters 
-                    in vertical farms to multi-robot SLAM deployments using Spot, AgileX, and Unitree robots.
-                    
-                </p><br>
-                <p>
-                    Currently, at the Autonomy and Intelligence Lab at Northeastern University, I work on risk-aware trajectory planning, 
-                    and safety guaranteed control strategies with contingency planning. My work emphasizes real-world deployment 
-                    and robustness under uncertainty, combining ROS2 and hardware-in-the-loop systems. My long-term vision is to 
-                    build robust, generalizable autonomy stacks that operate safely, intelligently, and 
-                    adaptively — from structured labs to chaotic real-world environments.
-                </p>
-            </div>
-            <!-- <div class="about-gif">
-                <div class="terminal">
-                    <span class="prompt">$</span><span id="typed-text"></span><span class="cursor">|</span>
-                </div>
-            </div> -->
-            <div class="about-gif">
-            <div class="terminal-wrapper">
-                <div class="terminal">
-                <span class="prompt">$</span><span id="typed-text"></span><span class="cursor">|</span>
-                </div>
-                <div class="contact-icons-inline">
-                <a href="mailto:poola.r@northeastern.edu" target="_blank" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/rohith18p" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://drive.google.com/file/d/1_MLck9owBeWnSa0E2mP3yk4duMXLLHDV/view?usp=drive_link" target="_blank" title="Resume">
-                    <i class="fas fa-file-alt"></i>
-                </a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
+        <div class="section-container">
+            <p class="section-eyebrow">01 — About</p>
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience-section" class="white-section">
-        <div class="experience-container">
-            <!-- LEFT SIDEBAR -->
-            <div class="experience-sidebar">
-                <div class="experience-icon-circle">
-                    <span class="experience-icon">&#9881;</span>
-                </div>
-                <h2>Experience</h2>
-            </div>
-
-            <!-- RIGHT EXPERIENCE CONTENT -->
-            <div class="experience-content">
-                <h3>Professional</h3>
-
-                <!-- PROFESSIONAL TILE -->
-                <div class="experience-tile" data-file="projects/cg.html">
-                    <div class="tile-logo">
-                        <img src="images/cg.png" alt="Capgemini Logo">
-                    </div>
-                    <div class="tile-details">
-                        <p><strong>Associate 2 Software Engineer</strong></p>
-                        <p>Capgemini – Stellantis</p>
-                        <p>Sep 2022 - Aug 2024</p>
-                    </div>
-                </div>
-                <br>
-                <h3>Research</h3>
-
-                <!-- RESEARCH TILE 1 -->
-                <div class="experience-tile" data-file="projects/nail.html">
-                    <div class="tile-logo">
-                        <img src="images/neu.png" alt="NU Logo">
-                    </div>
-                    <div class="tile-details">
-                        <p><strong>Research Assistant</strong></p>
-                        <p>Autonomy & Intelligence Lab</p>
-                        <p>Apr 2025 - Present</p>
-                    </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Building robots that<br>think, sense, and act.</h2>
+                    <p>
+                        I'm a robotics researcher focused on developing autonomy stacks that enable robots to act
+                        intelligently and adaptively in the real world. My path into robotics began with building —
+                        mobile robots, manipulators, bionic hands, and competition-ready platforms. These early
+                        experiences laid the foundation for deeper research into robot learning, real-time planning,
+                        SLAM, and perception.
+                    </p>
+                    <p>
+                        Currently at the Autonomy and Intelligence Lab at Northeastern University, I work on
+                        risk-aware trajectory planning and safety-guaranteed control strategies with contingency
+                        planning. My work emphasises real-world deployment and robustness under uncertainty,
+                        combining ROS2 and hardware-in-the-loop systems.
+                    </p>
                 </div>
 
-                <!-- RESEARCH TILE 2 -->
-                <div class="experience-tile" data-file="projects/rrc.html">
-                    <div class="tile-logo">
-                        <img src="images/iiith.png" alt="IIITH Logo">
+                <div class="about-aside">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <span class="t-dot r"></span>
+                            <span class="t-dot y"></span>
+                            <span class="t-dot g"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="t-cmd">$ whoami</span><br>
+                            <span class="t-out"><span class="t-key">rohith_poola</span></span>
+                            <span class="t-blank"></span>
+                            <span class="t-cmd">$ cat focus.txt</span><br>
+                            <span class="t-out">→ risk_aware_planning</span><br>
+                            <span class="t-out">→ contingency_mppi</span><br>
+                            <span class="t-out">→ multi_robot_slam</span>
+                            <span class="t-blank"></span>
+                            <span class="t-cmd">$ echo $AFFILIATION</span><br>
+                            <span class="t-out"><span class="t-key">NAIL @ Northeastern</span></span>
+                        </div>
                     </div>
-                    <div class="tile-details">
-                        <p><strong>Graduate Researcher (Part time)</strong></p>
-                        <p>Robotics Research Center</p>
-                        <p>May 2022 - Jul 2024</p>
-                    </div>
-                </div>
 
-                <!-- RESEARCH TILE 3 -->
-                <div class="experience-tile" data-file="projects/rig.html">
-                    <div class="tile-logo">
-                        <img src="images/nitc.png" alt="NITC Logo">
-                    </div>
-                    <div class="tile-details">
-                        <p><strong>Under Graduate Researcher</strong></p>
-                        <p>Robotics Lab</p>
-                        <p>May 2019 - May 2022</p>
+                    <div class="contact-links">
+                        <a href="mailto:poola.r@northeastern.edu">
+                            <i class="fas fa-envelope"></i>
+                            <span>poola.r@northeastern.edu</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rohith-poola" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/rohith-poola</span>
+                        </a>
+                        <a href="https://github.com/rohith18p" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/rohith18p</span>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1_MLck9owBeWnSa0E2mP3yk4duMXLLHDV/view?usp=drive_link" target="_blank">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Resume / CV</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects-section" class="white-section">
-        <div class="projects-container">
+    <!-- ── EXPERIENCE ───────────────────────────── -->
+    <section id="experience-section">
+        <div class="section-container">
+            <p class="section-eyebrow">02 — Experience</p>
+            <h2 class="section-title">Where I've worked</h2>
 
-            <h2 class="projects-title">Projects</h2>
+            <div class="timeline">
 
-            <!-- CATEGORY: M Sc -->
+                <div class="timeline-group-label">Research</div>
+
+                <div class="timeline-item experience-tile" data-file="projects/nail.html">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">Apr 2025 — Present</span>
+                    </div>
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <div class="org-logo-wrap">
+                            <img src="images/neu.png" alt="Northeastern University">
+                        </div>
+                        <div class="timeline-info">
+                            <h4>Research Assistant</h4>
+                            <p>Autonomy &amp; Intelligence Lab · Northeastern University</p>
+                            <span class="tag-chip">Risk-aware Planning</span>
+                            <span class="tag-chip">Safety Control</span>
+                            <span class="tag-chip">ROS2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item experience-tile" data-file="projects/rrc.html">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">May 2022 — Jul 2024</span>
+                    </div>
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <div class="org-logo-wrap">
+                            <img src="images/iiith.png" alt="IIIT Hyderabad">
+                        </div>
+                        <div class="timeline-info">
+                            <h4>Graduate Researcher</h4>
+                            <p>Robotics Research Center · IIIT Hyderabad</p>
+                            <span class="tag-chip">SLAM</span>
+                            <span class="tag-chip">Multi-robot</span>
+                            <span class="tag-chip">Spot · AgileX · Unitree</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item experience-tile" data-file="projects/rig.html">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">May 2019 — May 2022</span>
+                    </div>
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <div class="org-logo-wrap">
+                            <img src="images/nitc.png" alt="NIT Calicut">
+                        </div>
+                        <div class="timeline-info">
+                            <h4>Undergraduate Researcher</h4>
+                            <p>Robotics Lab · NIT Calicut</p>
+                            <span class="tag-chip">Mobile Robots</span>
+                            <span class="tag-chip">Manipulation</span>
+                            <span class="tag-chip">Robocon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-spacer"></div>
+                <div class="timeline-group-label">Industry</div>
+
+                <div class="timeline-item experience-tile" data-file="projects/cg.html">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">Sep 2022 — Aug 2024</span>
+                    </div>
+                    <div class="timeline-node"></div>
+                    <div class="timeline-card">
+                        <div class="org-logo-wrap">
+                            <img src="images/cg.png" alt="Capgemini">
+                        </div>
+                        <div class="timeline-info">
+                            <h4>Associate Software Engineer</h4>
+                            <p>Capgemini – Stellantis</p>
+                            <span class="tag-chip">Embedded Systems</span>
+                            <span class="tag-chip">Automotive</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROJECTS ──────────────────────────────── -->
+    <section id="projects-section">
+        <div class="section-container">
+            <p class="section-eyebrow">03 — Projects</p>
+            <h2 class="section-title">Selected work</h2>
+
+            <!-- M.Sc. -->
             <div class="project-category">
-                <h3 class="project-category-title">M.Sc.</h3>
-                <hr class="project-subdivider">
+                <h3 class="project-category-title">Graduate <span class="cat-code">M.Sc.</span></h3>
                 <div class="project-grid">
                     <div class="project-tile" id="project36" data-file="projects/p_cmppi.html">
-                        <p class="project-title">Contingency MPPI</p>
-                        <img src="images/p_cmppi1.png" alt="CMPPI Project">
+                        <img src="images/p_cmppi1.png" alt="Contingency MPPI">
+                        <div class="card-overlay"><span class="card-title">Contingency MPPI</span></div>
                     </div>
                     <div class="project-tile" id="project35" data-file="projects/p_spot.html">
-                        <p class="project-title">SLAM with SPOT</p>
-                        <img src="images/p_spot1.png" alt="SPOT Project">
+                        <img src="images/p_spot1.png" alt="SLAM with SPOT">
+                        <div class="card-overlay"><span class="card-title">SLAM with SPOT</span></div>
                     </div>
                     <div class="project-tile" id="project34" data-file="projects/p_pincher.html">
-                        <p class="project-title">Obstacle-Aware Manipulation</p>
-                        <img src="images/p_pincher1.png" alt="Pincher Project">
+                        <img src="images/p_pincher1.png" alt="Obstacle-Aware Manipulation">
+                        <div class="card-overlay"><span class="card-title">Obstacle-Aware Manipulation</span></div>
                     </div>
                     <div class="project-tile" id="project33" data-file="projects/p_dead.html">
-                        <p class="project-title">Dead Reckoning (GPS + IMU)</p>
                         <img src="images/p_dead1.png" alt="Dead Reckoning">
+                        <div class="card-overlay"><span class="card-title">Dead Reckoning (GPS + IMU)</span></div>
                     </div>
                     <div class="project-tile" id="project32" data-file="projects/p_npm.html">
-                        <p class="project-title">Non-Prehensile Manipulation (MPPI + IssacGym)</p>
-                        <img src="images/p_npm1.png" alt="SPOT Project">
+                        <img src="images/p_npm1.png" alt="Non-Prehensile Manipulation">
+                        <div class="card-overlay"><span class="card-title">Non-Prehensile Manipulation</span></div>
                     </div>
                     <div class="project-tile" id="project31" data-file="projects/p_acrobot.html">
-                        <p class="project-title">Acrobot Swing up Control</p>
-                        <img src="images/p_acrobot1.png" alt="Pincher Project">
+                        <img src="images/p_acrobot1.png" alt="Acrobot Swing-up">
+                        <div class="card-overlay"><span class="card-title">Acrobot Swing-up Control</span></div>
                     </div>
                 </div>
             </div>
 
-            <!-- CATEGORY: RA -->
+            <!-- RA -->
             <div class="project-category">
-                <h3 class="project-category-title">RA</h3>
-                <hr class="project-subdivider">
+                <h3 class="project-category-title">Research Assistant <span class="cat-code">RA</span></h3>
                 <div class="project-grid">
                     <div class="project-tile" id="project23" data-file="projects/p_hand.html">
-                        <p class="project-title">Bionic Hand</p>
                         <img src="images/p_hand1.jpg" alt="Bionic Hand">
+                        <div class="card-overlay"><span class="card-title">Bionic Hand</span></div>
                     </div>
                     <div class="project-tile" id="project22" data-file="projects/p_mechanisms.html">
-                        <p class="project-title">Mechanisms</p>
                         <img src="images/p_mechanism1.png" alt="Mechanisms">
+                        <div class="card-overlay"><span class="card-title">Mechanisms</span></div>
                     </div>
                     <div class="project-tile" id="project21" data-file="projects/p_manipulators.html">
-                        <p class="project-title">Manipulator</p>
                         <img src="images/p_manipulator1.png" alt="Manipulator">
+                        <div class="card-overlay"><span class="card-title">Robotic Manipulator</span></div>
                     </div>
                 </div>
             </div>
 
-            <!-- CATEGORY: UG -->
+            <!-- UG -->
             <div class="project-category">
-                <h3 class="project-category-title">UG</h3>
-                <hr class="project-subdivider">
+                <h3 class="project-category-title">Undergraduate <span class="cat-code">UG</span></h3>
                 <div class="project-grid">
                     <div class="project-tile" id="project15" data-file="projects/p_major.html">
-                        <p class="project-title">Vertical Farm Harvester</p>
-                        <img src="images/p_major01.png" alt="Farm Project">
+                        <img src="images/p_major01.png" alt="Vertical Farm Harvester">
+                        <div class="card-overlay"><span class="card-title">Vertical Farm Harvester</span></div>
                     </div>
                     <div class="project-tile" id="project14" data-file="projects/p_rc21.html">
-                        <p class="project-title">Robocon 2021</p>
-                        <img src="images/p_robocon1.png" alt="RC21">
+                        <img src="images/p_robocon1.png" alt="Robocon 2021">
+                        <div class="card-overlay"><span class="card-title">Robocon 2021</span></div>
                     </div>
                     <div class="project-tile" id="project13" data-file="projects/p_bases.html">
-                        <p class="project-title">Holonomic Mobile Bases</p>
-                        <img src="images/p_bases01.png" alt="Bases">
+                        <img src="images/p_bases01.png" alt="Holonomic Mobile Bases">
+                        <div class="card-overlay"><span class="card-title">Holonomic Mobile Bases</span></div>
                     </div>
                     <div class="project-tile" id="project12" data-file="projects/p_bfr.html">
-                        <p class="project-title">Ball Following Robot</p>
-                        <img src="images/p_bfr01.png" alt="BFR">
+                        <img src="images/p_bfr01.png" alt="Ball Following Robot">
+                        <div class="card-overlay"><span class="card-title">Ball Following Robot</span></div>
                     </div>
                     <div class="project-tile" id="project11" data-file="projects/p_crutch.html">
-                        <p class="project-title">Multi-Functional Crutch</p>
-                        <img src="images/p_crutch01.png" alt="Crutch">
+                        <img src="images/p_crutch01.png" alt="Multi-Functional Crutch">
+                        <div class="card-overlay"><span class="card-title">Multi-Functional Crutch</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── PUBLICATIONS ──────────────────────────── -->
+    <section id="publications">
+        <div class="section-container">
+            <p class="section-eyebrow">04 — Publications</p>
+            <h2 class="section-title">Research output</h2>
+
+            <div class="pub-columns">
+
+                <!-- Patents -->
+                <div>
+                    <p class="pub-col-title">Patents</p>
+
+                    <div class="pub-card">
+                        <span class="pub-badge patent">Patent</span>
+                        <p class="pub-card-title">Robotic System for Harvesting Crops in Vertical Farms and Method Thereof</p>
+                        <p class="pub-card-meta">App. No. 202441084733</p>
+                    </div>
+
+                    <div class="pub-card">
+                        <span class="pub-badge patent">Patent</span>
+                        <p class="pub-card-title">A Multi-Functional Crutch with Automatic Height Adjustment, Shock Absorption, and Alert Functions</p>
+                    </div>
+                </div>
+
+                <!-- Papers -->
+                <div>
+                    <p class="pub-col-title">Conference Papers</p>
+
+                    <div class="pub-card">
+                        <span class="pub-badge paper">AIR 2023</span>
+                        <p class="pub-card-title">Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms</p>
+                        <p class="pub-card-authors">P. Rohith, M. Thejonath, A. Manoj, A. Sudheer</p>
+                        <p class="pub-card-venue">Advances in Robotics, 2023</p>
+                        <a class="pub-card-link" href="https://doi.org/10.1145/3610419.3610451" target="_blank">
+                            doi.org/10.1145/3610419.3610451 <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SKILLS ────────────────────────────────── -->
+    <section id="skills-section">
+        <div class="section-container">
+            <p class="section-eyebrow">05 — Skills</p>
+            <h2 class="section-title">Technical toolkit</h2>
+
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <div class="skill-group-label"><i class="fas fa-code"></i> Languages</div>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Bash</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label"><i class="fas fa-robot"></i> Frameworks</div>
+                    <div class="skill-tags">
+                        <span class="tag">ROS2</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label"><i class="fas fa-laptop-code"></i> Simulation</div>
+                    <div class="skill-tags">
+                        <span class="tag">Gazebo</span>
+                        <span class="tag">PyBullet</span>
+                        <span class="tag">Isaac Sim</span>
+                        <span class="tag">Isaac Lab</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label"><i class="fas fa-microchip"></i> Hardware</div>
+                    <div class="skill-tags">
+                        <span class="tag">LiDAR</span>
+                        <span class="tag">Stereo Cameras</span>
+                        <span class="tag">RTK GPS</span>
+                        <span class="tag">IMU</span>
+                        <span class="tag">NVIDIA Jetson</span>
+                        <span class="tag">Raspberry Pi</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label"><i class="fas fa-drafting-compass"></i> CAD</div>
+                    <div class="skill-tags">
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">Fusion 360</span>
+                        <span class="tag">Onshape</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label"><i class="fas fa-industry"></i> Manufacturing</div>
+                    <div class="skill-tags">
+                        <span class="tag">FDM / SLA / SLS</span>
+                        <span class="tag">CNC Machining</span>
+                        <span class="tag">Laser Cutting</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="publications">
-        <h1>Publications</h1>
-
-        <div class="subsection">
-            <h2>Patents</h2>
-            <ul>
-            <li class="publication-item">
-                <span class="icon"><i class="fas fa-scroll"></i></span>
-                <span class="text">
-                Robotic System for Harvesting Crops in Vertical Farms and Method Thereof  
-                <br><small>(Patent Application Number: 202441084733)</small>
-                </span>
-            </li>
-            <li class="publication-item">
-                <span class="icon"><i class="fas fa-scroll"></i></span>
-                <span class="text">
-                A Multi-Functional Crutch with Automatic Height Adjustment, Shock Absorption, and Alert Functions
-                </span>
-            </li>
-            </ul>
+    <!-- ── FOOTER ────────────────────────────────── -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <span class="footer-name">Rohith Poola</span>
+            <span class="footer-copy">© 2025</span>
         </div>
+    </footer>
 
-        <div class="subsection">
-            <h2>Research Papers</h2>
-            <ul>
-            <li class="publication-item">
-                <span class="icon"><i class="fas fa-file-alt"></i></span>
-                <span class="text">
-                P. Rohith, M. Thejonath, A. Manoj, A. Sudheer —  
-                <em>“Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms.”</em>
-                <br>
-                <small>In: AIR 2023 (Advances in Robotics)</small>
-                <a href="https://doi.org/10.1145/3610419.3610451" target="_blank">https://doi.org/10.1145/3610419.3610451</a>
-                </span>
-            </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="skills-section" class="dark-section">
-        <div class="section-heading">
-            <h2>My Skills</h2>
-            <p>A short list of valuable skills I possess.</p>
-            <hr class="section-underline">
-        </div>
-
-        <div class="skills-grid">
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-code"></i></div>
-                <h3>Programming Languages</h3>
-                <p>Python, C++, Matlab, bash</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Simulation</h3>
-                <p>Gazebo, PyBullet, Isaac-Sim, Isaac-Lab</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fa-solid fa-file-code"></i></div>
-                <h3>Software / General Tools</h3>
-                <p>ROS2, Git, Docker, PyTorch, TensorFlow</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-                <h3>Sensors and Hardware</h3>
-                <p>LiDAR, Stereo Cameras, RTK GPS, IMU, Encoders, NVIDIA-Jetson, Raspberry-Pi</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-drafting-compass"></i></div>
-                <h3>CAD</h3>
-                <p>SolidWorks, Fusion 360, Onshape</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-microscope"></i></div>
-                <h3>Manufacturing</h3>
-                <p>3D Printing (FDM, SLA, SLS), CNC Machining, Laser Cutting</p>
-            </div>
-        </div>
-    </section>
-
-    <br><br><br>
-
-    <!-- POPUP MODAL WRAPPER -->
+    <!-- ── MODAL ─────────────────────────────────── -->
     <div id="popup-overlay">
         <div id="popup-modal">
-            <span id="popup-close">&times;</span>
-            <div id="popup-content">
-                <!-- Loaded content goes here -->
-            </div>
+            <button id="popup-close" aria-label="Close">&times;</button>
+            <div id="popup-content"></div>
         </div>
     </div>
+
     <script src="js/main.js"></script>
-
     <script>
-        const textArray = [
-        " Hi !!",
-        " I am <strong>Rohith Poola. </strong>",
-        " Welcome to my Website 👋🏻"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingDelay = 100;
-        const erasingDelay = 100;
-        const newTextDelay = 300;
-        const typedText = document.getElementById("typed-text");
+        // Space canvas — stars, nebulae, planets, galaxy, meteors
+        (function () {
+            const c = document.createElement('canvas');
+            c.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
+            document.body.insertBefore(c, document.body.firstChild);
+            const ctx = c.getContext('2d');
 
-        function type() {
-            const currentText = textArray[textIndex];
+            // ── Stars ───────────────────────────────────────────
+            const S = [];
 
-            if (!isDeleting) {
-                typedText.innerHTML = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                if (charIndex < currentText.length) {
-                    setTimeout(type, typingDelay);
-                } else {
-                    isDeleting = true;
-                    setTimeout(type, newTextDelay);
-                }
-            } else {
-                typedText.innerHTML = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                if (charIndex > 0) {
-                    setTimeout(type, erasingDelay);
-                } else {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % textArray.length;
-                    setTimeout(type, typingDelay);
+            // ── Animated nebula blobs (viewport-relative) ──────
+            const nebulae = [
+                { px:0.80, py:0.22, r:0.34, rgb:[0,210,255],  a:0.046, sp:0.00028, ph:0.00 },
+                { px:0.08, py:0.62, r:0.27, rgb:[0,120,210],  a:0.042, sp:0.00021, ph:2.10 },
+                { px:0.52, py:0.88, r:0.30, rgb:[0,195,185],  a:0.033, sp:0.00024, ph:4.20 },
+                { px:0.27, py:0.10, r:0.21, rgb:[80,165,255], a:0.038, sp:0.00033, ph:1.05 },
+                { px:0.66, py:0.54, r:0.23, rgb:[0,172,225],  a:0.028, sp:0.00018, ph:3.30 },
+            ];
+
+            // ── Planets ─────────────────────────────────────────
+            const planets = [
+                { px:0.83, py:0.20, r:15, inner:[0,55,100],   outer:[0,148,215],  ring:true,  rScale:0.32, rW:5,  sp:0.00018, ph:0.00 },
+                { px:0.09, py:0.75, r:10, inner:[0,38,88],    outer:[0,128,195],  ring:false,             sp:0.00024, ph:2.80 },
+                { px:0.62, py:0.42, r: 7, inner:[18,75,130],  outer:[0,195,235],  ring:false,             sp:0.00013, ph:1.40 },
+            ];
+
+            // ── Galaxy cluster ───────────────────────────────────
+            const GAL = { px:0.17, py:0.47, arms:2, maxR:75, sp:0.000088 };
+            const gStars = [];
+            function buildGalaxy() {
+                gStars.length = 0;
+                for (let i = 0; i < 88; i++) {
+                    const arm = (i % GAL.arms) * Math.PI;
+                    const d   = Math.pow(Math.random(), 0.55) * GAL.maxR;
+                    const ang = arm + d * 0.046 + (Math.random() - 0.5) * 0.85;
+                    gStars.push({ d, ang, r: Math.random() * 0.65 + 0.10, o: Math.random() * 0.19 + 0.04 });
                 }
             }
+
+            // ── Meteor state ─────────────────────────────────────
+            let meteor = null, meteorCd = 1100;
+
+            // ── Init / resize ────────────────────────────────────
+            function init() {
+                c.width  = innerWidth;
+                c.height = innerHeight;
+                S.length = 0;
+                for (let i = 0; i < 255; i++) {
+                    const h = Math.random();
+                    S.push({
+                        x:    Math.random() * c.width,
+                        y:    Math.random() * c.height,
+                        r:    Math.random() * 0.95 + 0.12,
+                        base: Math.random() * 0.54 + 0.07,
+                        sp:   (Math.random() * 1.6 + 0.4) * 0.00030,
+                        ph:   Math.random() * 6.28,
+                        col:  h > 0.88 ? '160,185,255' : h > 0.70 ? '100,220,255' : '215,228,248'
+                    });
+                }
+                buildGalaxy();
+            }
+
+            // ── Draw nebula blob ──────────────────────────────────
+            function drawNebula(n, t) {
+                const x = n.px * c.width, y = n.py * c.height;
+                const radius = n.r * Math.min(c.width, c.height);
+                const pulse  = 0.70 + 0.30 * Math.sin(n.ph + t * n.sp * 60);
+                const a = n.a * pulse;
+                const [r, g, b] = n.rgb;
+                const grd = ctx.createRadialGradient(x, y, 0, x, y, radius);
+                grd.addColorStop(0,   `rgba(${r},${g},${b},${a})`);
+                grd.addColorStop(0.4, `rgba(${r},${g},${b},${(a * 0.44).toFixed(4)})`);
+                grd.addColorStop(1,   'rgba(0,0,0,0)');
+                ctx.fillStyle = grd;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, 6.283);
+                ctx.fill();
+            }
+
+            // ── Draw planet ────────────────────────────────────────
+            function drawPlanet(p, t) {
+                const x = p.px * c.width, y = p.py * c.height;
+                const pulse = 0.88 + 0.12 * Math.sin(p.ph + t * p.sp * 60);
+                const op    = 0.22 * pulse;
+                const [ri,gi,bi] = p.inner, [ro,go,bo] = p.outer;
+
+                // Ambient halo
+                const halo = ctx.createRadialGradient(x, y, 0, x, y, p.r * 3.2);
+                halo.addColorStop(0, `rgba(${ro},${go},${bo},${(op * 0.40).toFixed(4)})`);
+                halo.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = halo;
+                ctx.beginPath(); ctx.arc(x, y, p.r * 3.2, 0, 6.283); ctx.fill();
+
+                // Sphere (off-center highlight)
+                const body = ctx.createRadialGradient(
+                    x - p.r * 0.32, y - p.r * 0.32, p.r * 0.07,
+                    x, y, p.r);
+                body.addColorStop(0,    `rgba(${ro},${go},${bo},${(op * 1.45).toFixed(4)})`);
+                body.addColorStop(0.55, `rgba(${ri},${gi},${bi},${op.toFixed(4)})`);
+                body.addColorStop(1,    `rgba(0,14,35,${(op * 0.82).toFixed(4)})`);
+                ctx.fillStyle = body;
+                ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
+
+                // Saturn-style rings
+                if (p.ring) {
+                    ctx.save();
+                    ctx.translate(x, y);
+                    ctx.scale(1, p.rScale);
+                    ctx.beginPath(); ctx.arc(0, 0, p.r * 2.4, 0, 6.283);
+                    ctx.strokeStyle = `rgba(0,185,235,${(op * 0.80).toFixed(4)})`;
+                    ctx.lineWidth = p.rW; ctx.stroke();
+                    ctx.beginPath(); ctx.arc(0, 0, p.r * 2.9, 0, 6.283);
+                    ctx.strokeStyle = `rgba(0,160,215,${(op * 0.36).toFixed(4)})`;
+                    ctx.lineWidth = p.rW * 0.55; ctx.stroke();
+                    ctx.restore();
+                }
+            }
+
+            // ── Draw galaxy ────────────────────────────────────────
+            function drawGalaxy(t) {
+                const cx = GAL.px * c.width, cy = GAL.py * c.height;
+                const rot = t * GAL.sp * 60;
+                for (const s of gStars) {
+                    const a = s.ang + rot;
+                    ctx.beginPath();
+                    ctx.arc(cx + Math.cos(a) * s.d, cy + Math.sin(a) * s.d * 0.38, s.r, 0, 6.283);
+                    ctx.fillStyle = `rgba(190,225,255,${s.o})`;
+                    ctx.fill();
+                }
+                const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, 18);
+                core.addColorStop(0, 'rgba(200,232,255,0.10)');
+                core.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = core;
+                ctx.beginPath(); ctx.arc(cx, cy, 18, 0, 6.283); ctx.fill();
+            }
+
+            // ── Tick meteor ────────────────────────────────────────
+            function tickMeteor() {
+                meteorCd--;
+                if (meteorCd <= 0 && !meteor) {
+                    meteorCd = 900 + Math.random() * 700;
+                    meteor = {
+                        x: Math.random() * c.width * 0.35,
+                        y: Math.random() * c.height * 0.40,
+                        vx: 7 + Math.random() * 4,
+                        vy: 2 + Math.random() * 2.5,
+                        life: 0, max: 52 + Math.random() * 28, len: 110
+                    };
+                }
+                if (!meteor) return;
+                meteor.x += meteor.vx; meteor.y += meteor.vy; meteor.life++;
+                if (meteor.life > meteor.max) { meteor = null; return; }
+                const prog  = meteor.life / meteor.max;
+                const alpha = 0.58 * Math.sin(prog * Math.PI);
+                const rx = meteor.vx, ry = meteor.vy, factor = meteor.len / Math.max(rx, 0.1);
+                const grd = ctx.createLinearGradient(meteor.x - rx * factor, meteor.y - ry * factor, meteor.x, meteor.y);
+                grd.addColorStop(0, 'rgba(0,0,0,0)');
+                grd.addColorStop(1, `rgba(180,240,255,${alpha.toFixed(3)})`);
+                ctx.strokeStyle = grd; ctx.lineWidth = 1.2;
+                ctx.beginPath();
+                ctx.moveTo(meteor.x - rx * factor, meteor.y - ry * factor);
+                ctx.lineTo(meteor.x, meteor.y);
+                ctx.stroke();
+            }
+
+            // ── Render loop ────────────────────────────────────────
+            let t = 0;
+            (function frame() {
+                t++;
+                ctx.fillStyle = '#020609';
+                ctx.fillRect(0, 0, c.width, c.height);
+
+                for (const n of nebulae) drawNebula(n, t);
+                drawGalaxy(t);
+
+                for (const s of S) {
+                    const op = s.base * (0.55 + 0.45 * Math.sin(s.ph + t * s.sp * 60));
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y, s.r, 0, 6.283);
+                    ctx.fillStyle = 'rgba(' + s.col + ',' + op + ')';
+                    ctx.fill();
+                }
+
+                for (const p of planets) drawPlanet(p, t);
+                tickMeteor();
+
+                requestAnimationFrame(frame);
+            })();
+
+            addEventListener('resize', init);
+            init();
+        })();
+    </script>
+    <script>
+        // ── Typing animation ──────────────────────
+        const phrases = [
+            "autonomy_stack.build()",
+            "slam.deploy(robots=['Spot','AgileX'])",
+            "trajectory_planner.optimize(risk=True)",
+            "contingency_mppi.run(env='real_world')"
+        ];
+        let pi = 0, ci = 0, deleting = false;
+        const el = document.getElementById("typed-text");
+
+        function type() {
+            const cur = phrases[pi];
+            el.textContent = deleting ? cur.slice(0, --ci) : cur.slice(0, ++ci);
+            let delay = deleting ? 38 : 68;
+            if (!deleting && ci === cur.length) { delay = 2000; deleting = true; }
+            else if (deleting && ci === 0)      { deleting = false; pi = (pi + 1) % phrases.length; delay = 480; }
+            setTimeout(type, delay);
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            if (textArray.length) setTimeout(type, newTextDelay);
+        // ── Navbar on scroll ──────────────────────
+        window.addEventListener("scroll", () => {
+            document.getElementById("navbar").classList.toggle("scrolled", scrollY > 50);
+        });
+
+        // ── Fade-up on scroll ─────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+        }, { threshold: 0.08 });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 600);
+            document.querySelectorAll(
+                ".timeline-item, .project-tile, .pub-item, .skill-group"
+            ).forEach((el, i) => {
+                el.classList.add("fade-up");
+                el.style.transitionDelay = `${(i % 6) * 60}ms`;
+                observer.observe(el);
+            });
         });
     </script>
 </body>
