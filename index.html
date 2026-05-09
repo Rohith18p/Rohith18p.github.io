@@ -435,125 +435,225 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Space canvas — stars, nebulae, planets, galaxy, meteors
+        // ══════════════════════════════════════════════════
+        //  SPACE CANVAS — stars · nebulae · Milky Way
+        //                 planets · galaxy · meteors
+        // ══════════════════════════════════════════════════
         (function () {
             const c = document.createElement('canvas');
             c.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
             document.body.insertBefore(c, document.body.firstChild);
             const ctx = c.getContext('2d');
 
-            // ── Stars ───────────────────────────────────────────
+            // ── Star pool ────────────────────────────────────────
             const S = [];
 
-            // ── Animated nebula blobs (viewport-relative) ──────
+            // ── Nebula blobs — high opacity so they bleed through
+            //    the frosted-glass sections
             const nebulae = [
-                { px:0.80, py:0.22, r:0.34, rgb:[0,210,255],  a:0.046, sp:0.00028, ph:0.00 },
-                { px:0.08, py:0.62, r:0.27, rgb:[0,120,210],  a:0.042, sp:0.00021, ph:2.10 },
-                { px:0.52, py:0.88, r:0.30, rgb:[0,195,185],  a:0.033, sp:0.00024, ph:4.20 },
-                { px:0.27, py:0.10, r:0.21, rgb:[80,165,255], a:0.038, sp:0.00033, ph:1.05 },
-                { px:0.66, py:0.54, r:0.23, rgb:[0,172,225],  a:0.028, sp:0.00018, ph:3.30 },
+                { px:0.80, py:0.22, r:0.42, rgb:[0,210,255],  a:0.38, sp:0.00028, ph:0.00 },
+                { px:0.07, py:0.60, r:0.34, rgb:[0,118,215],  a:0.32, sp:0.00021, ph:2.10 },
+                { px:0.52, py:0.87, r:0.36, rgb:[0,192,188],  a:0.27, sp:0.00024, ph:4.20 },
+                { px:0.26, py:0.07, r:0.28, rgb:[75,162,255], a:0.34, sp:0.00033, ph:1.05 },
+                { px:0.65, py:0.52, r:0.28, rgb:[0,168,232],  a:0.24, sp:0.00018, ph:3.30 },
             ];
 
-            // ── Planets ─────────────────────────────────────────
+            // ── Planets ──────────────────────────────────────────
             const planets = [
-                { px:0.83, py:0.20, r:15, inner:[0,55,100],   outer:[0,148,215],  ring:true,  rScale:0.32, rW:5,  sp:0.00018, ph:0.00 },
-                { px:0.09, py:0.75, r:10, inner:[0,38,88],    outer:[0,128,195],  ring:false,             sp:0.00024, ph:2.80 },
-                { px:0.62, py:0.42, r: 7, inner:[18,75,130],  outer:[0,195,235],  ring:false,             sp:0.00013, ph:1.40 },
+                { px:0.83, py:0.20, r:18, inner:[0,55,100],  outer:[0,152,222], ring:true,  rScale:0.30, rW:6,  sp:0.00018, ph:0.00 },
+                { px:0.08, py:0.74, r:12, inner:[0,38,92],   outer:[0,132,202], ring:false,               sp:0.00024, ph:2.80 },
+                { px:0.62, py:0.42, r: 8, inner:[18,78,132], outer:[0,198,240], ring:false,               sp:0.00013, ph:1.40 },
             ];
 
             // ── Galaxy cluster ───────────────────────────────────
-            const GAL = { px:0.17, py:0.47, arms:2, maxR:75, sp:0.000088 };
+            const GAL = { px:0.17, py:0.46, arms:2, maxR:80, sp:0.000082 };
             const gStars = [];
             function buildGalaxy() {
                 gStars.length = 0;
-                for (let i = 0; i < 88; i++) {
+                for (let i = 0; i < 90; i++) {
                     const arm = (i % GAL.arms) * Math.PI;
                     const d   = Math.pow(Math.random(), 0.55) * GAL.maxR;
-                    const ang = arm + d * 0.046 + (Math.random() - 0.5) * 0.85;
-                    gStars.push({ d, ang, r: Math.random() * 0.65 + 0.10, o: Math.random() * 0.19 + 0.04 });
+                    const ang = arm + d * 0.045 + (Math.random() - 0.5) * 0.85;
+                    gStars.push({ d, ang, r: Math.random() * 0.65 + 0.10, o: Math.random() * 0.22 + 0.05 });
                 }
             }
 
-            // ── Meteor state ─────────────────────────────────────
-            let meteor = null, meteorCd = 1100;
+            // ── Meteor ───────────────────────────────────────────
+            let meteor = null, meteorCd = 1200;
 
             // ── Init / resize ────────────────────────────────────
             function init() {
-                c.width  = innerWidth;
-                c.height = innerHeight;
+                c.width = innerWidth; c.height = innerHeight;
                 S.length = 0;
-                for (let i = 0; i < 255; i++) {
+                const mwAngle = -Math.PI * 0.18;
+                const mwCos = Math.cos(mwAngle), mwSin = Math.sin(mwAngle);
+
+                // Regular stars (360)
+                for (let i = 0; i < 360; i++) {
                     const h = Math.random();
                     S.push({
                         x:    Math.random() * c.width,
                         y:    Math.random() * c.height,
-                        r:    Math.random() * 0.95 + 0.12,
-                        base: Math.random() * 0.54 + 0.07,
+                        r:    Math.random() * 1.0 + 0.12,
+                        base: Math.random() * 0.55 + 0.10,
                         sp:   (Math.random() * 1.6 + 0.4) * 0.00030,
                         ph:   Math.random() * 6.28,
-                        col:  h > 0.88 ? '160,185,255' : h > 0.70 ? '100,220,255' : '215,228,248'
+                        col:  h > 0.88 ? '158,185,255' : h > 0.70 ? '100,220,255' : '215,228,248',
+                        hero: false
                     });
                 }
+
+                // Milky Way band — denser faint stars (110) along diagonal
+                for (let i = 0; i < 110; i++) {
+                    const along  = (Math.random() - 0.5) * 1.5;
+                    const across = (Math.random() - 0.5) * 0.18;
+                    const bx = along * mwCos - across * mwSin + 0.5;
+                    const by = along * mwSin + across * mwCos + 0.5;
+                    S.push({
+                        x:    bx * c.width,
+                        y:    by * c.height,
+                        r:    Math.random() * 0.55 + 0.08,
+                        base: Math.random() * 0.28 + 0.06,
+                        sp:   (Math.random() * 1.0 + 0.3) * 0.00026,
+                        ph:   Math.random() * 6.28,
+                        col:  '200,218,255',
+                        hero: false
+                    });
+                }
+
+                // Hero stars — bright prominent points (7) with diffraction spikes
+                for (let i = 0; i < 7; i++) {
+                    S.push({
+                        x:    Math.random() * c.width,
+                        y:    Math.random() * c.height,
+                        r:    1.6 + Math.random() * 0.9,
+                        base: 0.55 + Math.random() * 0.30,
+                        sp:   (Math.random() * 0.7 + 0.2) * 0.00028,
+                        ph:   Math.random() * 6.28,
+                        col:  '230,242,255',
+                        hero: true
+                    });
+                }
+
                 buildGalaxy();
             }
 
-            // ── Draw nebula blob ──────────────────────────────────
+            // ── Deep-space background (not flat black) ───────────
+            function drawBg() {
+                const bg = ctx.createRadialGradient(
+                    c.width * 0.45, c.height * 0.42, 0,
+                    c.width * 0.45, c.height * 0.42, c.width * 0.85);
+                bg.addColorStop(0,   '#050c1e');
+                bg.addColorStop(0.5, '#030810');
+                bg.addColorStop(1,   '#020508');
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, c.width, c.height);
+            }
+
+            // ── Milky Way diagonal band ───────────────────────────
+            function drawMilkyWay(t) {
+                const pulse = 0.88 + 0.12 * Math.sin(t * 0.00016 * 60);
+                ctx.save();
+                ctx.translate(c.width * 0.5, c.height * 0.5);
+                ctx.rotate(-Math.PI * 0.18);
+                const W = c.width  * 1.6;
+                const H = Math.min(c.width, c.height) * 0.26;
+                const grd = ctx.createLinearGradient(0, -H * 0.5, 0, H * 0.5);
+                grd.addColorStop(0,    'rgba(0,0,0,0)');
+                grd.addColorStop(0.22, `rgba(18,52,145,${0.06 * pulse})`);
+                grd.addColorStop(0.42, `rgba(38,85,185,${0.11 * pulse})`);
+                grd.addColorStop(0.50, `rgba(52,102,200,${0.15 * pulse})`);
+                grd.addColorStop(0.58, `rgba(38,85,185,${0.11 * pulse})`);
+                grd.addColorStop(0.78, `rgba(18,52,145,${0.06 * pulse})`);
+                grd.addColorStop(1,    'rgba(0,0,0,0)');
+                ctx.fillStyle = grd;
+                ctx.fillRect(-W * 0.5, -H * 0.5, W, H);
+                ctx.restore();
+            }
+
+            // ── Nebula blob ───────────────────────────────────────
             function drawNebula(n, t) {
                 const x = n.px * c.width, y = n.py * c.height;
                 const radius = n.r * Math.min(c.width, c.height);
-                const pulse  = 0.70 + 0.30 * Math.sin(n.ph + t * n.sp * 60);
+                const pulse  = 0.68 + 0.32 * Math.sin(n.ph + t * n.sp * 60);
                 const a = n.a * pulse;
                 const [r, g, b] = n.rgb;
                 const grd = ctx.createRadialGradient(x, y, 0, x, y, radius);
-                grd.addColorStop(0,   `rgba(${r},${g},${b},${a})`);
-                grd.addColorStop(0.4, `rgba(${r},${g},${b},${(a * 0.44).toFixed(4)})`);
+                grd.addColorStop(0,   `rgba(${r},${g},${b},${a.toFixed(3)})`);
+                grd.addColorStop(0.35,`rgba(${r},${g},${b},${(a*0.55).toFixed(3)})`);
+                grd.addColorStop(0.70,`rgba(${r},${g},${b},${(a*0.18).toFixed(3)})`);
                 grd.addColorStop(1,   'rgba(0,0,0,0)');
                 ctx.fillStyle = grd;
-                ctx.beginPath();
-                ctx.arc(x, y, radius, 0, 6.283);
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(x, y, radius, 0, 6.283); ctx.fill();
             }
 
-            // ── Draw planet ────────────────────────────────────────
+            // ── Star + optional diffraction spikes ───────────────
+            function drawStar(s, op) {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, 6.283);
+                ctx.fillStyle = 'rgba(' + s.col + ',' + op + ')';
+                ctx.fill();
+                if (s.hero) {
+                    const spike = s.r * 5;
+                    const sg = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, spike);
+                    sg.addColorStop(0, `rgba(${s.col},${(op * 0.5).toFixed(3)})`);
+                    sg.addColorStop(1, 'rgba(0,0,0,0)');
+                    ctx.fillStyle = sg;
+                    ctx.beginPath(); ctx.arc(s.x, s.y, spike, 0, 6.283); ctx.fill();
+                    ctx.strokeStyle = `rgba(${s.col},${(op * 0.28).toFixed(3)})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath(); ctx.moveTo(s.x - spike, s.y); ctx.lineTo(s.x + spike, s.y); ctx.stroke();
+                    ctx.beginPath(); ctx.moveTo(s.x, s.y - spike * 0.75); ctx.lineTo(s.x, s.y + spike * 0.75); ctx.stroke();
+                }
+            }
+
+            // ── Planet ───────────────────────────────────────────
             function drawPlanet(p, t) {
                 const x = p.px * c.width, y = p.py * c.height;
                 const pulse = 0.88 + 0.12 * Math.sin(p.ph + t * p.sp * 60);
-                const op    = 0.22 * pulse;
+                const op    = 0.34 * pulse;
                 const [ri,gi,bi] = p.inner, [ro,go,bo] = p.outer;
 
-                // Ambient halo
-                const halo = ctx.createRadialGradient(x, y, 0, x, y, p.r * 3.2);
-                halo.addColorStop(0, `rgba(${ro},${go},${bo},${(op * 0.40).toFixed(4)})`);
-                halo.addColorStop(1, 'rgba(0,0,0,0)');
+                // Wide ambient halo
+                const halo = ctx.createRadialGradient(x, y, 0, x, y, p.r * 3.8);
+                halo.addColorStop(0, `rgba(${ro},${go},${bo},${(op*0.45).toFixed(3)})`);
+                halo.addColorStop(0.5,`rgba(${ro},${go},${bo},${(op*0.12).toFixed(3)})`);
+                halo.addColorStop(1,  'rgba(0,0,0,0)');
                 ctx.fillStyle = halo;
-                ctx.beginPath(); ctx.arc(x, y, p.r * 3.2, 0, 6.283); ctx.fill();
+                ctx.beginPath(); ctx.arc(x, y, p.r * 3.8, 0, 6.283); ctx.fill();
 
-                // Sphere (off-center highlight)
+                // Sphere with off-center highlight
                 const body = ctx.createRadialGradient(
-                    x - p.r * 0.32, y - p.r * 0.32, p.r * 0.07,
+                    x - p.r * 0.32, y - p.r * 0.32, p.r * 0.06,
                     x, y, p.r);
-                body.addColorStop(0,    `rgba(${ro},${go},${bo},${(op * 1.45).toFixed(4)})`);
-                body.addColorStop(0.55, `rgba(${ri},${gi},${bi},${op.toFixed(4)})`);
-                body.addColorStop(1,    `rgba(0,14,35,${(op * 0.82).toFixed(4)})`);
+                body.addColorStop(0,    `rgba(${ro},${go},${bo},${(op*1.5).toFixed(3)})`);
+                body.addColorStop(0.5,  `rgba(${ri},${gi},${bi},${op.toFixed(3)})`);
+                body.addColorStop(1,    `rgba(0,12,32,${(op*0.85).toFixed(3)})`);
                 ctx.fillStyle = body;
+                ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
+
+                // Limb darkening ring
+                const limb = ctx.createRadialGradient(x, y, p.r * 0.7, x, y, p.r);
+                limb.addColorStop(0, 'rgba(0,0,0,0)');
+                limb.addColorStop(1, `rgba(0,5,20,${(op*0.55).toFixed(3)})`);
+                ctx.fillStyle = limb;
                 ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
 
                 // Saturn-style rings
                 if (p.ring) {
                     ctx.save();
-                    ctx.translate(x, y);
-                    ctx.scale(1, p.rScale);
+                    ctx.translate(x, y); ctx.scale(1, p.rScale);
                     ctx.beginPath(); ctx.arc(0, 0, p.r * 2.4, 0, 6.283);
-                    ctx.strokeStyle = `rgba(0,185,235,${(op * 0.80).toFixed(4)})`;
+                    ctx.strokeStyle = `rgba(0,188,238,${(op*0.85).toFixed(3)})`;
                     ctx.lineWidth = p.rW; ctx.stroke();
-                    ctx.beginPath(); ctx.arc(0, 0, p.r * 2.9, 0, 6.283);
-                    ctx.strokeStyle = `rgba(0,160,215,${(op * 0.36).toFixed(4)})`;
-                    ctx.lineWidth = p.rW * 0.55; ctx.stroke();
+                    ctx.beginPath(); ctx.arc(0, 0, p.r * 2.95, 0, 6.283);
+                    ctx.strokeStyle = `rgba(0,162,218,${(op*0.38).toFixed(3)})`;
+                    ctx.lineWidth = p.rW * 0.5; ctx.stroke();
                     ctx.restore();
                 }
             }
 
-            // ── Draw galaxy ────────────────────────────────────────
+            // ── Galaxy cluster ────────────────────────────────────
             function drawGalaxy(t) {
                 const cx = GAL.px * c.width, cy = GAL.py * c.height;
                 const rot = t * GAL.sp * 60;
@@ -561,66 +661,57 @@
                     const a = s.ang + rot;
                     ctx.beginPath();
                     ctx.arc(cx + Math.cos(a) * s.d, cy + Math.sin(a) * s.d * 0.38, s.r, 0, 6.283);
-                    ctx.fillStyle = `rgba(190,225,255,${s.o})`;
+                    ctx.fillStyle = `rgba(192,225,255,${s.o})`;
                     ctx.fill();
                 }
-                const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, 18);
-                core.addColorStop(0, 'rgba(200,232,255,0.10)');
+                const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, 22);
+                core.addColorStop(0, 'rgba(205,232,255,0.14)');
                 core.addColorStop(1, 'rgba(0,0,0,0)');
                 ctx.fillStyle = core;
-                ctx.beginPath(); ctx.arc(cx, cy, 18, 0, 6.283); ctx.fill();
+                ctx.beginPath(); ctx.arc(cx, cy, 22, 0, 6.283); ctx.fill();
             }
 
-            // ── Tick meteor ────────────────────────────────────────
+            // ── Meteor ───────────────────────────────────────────
             function tickMeteor() {
                 meteorCd--;
                 if (meteorCd <= 0 && !meteor) {
-                    meteorCd = 900 + Math.random() * 700;
+                    meteorCd = 850 + Math.random() * 750;
                     meteor = {
-                        x: Math.random() * c.width * 0.35,
-                        y: Math.random() * c.height * 0.40,
-                        vx: 7 + Math.random() * 4,
-                        vy: 2 + Math.random() * 2.5,
-                        life: 0, max: 52 + Math.random() * 28, len: 110
+                        x: Math.random() * c.width * 0.38,
+                        y: Math.random() * c.height * 0.42,
+                        vx: 7 + Math.random() * 5, vy: 2 + Math.random() * 2.5,
+                        life: 0, max: 50 + Math.random() * 30, len: 115
                     };
                 }
                 if (!meteor) return;
                 meteor.x += meteor.vx; meteor.y += meteor.vy; meteor.life++;
                 if (meteor.life > meteor.max) { meteor = null; return; }
                 const prog  = meteor.life / meteor.max;
-                const alpha = 0.58 * Math.sin(prog * Math.PI);
-                const rx = meteor.vx, ry = meteor.vy, factor = meteor.len / Math.max(rx, 0.1);
-                const grd = ctx.createLinearGradient(meteor.x - rx * factor, meteor.y - ry * factor, meteor.x, meteor.y);
+                const alpha = 0.62 * Math.sin(prog * Math.PI);
+                const f = meteor.len / Math.max(meteor.vx, 0.1);
+                const grd = ctx.createLinearGradient(meteor.x - meteor.vx*f, meteor.y - meteor.vy*f, meteor.x, meteor.y);
                 grd.addColorStop(0, 'rgba(0,0,0,0)');
-                grd.addColorStop(1, `rgba(180,240,255,${alpha.toFixed(3)})`);
-                ctx.strokeStyle = grd; ctx.lineWidth = 1.2;
+                grd.addColorStop(1, `rgba(185,242,255,${alpha.toFixed(3)})`);
+                ctx.strokeStyle = grd; ctx.lineWidth = 1.3;
                 ctx.beginPath();
-                ctx.moveTo(meteor.x - rx * factor, meteor.y - ry * factor);
-                ctx.lineTo(meteor.x, meteor.y);
-                ctx.stroke();
+                ctx.moveTo(meteor.x - meteor.vx*f, meteor.y - meteor.vy*f);
+                ctx.lineTo(meteor.x, meteor.y); ctx.stroke();
             }
 
-            // ── Render loop ────────────────────────────────────────
+            // ── Render loop ───────────────────────────────────────
             let t = 0;
             (function frame() {
                 t++;
-                ctx.fillStyle = '#020609';
-                ctx.fillRect(0, 0, c.width, c.height);
-
+                drawBg();
+                drawMilkyWay(t);
                 for (const n of nebulae) drawNebula(n, t);
                 drawGalaxy(t);
-
                 for (const s of S) {
                     const op = s.base * (0.55 + 0.45 * Math.sin(s.ph + t * s.sp * 60));
-                    ctx.beginPath();
-                    ctx.arc(s.x, s.y, s.r, 0, 6.283);
-                    ctx.fillStyle = 'rgba(' + s.col + ',' + op + ')';
-                    ctx.fill();
+                    drawStar(s, op);
                 }
-
                 for (const p of planets) drawPlanet(p, t);
                 tickMeteor();
-
                 requestAnimationFrame(frame);
             })();
 

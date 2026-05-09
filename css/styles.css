@@ -2,28 +2,22 @@
    DESIGN SYSTEM — Rohith Poola Portfolio  (Space Theme)
    ============================================================ */
 :root {
-  /* Space depth layers */
   --space-0: #020609;
   --space-1: #050d1a;
   --space-2: #071120;
   --space-3: #0b1828;
   --space-4: #0f2035;
 
-  /* Borders — all cyan family */
   --b1:  rgba(0,210,255,0.07);
   --b2:  rgba(0,210,255,0.20);
-  --bteal: rgba(0,175,215,0.18);
 
-  /* Text */
   --t1: #dde8f8;
   --t2: #506888;
   --t3: #2c4460;
 
-  /* Accents — cyan only */
   --cyan:  #00d4ff;
   --gold:  #f59e0b;
   --dim-c: rgba(0,212,255,0.07);
-  --dim-g: rgba(245,158,11,0.08);
 
   --max-w: 1160px;
   --font-head: 'Space Grotesk', sans-serif;
@@ -52,9 +46,9 @@ body {
   transition: background 0.4s, padding 0.3s;
 }
 #navbar.scrolled {
-  background: rgba(2,6,9,0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(2,6,9,0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   padding: 14px 8%;
   border-bottom: 1px solid var(--b1);
 }
@@ -70,7 +64,7 @@ body {
 .nav-list a:hover { color: var(--t1); }
 
 /* ============================================================
-   HERO  (unchanged — user likes it)
+   HERO  (unchanged)
    ============================================================ */
 #hero {
   position: relative; height: 100vh; min-height: 700px;
@@ -153,17 +147,20 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 #publications .section-eyebrow { color: var(--gold); }
 
 /* ============================================================
-   ABOUT  — gradient: top-left dark → bottom-right blue
-   Nebula: bright cyan, top-right
+   ABOUT
+   Frosted glass over canvas — cyan nebula top-right
    ============================================================ */
 #about {
-  background: linear-gradient(145deg, rgba(5,13,28,0.93) 0%, rgba(3,10,22,0.91) 100%);
+  background: linear-gradient(145deg, rgba(3,10,26,0.76) 0%, rgba(2,8,20,0.74) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--b1);
 }
 #about::before {
-  content: ''; position: absolute; top: -140px; right: -90px;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(0,212,255,0.10) 0%, rgba(0,180,240,0.04) 45%, transparent 70%);
+  content: ''; position: absolute; top: -100px; right: -80px;
+  width: 720px; height: 720px;
+  background: radial-gradient(circle, rgba(0,210,255,0.26) 0%, rgba(0,175,238,0.10) 42%, transparent 68%);
+  filter: blur(55px);
   pointer-events: none;
 }
 
@@ -172,12 +169,12 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .about-text p + p { margin-top: 20px; }
 
 .terminal-card {
-  background: rgba(2,6,9,0.90); border: 1px solid var(--b1);
+  background: rgba(2,6,9,0.85); border: 1px solid var(--b1);
   border-radius: 12px; overflow: hidden; margin-bottom: 28px;
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
 .terminal-header {
-  background: var(--space-3); padding: 10px 14px;
+  background: rgba(11,24,40,0.90); padding: 10px 14px;
   display: flex; gap: 7px; align-items: center; border-bottom: 1px solid var(--b1);
 }
 .t-dot { width: 10px; height: 10px; border-radius: 50%; }
@@ -199,23 +196,27 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .contact-links a:hover, .contact-links a:hover i { color: var(--t1); }
 
 /* ============================================================
-   EXPERIENCE  — gradient: top-right bright → bottom-left dark
-   Nebula: ocean-blue top-left, teal hint bottom-right
+   EXPERIENCE
+   Frosted glass — ocean-blue nebula top-left, teal hint bottom-right
    ============================================================ */
 #experience-section {
-  background: linear-gradient(215deg, rgba(2,8,18,0.94) 0%, rgba(5,13,26,0.92) 100%);
+  background: linear-gradient(215deg, rgba(2,8,20,0.77) 0%, rgba(3,11,25,0.75) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--b1);
 }
 #experience-section::before {
-  content: ''; position: absolute; top: -100px; left: -140px;
-  width: 820px; height: 820px;
-  background: radial-gradient(circle, rgba(0,148,215,0.11) 0%, rgba(0,120,200,0.05) 40%, transparent 65%);
+  content: ''; position: absolute; top: -100px; left: -130px;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(0,145,215,0.24) 0%, rgba(0,110,198,0.09) 38%, transparent 64%);
+  filter: blur(60px);
   pointer-events: none;
 }
 #experience-section::after {
-  content: ''; position: absolute; bottom: -70px; right: -70px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(0,218,198,0.06) 0%, transparent 65%);
+  content: ''; position: absolute; bottom: -80px; right: -80px;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(0,215,195,0.16) 0%, transparent 65%);
+  filter: blur(45px);
   pointer-events: none;
 }
 
@@ -228,7 +229,7 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .timeline::before {
   content: ''; position: absolute; left: calc(140px + 22px);
   top: 0; bottom: 0; width: 1px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0,212,255,0.40) 30%, rgba(0,190,220,0.25) 75%, transparent 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,212,255,0.45) 30%, rgba(0,195,220,0.28) 75%, transparent 100%);
 }
 .timeline-item {
   display: flex; align-items: flex-start; margin-bottom: 2px; cursor: pointer; position: relative;
@@ -243,24 +244,24 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 }
 .timeline-node::before {
   content: ''; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--t3); border: 2px solid var(--space-0);
+  background: var(--t3); border: 2px solid rgba(2,8,20,0.9);
   display: block; transition: background 0.25s, box-shadow 0.25s;
 }
 .timeline-item:hover .timeline-node::before {
-  background: var(--cyan); box-shadow: 0 0 12px rgba(0,212,255,0.65);
+  background: var(--cyan); box-shadow: 0 0 14px rgba(0,212,255,0.70);
 }
 .timeline-card {
   flex: 1; display: flex; align-items: center; gap: 18px;
   padding: 18px 22px; margin: 6px 0;
   border: 1px solid transparent; border-radius: 10px; background: transparent;
-  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s, backdrop-filter 0.25s;
+  transition: border-color 0.30s, background 0.30s, box-shadow 0.30s;
 }
 .timeline-item:hover .timeline-card {
   border-color: var(--b2);
-  background: rgba(0,212,255,0.04);
-  box-shadow: 0 0 40px rgba(0,212,255,0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0,212,255,0.05);
+  box-shadow: 0 0 40px rgba(0,212,255,0.07), inset 0 0 30px rgba(0,212,255,0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .org-logo-wrap {
   width: 60px; height: 44px;
@@ -268,7 +269,7 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 }
 .org-logo-wrap img {
   max-width: 100%; max-height: 100%; object-fit: contain;
-  filter: grayscale(50%) brightness(0.5); transition: filter 0.25s;
+  filter: grayscale(50%) brightness(0.45); transition: filter 0.25s;
 }
 .timeline-item:hover .org-logo-wrap img { filter: grayscale(0%) brightness(0.88); }
 .timeline-info h4 {
@@ -285,17 +286,20 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .timeline-spacer { height: 44px; }
 
 /* ============================================================
-   PROJECTS  — gradient: top-left → bottom-right (teal lean)
-   Nebula: teal-cyan, right-center
+   PROJECTS
+   Frosted glass — teal-cyan nebula right-center
    ============================================================ */
 #projects-section {
-  background: linear-gradient(165deg, rgba(5,14,22,0.91) 0%, rgba(3,10,20,0.93) 100%);
+  background: linear-gradient(165deg, rgba(3,11,22,0.74) 0%, rgba(2,9,20,0.76) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--b1);
 }
 #projects-section::before {
-  content: ''; position: absolute; top: 28%; right: -110px;
-  width: 620px; height: 620px;
-  background: radial-gradient(circle, rgba(0,188,235,0.08) 0%, rgba(0,160,220,0.03) 45%, transparent 68%);
+  content: ''; position: absolute; top: 22%; right: -100px;
+  width: 640px; height: 640px;
+  background: radial-gradient(circle, rgba(0,185,238,0.22) 0%, rgba(0,155,222,0.08) 40%, transparent 66%);
+  filter: blur(58px);
   pointer-events: none;
 }
 
@@ -331,23 +335,27 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 }
 
 /* ============================================================
-   PUBLICATIONS  — gradient: bottom-right → top-left (deepest)
-   Nebula: aqua bottom-right, cool-blue top-left
+   PUBLICATIONS
+   Frosted glass — aqua nebula bottom-right, cool-blue top-left
    ============================================================ */
 #publications {
-  background: linear-gradient(315deg, rgba(2,7,16,0.95) 0%, rgba(5,12,24,0.93) 100%);
+  background: linear-gradient(315deg, rgba(2,7,18,0.80) 0%, rgba(3,11,24,0.78) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--b1);
 }
 #publications::before {
-  content: ''; position: absolute; bottom: -100px; right: -70px;
-  width: 720px; height: 720px;
-  background: radial-gradient(circle, rgba(0,200,220,0.09) 0%, rgba(0,175,210,0.04) 40%, transparent 62%);
+  content: ''; position: absolute; bottom: -90px; right: -75px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,198,220,0.24) 0%, rgba(0,165,212,0.09) 38%, transparent 62%);
+  filter: blur(58px);
   pointer-events: none;
 }
 #publications::after {
   content: ''; position: absolute; top: -80px; left: -90px;
-  width: 520px; height: 520px;
-  background: radial-gradient(circle, rgba(0,130,210,0.08) 0%, transparent 65%);
+  width: 540px; height: 540px;
+  background: radial-gradient(circle, rgba(0,128,212,0.20) 0%, transparent 62%);
+  filter: blur(48px);
   pointer-events: none;
 }
 
@@ -359,15 +367,16 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 }
 .pub-card {
   border: 1px solid var(--b1); border-radius: 10px; padding: 22px 24px;
-  background: rgba(3,8,18,0.65); margin-bottom: 14px;
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  background: rgba(2,7,18,0.55);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 14px;
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
 }
 .pub-card:last-child { margin-bottom: 0; }
 .pub-card:hover {
   border-color: var(--b2);
-  background: rgba(5,13,26,0.82);
-  box-shadow: 0 0 30px rgba(0,212,255,0.07);
+  background: rgba(3,10,25,0.70);
+  box-shadow: 0 0 32px rgba(0,212,255,0.08);
 }
 .pub-badge {
   display: inline-block; font-family: var(--font-mono); font-size: 0.65rem;
@@ -396,34 +405,37 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .pub-card-link i { font-size: 0.6rem; }
 
 /* ============================================================
-   SKILLS  — gradient: top → bottom (midnight blue)
-   Nebula: dual cyan/teal, centered ellipse
+   SKILLS
+   Frosted glass — dual cyan/teal ellipse centered
    ============================================================ */
 #skills-section {
-  background: linear-gradient(180deg, rgba(4,11,24,0.93) 0%, rgba(2,8,18,0.95) 100%);
+  background: linear-gradient(180deg, rgba(3,10,24,0.76) 0%, rgba(2,8,18,0.78) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 #skills-section::before {
   content: ''; position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 950px; height: 520px;
+  width: 960px; height: 540px;
   background: radial-gradient(ellipse,
-    rgba(0,215,235,0.08) 0%,
-    rgba(0,175,215,0.04) 45%,
-    transparent 72%);
+    rgba(0,215,238,0.22) 0%,
+    rgba(0,178,222,0.09) 42%,
+    transparent 70%);
+  filter: blur(65px);
   pointer-events: none;
 }
 
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .skill-group {
   padding: 26px; border: 1px solid var(--b1); border-radius: 10px;
-  background: rgba(3,8,18,0.60);
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  background: rgba(2,7,18,0.55);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
 }
 .skill-group:hover {
   border-color: var(--b2);
-  background: rgba(5,13,26,0.80);
-  box-shadow: 0 0 25px rgba(0,212,255,0.07);
+  background: rgba(4,12,26,0.72);
+  box-shadow: 0 0 28px rgba(0,212,255,0.08);
 }
 .skill-group-label {
   font-size: 0.8125rem; font-weight: 600; color: var(--t1);
@@ -438,13 +450,13 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
   transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .skill-group:hover .tag {
-  border-color: var(--b2); color: var(--t1); background: rgba(0,212,255,0.06);
+  border-color: var(--b2); color: var(--t1); background: rgba(0,212,255,0.07);
 }
 
 /* ============================================================
    FOOTER
    ============================================================ */
-#footer { background: rgba(2,6,9,0.97); border-top: 1px solid var(--b1); padding: 36px 8%; }
+#footer { background: rgba(2,5,10,0.96); border-top: 1px solid var(--b1); padding: 36px 8%; }
 .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .footer-name { font-family: var(--font-head); font-weight: 600; font-size: 0.875rem; color: var(--t2); }
 .footer-copy  { font-size: 0.78rem; color: var(--t3); font-family: var(--font-mono); }
@@ -453,8 +465,8 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
    MODAL
    ============================================================ */
 #popup-overlay {
-  position: fixed; inset: 0; background: rgba(2,6,9,0.85);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  position: fixed; inset: 0; background: rgba(2,6,9,0.88);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   display: none; justify-content: center; align-items: flex-start;
   padding: 80px 20px 60px; overflow-y: auto; z-index: 9999;
 }
