@@ -19,6 +19,10 @@
   --gold:  #f59e0b;
   --dim-c: rgba(0,212,255,0.07);
 
+  /* Idle (non-hover) treatment for nav links and hero icon buttons */
+  --nav-idle: #6d8cb2;
+  --icon-border-idle: rgba(0,210,255,0.18);
+
   --max-w: 1160px;
   --font-head: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -41,7 +45,7 @@ body {
    ============================================================ */
 #navbar {
   position: fixed; top: 0; left: 0; width: 100%;
-  z-index: 1000; padding: 22px 8%;
+  z-index: 1000; padding: 18px 8%;
   display: flex; align-items: center; justify-content: space-between;
   transition: background 0.4s, padding 0.3s;
 }
@@ -49,19 +53,71 @@ body {
   background: rgba(2,6,9,0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  padding: 14px 8%;
+  padding: 12px 8%;
   border-bottom: 1px solid var(--b1);
 }
 .nav-brand {
   font-family: var(--font-head); font-size: 1rem; font-weight: 700;
   color: var(--t1); text-decoration: none; letter-spacing: 0.06em;
 }
-.nav-list { list-style: none; display: flex; gap: 38px; }
+/* 6px gap + 16px capsule padding per side ≈ the previous 38px spacing */
+.nav-list { list-style: none; display: flex; gap: 6px; }
+
+/* Capsule geometry is always present — only the paint changes on hover,
+   so nothing reflows. z-index:0 makes each link a stacking context so
+   the ::before sheen can sit above the capsule fill but under the text. */
 .nav-list a {
-  color: var(--t3); text-decoration: none; font-size: 0.8125rem;
-  letter-spacing: 0.04em; transition: color 0.2s;
+  color: var(--nav-idle); text-decoration: none; font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  display: block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: color 0.25s, background 0.25s,
+              border-color 0.25s, box-shadow 0.25s;
 }
-.nav-list a:hover { color: var(--t1); }
+
+/* Specular sheen — negative z-index keeps it off the text */
+.nav-list a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(160deg,
+    rgba(255,255,255,0.16) 0%,
+    rgba(255,255,255,0.04) 40%,
+    transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+
+/* Liquid-glass capsule — same cyan/dim-c base as .hero-links a:hover.
+   backdrop-filter is intentionally left out of the transition (animating
+   a blur radius is expensive) and is an enhancement only: --dim-c, the
+   border and the box-shadow carry the capsule on their own. */
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--cyan);
+  background: var(--dim-c);
+  border-color: var(--cyan);
+  /* the capsule itself is the focus indicator — otherwise the UA ring
+     draws a second, off-theme outline around it */
+  outline: none;
+  backdrop-filter: blur(12px) saturate(170%);
+  -webkit-backdrop-filter: blur(12px) saturate(170%);
+  box-shadow:
+    0 0 18px rgba(0,212,255,0.20),           /* outer bloom */
+    inset 0 1px 0 rgba(255,255,255,0.16),    /* top edge light */
+    inset 0 -1px 0 rgba(0,212,255,0.10);     /* bottom bounce */
+}
+.nav-list a:hover::before,
+.nav-list a:focus-visible::before { opacity: 1; }
 
 /* ============================================================
    HERO  (unchanged)
@@ -88,7 +144,7 @@ body {
 }
 .hero-text { flex: 1; }
 .hero-eyebrow {
-  font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan);
+  font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan);
   letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 18px; opacity: 0.9;
 }
 .hero-name {
@@ -97,15 +153,15 @@ body {
   color: var(--t1); line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 30px;
 }
 .hero-terminal-line {
-  font-family: var(--font-mono); font-size: 0.9rem; color: var(--t2);
+  font-family: var(--font-mono); font-size: 0.95rem; color: var(--t2);
   margin-bottom: 44px; height: 22px; display: flex; align-items: center; gap: 8px;
 }
 .hero-terminal-line .prompt { color: var(--cyan); }
 .hero-links { display: flex; gap: 14px; }
 .hero-links a {
-  width: 40px; height: 40px; border: 1px solid var(--b1); border-radius: 8px;
+  width: 45px; height: 45px; border: 1px solid var(--icon-border-idle); border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--t3); text-decoration: none; font-size: 1rem;
+  color: var(--nav-idle); text-decoration: none; font-size: 1rem;
   transition: border-color 0.25s, color 0.25s, background 0.25s;
 }
 .hero-links a:hover { border-color: var(--cyan); color: var(--cyan); background: var(--dim-c); }
@@ -135,6 +191,11 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+/* Keyboard focus for the div-based buttons that open the modal */
+.timeline-item:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+/* inset, so the ring doesn't bleed into the 3px project-grid gap */
+.project-tile:focus-visible  { outline: 2px solid var(--cyan); outline-offset: -2px; }
+
 .section-eyebrow {
   font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em;
   text-transform: uppercase; margin-bottom: 18px; opacity: 0.9; color: var(--cyan);
@@ -151,9 +212,9 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
    Frosted glass over canvas — cyan nebula top-right
    ============================================================ */
 #about {
-  background: linear-gradient(145deg, rgba(3,10,26,0.76) 0%, rgba(2,8,20,0.74) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(145deg, rgba(3,10,26,0.58) 0%, rgba(2,8,20,0.55) 100%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-bottom: 1px solid var(--b1);
 }
 #about::before {
@@ -180,7 +241,7 @@ section { padding: 110px 8%; position: relative; overflow: hidden; }
 .t-dot { width: 10px; height: 10px; border-radius: 50%; }
 .t-dot.r { background: #ff5f57; } .t-dot.y { background: #febc2e; } .t-dot.g { background: #28c840; }
 .terminal-body {
-  padding: 18px 20px; font-family: var(--font-mono); font-size: 0.8rem;
+  padding: 18px 20px; font-family: var(--font-mono); font-size: 0.85rem;
   color: var(--t3); line-height: 1.9;
 }
 .terminal-body .t-cmd  { color: var(--t2); display: block; }
