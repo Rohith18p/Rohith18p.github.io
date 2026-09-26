@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="css/projects.css">
 <div class="project-detail-content">
   <h2 class="project-title">Contingency MPPI</h2>
-  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
   <hr class="project-divider">
 
   <div class="project-images">
@@ -10,14 +9,10 @@
 
   <div class="project-description">
     <p>
-      This project implements Contingency-MPPI, a motion planning framework that embeds contingency planning within a standard 
-      Model Predictive Path Integral (MPPI) controller to ensure safety in dynamic environments. At each step, the planner generates 
-      both a nominal trajectory and a contingency backup path to a safe region, enabling robust responses to sudden changes.
-    </p><br>
-    <p>
-      I further implemented occlusion-based safe zone detection, allowing the robot to plan dynamically around unseen areas rather than 
-      relying on predefined safe zones. Validated in simulation and hardware with LiDAR-inertial localization, Contingency-MPPI 
-      achieved real-time, risk-aware trajectory planning with improved safety and adaptability.
+      Implemented Contingency-MPPI, embedding a backup plan inside an MPPI controller so every optimization step produces both a
+      nominal trajectory and a route to a safe region. Extended the framework with occlusion-aware safe-zone detection, allowing the
+      robot to identify refuge online instead of relying on predefined locations. Simulation and hardware validation with
+      LiDAR–inertial localization demonstrated real-time, risk-aware planning under uncertainty.
     </p>
   </div>
 </div>

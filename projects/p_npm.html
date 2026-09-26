@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="css/projects.css">
 <div class="project-detail-content">
   <h2 class="project-title">Non-Prehensile Manipulation</h2>
-  <p class="project-caption">using MPPI</p>
   <hr class="project-divider">
 
   <div class="project-images">
@@ -11,16 +10,9 @@
 
   <div class="project-description">
     <p>
-      This project tackles non-prehensile manipulation with complex, high-DOF manipulators using a Model Predictive Path Integral 
-      (MPPI) controller. Instead of relying on hard-to-derive dynamics models, the approach integrates the PyBullet physics simulator 
-      directly into the MPPI loop, enabling real-time trajectory rollouts through sampling and importance weighting.
-      This simulator-in-the-loop strategy eliminates the need for explicit modeling, making MPPI broadly applicable to highly 
-      articulated robots.
+      Implemented a simulator-in-the-loop MPPI controller for non-prehensile manipulation with high-DOF robots. PyBullet supplies
+      trajectory rollouts inside the optimization loop, while sampling and importance weighting produce real-time control updates.
+      This avoids deriving an explicit high-dimensional dynamics model and makes the same formulation applicable to articulated robots.
     </p>
-    <br>
-    <!-- <p>
-      Experiments with a 7-DOF manipulator validated robust trajectory tracking and successful non-prehensile 
-      manipulation, demonstrating both the flexibility and practicality of the method.
-    </p> -->
   </div>
 </div>
