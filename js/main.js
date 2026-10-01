@@ -116,7 +116,7 @@ function setupProjectFilters() {
     const domainOrder = {
         featured: ["project36", "project38", "project35", "project23", "project15"],
         planning: ["project36", "project34", "project31", "project14"],
-        perception: ["project38", "project37", "project35", "project33", "project15", "project12"],
+        perception: ["project38", "project37", "project35", "project15", "project12"],
         manipulation: ["project23", "project32", "project34", "project21", "project15", "project22"],
         control: ["project36", "project32", "project31", "project23", "project21", "project13", "project14", "project12"],
         systems: ["project38", "project15", "project35", "project23", "project21", "project33", "project13", "project14", "project12", "project22", "project11"]

@@ -392,22 +392,21 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
   background: linear-gradient(135deg, rgba(0,212,255,0.075), rgba(2,7,18,0.42) 56%);
   box-shadow: inset 3px 0 0 rgba(0,212,255,0.50);
 }
-.org-monogram {
-  width: 42px; height: 42px; display: grid; place-items: center;
-  border: 1px solid rgba(0,212,255,0.32); border-radius: 50%;
-  color: var(--cyan); font-family: var(--font-head); font-size: 1rem; font-weight: 700;
-  background: rgba(0,212,255,0.06);
-}
 .org-logo-wrap {
-  width: 60px; height: 44px;
+  width: 86px; height: 54px; padding: 6px 8px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.26); border-radius: 7px;
+  background: #eef4f9;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.16);
 }
+.org-logo-neu { background: #fff4f4; }
+.org-logo-iiith { background: #e9f2fb; }
+.org-logo-nitc { background: #edf3ed; }
+.org-logo-medtronic { width: 98px; background: #e9f4fb; }
+.org-logo-capgemini { background: #e9f5fa; }
 .org-logo-wrap img {
-  max-width: 100%; max-height: 100%; object-fit: contain;
-  filter: grayscale(50%) brightness(0.45); transition: filter 0.25s;
+  display: block; max-width: 100%; max-height: 100%; object-fit: contain;
 }
-.experience-card:hover .org-logo-wrap img,
-.experience-card:focus-visible .org-logo-wrap img { filter: grayscale(0%) brightness(0.88); }
 .timeline-info h4 {
   font-family: var(--font-head); font-size: 0.9375rem; font-weight: 600;
   color: var(--t1); margin-bottom: 3px;
@@ -421,6 +420,12 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
 }
 .experience-card:hover .tag-chip,
 .experience-card:focus-visible .tag-chip { color: var(--cyan); border-color: var(--b2); }
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .experience-card-main { gap: 10px; }
+  .org-logo-wrap { width: 70px; height: 48px; padding: 5px; }
+  .org-logo-medtronic { width: 82px; }
+}
 
 /* ============================================================
    PROJECTS

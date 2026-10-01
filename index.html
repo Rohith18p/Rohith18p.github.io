@@ -168,7 +168,7 @@
                     <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/nail.html">
                         <span class="experience-date">Apr 2025 — Present</span>
                         <div class="experience-card-main">
-                            <div class="org-logo-wrap">
+                            <div class="org-logo-wrap org-logo-neu">
                                 <img src="images/neu.png" alt="Northeastern University" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-info">
@@ -184,16 +184,15 @@
                     <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/rrc.html">
                         <span class="experience-date">May 2022 — Jul 2024</span>
                         <div class="experience-card-main">
-                            <div class="org-logo-wrap">
+                            <div class="org-logo-wrap org-logo-iiith">
                                 <img src="images/iiith.png" alt="IIIT Hyderabad" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-info">
                                 <h4>Graduate Researcher</h4>
                                 <p>Robotics Research Center · IIIT Hyderabad</p>
-                                <span class="tag-chip">Part-time</span>
-                                <span class="tag-chip">SLAM</span>
-                                <span class="tag-chip">Multi-robot</span>
-                                <span class="tag-chip">Spot · AgileX · Unitree</span>
+                                <span class="tag-chip">Manipulation</span>
+                                <span class="tag-chip">Control</span>
+                                <span class="tag-chip">Imitation Learning</span>
                             </div>
                         </div>
                     </div>
@@ -201,7 +200,7 @@
                     <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/rig.html">
                         <span class="experience-date">May 2019 — May 2022</span>
                         <div class="experience-card-main">
-                            <div class="org-logo-wrap">
+                            <div class="org-logo-wrap org-logo-nitc">
                                 <img src="images/nitc.png" alt="NIT Calicut" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-info">
@@ -232,16 +231,17 @@
                     </div>
 
                     <div class="experience-card experience-tile featured-experience" tabindex="0" role="button" data-file="projects/medtronic.html">
-                        <span class="experience-date">Dates to be added</span>
+                        <span class="experience-date">Jan 2026 — Aug 2026</span>
                         <div class="experience-card-main">
-                            <div class="org-logo-wrap">
-                                <span class="org-monogram" aria-hidden="true">M</span>
+                            <div class="org-logo-wrap org-logo-medtronic">
+                                <img src="images/medtronic-logo.svg" alt="Medtronic" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-info">
-                                <h4>Engineering Experience</h4>
+                                <h4>Robotics Software Engineer</h4>
                                 <p>Medtronic</p>
-                                <span class="tag-chip">Medical Devices</span>
-                                <span class="tag-chip">Engineering</span>
+                                <span class="tag-chip">Surgical Robotics</span>
+                                <span class="tag-chip">Controls</span>
+                                <span class="tag-chip">Robot Learning</span>
                             </div>
                         </div>
                     </div>
@@ -249,7 +249,7 @@
                     <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/cg.html">
                         <span class="experience-date">Sep 2022 — Aug 2024</span>
                         <div class="experience-card-main">
-                            <div class="org-logo-wrap">
+                            <div class="org-logo-wrap org-logo-capgemini">
                                 <img src="images/cg.png" alt="Capgemini" loading="lazy" decoding="async">
                             </div>
                             <div class="timeline-info">
@@ -274,12 +274,12 @@
             <div class="project-filter-bar" role="toolbar" aria-label="Filter projects by robotics domain">
                 <button class="project-filter is-active" type="button" data-filter="featured" aria-pressed="true"
                     data-description="Flagship work across safe autonomy, perception, manipulation, and integrated robotic systems.">Featured</button>
+                <button class="project-filter" type="button" data-filter="manipulation" aria-pressed="false"
+                    data-description="Planning and hardware for robots that physically interact with the world.">Manipulation</button>
                 <button class="project-filter" type="button" data-filter="planning" aria-pressed="false"
                     data-description="Trajectory generation, collision avoidance, and decision-making under uncertainty.">Planning</button>
                 <button class="project-filter" type="button" data-filter="perception" aria-pressed="false"
                     data-description="Mapping, localization, sensing, and learning-based scene understanding.">Perception &amp; Learning</button>
-                <button class="project-filter" type="button" data-filter="manipulation" aria-pressed="false"
-                    data-description="Planning and hardware for robots that physically interact with the world.">Manipulation</button>
                 <button class="project-filter" type="button" data-filter="control" aria-pressed="false"
                     data-description="Model-based and feedback control across dynamic robotic systems.">Control</button>
                 <button class="project-filter" type="button" data-filter="systems" aria-pressed="false"
@@ -295,7 +295,7 @@
                 <div class="project-tile project-lead" tabindex="0" role="button" id="project36"
                     data-file="projects/p_cmppi.html" data-domains="featured planning control">
                     <div class="project-media">
-                        <img src="images/p_cmppi1.png" alt="Contingency trajectories generated by the MPPI planner" loading="lazy" decoding="async">
+                        <img src="images/thumb-cmppi-v2.jpg" alt="Contingency trajectories generated by the MPPI planner" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Planning · Control</span><span>Hardware + simulation</span></div>
@@ -307,16 +307,13 @@
 
                 <div class="project-tile" tabindex="0" role="button" id="project38"
                     data-file="projects/p_multi_robot_slam.html" data-domains="featured perception systems">
-                    <div class="project-media project-media-placeholder">
-                        <div class="project-placeholder" role="img" aria-label="Placeholder for multi-robot SLAM project media">
-                            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-                            <span>Project media coming soon</span>
-                        </div>
+                    <div class="project-media">
+                        <img src="images/thumb-multi-robot-slam-v1.jpg" alt="Heterogeneous robot fleet used for large-scale multi-robot mapping" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
-                        <div class="project-card-meta"><span>Perception · Systems</span><span>Field deployment</span></div>
+                        <div class="project-card-meta"><span>Perception · Systems</span><span>5 robots · 14 floors</span></div>
                         <h3>Multi-Robot SLAM</h3>
-                        <p>Coordinated heterogeneous robots to reconstruct two seven-floor buildings with drift-resistant LiDAR–inertial mapping.</p>
+                        <p>Synchronized four sensor streams across five heterogeneous robots to map two seven-floor GPS-denied buildings with FAST-LIO.</p>
                         <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </div>
                 </div>
@@ -324,11 +321,11 @@
                 <div class="project-tile" tabindex="0" role="button" id="project35"
                     data-file="projects/p_spot.html" data-domains="featured perception systems">
                     <div class="project-media">
-                        <img src="images/p_spot1.png" alt="Boston Dynamics Spot used for indoor mapping" loading="lazy" decoding="async">
+                        <img src="images/thumb-spot-v1.jpg" alt="Boston Dynamics Spot used for indoor mapping" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Perception</span><span>Robot deployment</span></div>
-                        <h3>SLAM with Spot</h3>
+                        <h3>3D SLAM with Spot</h3>
                         <p>Large-scale indoor data collection and 3D mapping using Spot, LiDAR, stereo cameras, and RTAB-Map.</p>
                         <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </div>
@@ -337,11 +334,11 @@
                 <div class="project-tile" tabindex="0" role="button" id="project23"
                     data-file="projects/p_hand.html" data-domains="featured manipulation control systems">
                     <div class="project-media">
-                        <img src="images/p_hand1.jpg" alt="Three-finger dexterous bionic hand prototype" loading="lazy" decoding="async">
+                        <img src="images/thumb-bionic-hand-v1.jpg" alt="Three-finger dexterous bionic hand prototype" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Manipulation</span><span>Research prototype</span></div>
-                        <h3>Bionic Hand</h3>
+                        <h3>Dexterous Bionic Hand</h3>
                         <p>A custom dexterous hand designed for in-hand manipulation and adaptive pick-and-place tasks.</p>
                         <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </div>
@@ -350,7 +347,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project15"
                     data-file="projects/p_major.html" data-domains="featured perception manipulation systems">
                     <div class="project-media">
-                        <img src="images/p_major01.png" alt="Autonomous mobile manipulator for vertical farming" loading="lazy" decoding="async">
+                        <img src="images/thumb-vertical-harvester-v1.jpg" alt="Autonomous mobile manipulator for vertical farming" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Robotic Systems</span><span>Working prototype</span></div>
@@ -370,11 +367,8 @@
 
                 <div class="project-tile" tabindex="0" role="button" id="project37"
                     data-file="projects/p_sfm.html" data-domains="perception">
-                    <div class="project-media project-media-placeholder">
-                        <div class="project-placeholder" role="img" aria-label="Placeholder for structure-from-motion project media">
-                            <i class="fa-solid fa-cubes" aria-hidden="true"></i>
-                            <span>Project media coming soon</span>
-                        </div>
+                    <div class="project-media">
+                        <img src="images/thumb-sfm-buddha-v3.jpg" alt="Buddha input image transitioning into its correctly oriented sparse 3D reconstruction" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Perception · 3D Vision</span><span>Custom pipeline</span></div>
@@ -387,7 +381,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project34"
                     data-file="projects/p_pincher.html" data-domains="planning manipulation">
                     <div class="project-media">
-                        <img src="images/p_pincher1.png" alt="Manipulator planning a collision-free path around obstacles" loading="lazy" decoding="async">
+                        <img src="images/thumb-obstacle-aware-v1.jpg" alt="Manipulator planning a collision-free path around obstacles" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Planning · Manipulation</span><span>Simulation</span></div>
@@ -398,13 +392,13 @@
                 </div>
 
                 <div class="project-tile" tabindex="0" role="button" id="project33"
-                    data-file="projects/p_dead.html" data-domains="perception systems">
+                    data-file="projects/p_dead.html" data-domains="systems">
                     <div class="project-media">
-                        <img src="images/p_dead1.png" alt="GPS and IMU trajectory estimation results" loading="lazy" decoding="async">
+                        <img src="images/thumb-dead-reckoning-v1.jpg" alt="Instrumented vehicle and GPS–IMU trajectory visualization" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Localization</span><span>ROS 2 field tests</span></div>
-                        <h3>Dead Reckoning</h3>
+                        <h3>GPS–IMU Dead Reckoning</h3>
                         <p>Vehicle-state estimation through GPS–IMU calibration, sensor characterization, filtering, and fusion.</p>
                         <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </div>
@@ -413,7 +407,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project32"
                     data-file="projects/p_npm.html" data-domains="manipulation control">
                     <div class="project-media">
-                        <img src="images/p_npm1.png" alt="Robot performing non-prehensile manipulation with MPPI" loading="lazy" decoding="async">
+                        <img src="images/thumb-non-prehensile-v1.jpg" alt="Robot performing non-prehensile manipulation with MPPI" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Manipulation · Control</span><span>Simulation</span></div>
@@ -426,7 +420,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project31"
                     data-file="projects/p_acrobot.html" data-domains="planning control">
                     <div class="project-media">
-                        <img src="images/p_acrobot1.png" alt="Acrobot swing-up and stabilization simulation" loading="lazy" decoding="async">
+                        <img src="images/thumb-acrobot-v1.jpg" alt="Acrobot swing-up and stabilization simulation" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Control</span><span>Nonlinear dynamics</span></div>
@@ -439,7 +433,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project22"
                     data-file="projects/p_mechanisms.html" data-domains="manipulation systems">
                     <div class="project-media">
-                        <img src="images/p_mechanism1.png" alt="Tendon-driven finger and robotic wrist mechanisms" loading="lazy" decoding="async">
+                        <img src="images/thumb-hand-mechanisms-v1.jpg" alt="Tendon-driven finger and robotic wrist mechanisms" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Manipulation</span><span>Mechanical design</span></div>
@@ -452,11 +446,11 @@
                 <div class="project-tile" tabindex="0" role="button" id="project21"
                     data-file="projects/p_manipulators.html" data-domains="manipulation control systems">
                     <div class="project-media">
-                        <img src="images/p_manipulator1.png" alt="Custom robotic manipulator with bionic hand end-effector" loading="lazy" decoding="async">
+                        <img src="images/thumb-bionic-hand-manipulator-v1.jpg" alt="Custom robotic manipulator with bionic hand end-effector" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Manipulation · Control</span><span>Custom hardware</span></div>
-                        <h3>Robotic Manipulator</h3>
+                        <h3>Bionic Hand Manipulator</h3>
                         <p>A custom arm integrating the bionic hand with PID and impedance control for adaptive manipulation.</p>
                         <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </div>
@@ -465,11 +459,11 @@
                 <div class="project-tile" tabindex="0" role="button" id="project14"
                     data-file="projects/p_rc21.html" data-domains="planning control systems">
                     <div class="project-media">
-                        <img src="images/p_robocon1.png" alt="Robocon 2021 arrow-throwing robot" loading="lazy" decoding="async">
+                        <img src="images/thumb-dual-robot-arrow-v1.jpg" alt="Robocon 2021 dual-robot arrow-throwing system" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Robotic Systems</span><span>Competition robot</span></div>
-                        <h3>Robocon 2021</h3>
+                        <h3>Dual-Robot Arrow-Throwing System</h3>
                         <p>A coordinated dual-robot system combining target detection, navigation, and pneumatic actuation.</p>
                         <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </div>
@@ -478,7 +472,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project13"
                     data-file="projects/p_bases.html" data-domains="control systems">
                     <div class="project-media">
-                        <img src="images/p_bases01.png" alt="Three custom holonomic mobile robot bases" loading="lazy" decoding="async">
+                        <img src="images/thumb-holonomic-bases-v1.jpg" alt="Three custom holonomic mobile robot bases" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Control · Systems</span><span>Custom hardware</span></div>
@@ -491,7 +485,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project12"
                     data-file="projects/p_bfr.html" data-domains="perception control systems">
                     <div class="project-media">
-                        <img src="images/p_bfr01.png" alt="Vision-guided ball-following mobile robot" loading="lazy" decoding="async">
+                        <img src="images/thumb-ball-following-v1.jpg" alt="Vision-guided ball-following mobile robot" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Perception · Control</span><span>Working prototype</span></div>
@@ -504,7 +498,7 @@
                 <div class="project-tile" tabindex="0" role="button" id="project11"
                     data-file="projects/p_crutch.html" data-domains="systems">
                     <div class="project-media">
-                        <img src="images/p_crutch01.png" alt="Multi-functional height-adjustable crutch prototype" loading="lazy" decoding="async">
+                        <img src="images/thumb-crutch-v1.jpg" alt="Multi-functional height-adjustable crutch prototype" loading="lazy" decoding="async">
                     </div>
                     <div class="project-card-body">
                         <div class="project-card-meta"><span>Robotic Systems</span><span>Product design</span></div>
@@ -534,11 +528,31 @@
                 <article class="research-record publication-record">
                     <div class="research-record-type">
                         <span class="research-index">01</span>
+                        <span class="research-kind">Preprint</span>
+                    </div>
+                    <div class="research-work">
+                        <h3>SCRAMPPI: Contingency-Constrained Planning using Hamilton-Jacobi Reachability</h3>
+                        <p>Raj Harshit Srirangam, Leonard Jung, <strong>Rohith Poola</strong>, Michael Everett</p>
+                    </div>
+                    <div class="research-record-details">
+                        <p>Submitted to IEEE ICRA · arXiv 2026</p>
+                        <div class="research-links">
+                            <a href="https://arxiv.org/abs/2603.26995" target="_blank" rel="noopener noreferrer">
+                                arXiv <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="#project36">Related project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="research-record publication-record">
+                    <div class="research-record-type">
+                        <span class="research-index">02</span>
                         <span class="research-kind">Publication</span>
                     </div>
                     <div class="research-work">
                         <h3>Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms</h3>
-                        <p>P. Rohith, M. Thejonath, A. Manoj, A. Sudheer</p>
+                        <p><strong>Rohith Poola</strong>, Thejonath Mamidi, Sai Manoj Akondi, A. P. Sudheer</p>
                     </div>
                     <div class="research-record-details">
                         <p>Advances in Robotics · 2023</p>
@@ -553,7 +567,7 @@
 
                 <article class="research-record patent-record">
                     <div class="research-record-type">
-                        <span class="research-index">02</span>
+                        <span class="research-index">03</span>
                         <span class="research-kind">Patent</span>
                     </div>
                     <div class="research-work">
@@ -570,7 +584,7 @@
 
                 <article class="research-record patent-record">
                     <div class="research-record-type">
-                        <span class="research-index">03</span>
+                        <span class="research-index">04</span>
                         <span class="research-kind">Patent</span>
                     </div>
                     <div class="research-work">

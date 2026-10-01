@@ -4,21 +4,18 @@
   <hr class="project-divider">
 
   <div class="project-images">
-    <div class="project-placeholder" role="img" aria-label="Placeholder for multi-robot SLAM field deployment media">
-      <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-      <span>Field deployment media coming soon</span>
-    </div>
+    <img src="images/bg_big2.jpg" alt="Heterogeneous robot fleet used to map two seven-floor buildings">
   </div>
 
   <div class="project-description">
     <p>
-      Designed a standardized payload integrating stereo cameras, Ouster LiDAR, VectorNav IMU, and u-blox RTK GPS, then deployed it
-      across Boston Dynamics Spot, Unitree Go2 and Go2-Wheeled robots, and AgileX UGVs.
+      Designed and deployed a standardized payload—stereo cameras, Ouster LiDAR, VectorNav IMU, and u-blox RTK GPS—across five
+      heterogeneous robots: Boston Dynamics Spot, Unitree Go2/Go2-Wheels, and AgileX UGVs.
     </p>
     <p>
-      Coordinated role-specific mapping across two seven-floor buildings—Spot on staircases, UGVs in laboratories, and Unitree
-      robots in corridors—and merged the segmented datasets into complete 3D reconstructions. Implemented FAST-LIO for
-      drift-resistant LiDAR–inertial mapping in large-scale, GPS-denied environments.
+      Built the C++/roscpp acquisition stack to synchronize four asynchronous streams on a common clock while sustaining full-rate
+      LiDAR and stereo capture without dropped frames. Used FAST-LIO to map two seven-floor GPS-denied buildings, then merged
+      per-robot segments into a drift-resistant 3D reconstruction.
     </p>
   </div>
 </div>
