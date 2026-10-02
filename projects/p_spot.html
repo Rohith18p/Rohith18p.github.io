@@ -1,35 +1,33 @@
 <link rel="stylesheet" href="css/projects.css">
 <div class="project-detail-content">
-  <h2 class="project-title">SLAM with SPOT</h2>
-  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <h2 class="project-title">3D SLAM with Spot</h2>
   <hr class="project-divider">
 
   <div class="project-images">
-    <!-- <img src="images/test.png" alt="Project Image 1"> -->
     <iframe
         class="project-video"
         src="https://www.youtube.com/embed/70BYekiPRKw?start=1&autoplay=1&mute=1&loop=1&playlist=70BYekiPRKw"
-        title="YouTube video"
+        title="Boston Dynamics Spot indoor data collection demonstration"
+        loading="lazy"
         frameborder="0"
         allowfullscreen
     ></iframe>
     <iframe
         class="project-video"
         src="https://www.youtube.com/embed/SYs8a-AFXHE?autoplay=1&mute=1&loop=1&playlist=SYs8a-AFXHE"
-        title="YouTube video"
+        title="RTAB-Map SLAM reconstruction generated from Spot sensor data"
+        loading="lazy"
         frameborder="0"
         allowfullscreen
     ></iframe>
-    <!-- <img src="images/p_major2.png" alt="Project Image 1">
-    <img src="images/p_major3.gif" alt="Project Image 2"> -->
   </div>
 
   <div class="project-description">
     <p>
-      This project involved large-scale indoor data collection using Boston Dynamics Spot, equipped with five stereo cameras, 
-      a Velodyne LiDAR, and Spot’s internal odometry. Data was recorded across multiple environments, with an external 
-      Jetson Orion Nano handling collection through Spot’s I/O interface. Remote operation was managed via SSH with custom 
-      ROS launch files. For mapping, RTAB-Map SLAM is implemented in ROS, generating detailed 3D point clouds from the collected datasets. 
+      Built an indoor 3D mapping pipeline around Boston Dynamics Spot using its five stereo cameras, a Velodyne LiDAR, and onboard
+      odometry. Configured a Jetson Orin Nano through Spot’s payload interface for data collection and remote SSH operation with
+      custom ROS launch files. Processed the recorded datasets with RTAB-Map in ROS to reconstruct detailed 3D point clouds across
+      multiple environments.
     </p>
   </div>
 </div>

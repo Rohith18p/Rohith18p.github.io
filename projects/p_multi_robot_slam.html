@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="css/projects.css">
+<div class="project-detail-content">
+  <h2 class="project-title">Multi-Robot SLAM for Large-Scale Building Mapping</h2>
+  <hr class="project-divider">
+
+  <div class="project-images">
+    <img src="images/bg_big2.jpg" alt="Heterogeneous robot fleet used to map two seven-floor buildings">
+  </div>
+
+  <div class="project-description">
+    <p>
+      Designed and deployed a standardized payload—stereo cameras, Ouster LiDAR, VectorNav IMU, and u-blox RTK GPS—across five
+      heterogeneous robots: Boston Dynamics Spot, Unitree Go2/Go2-Wheels, and AgileX UGVs.
+    </p>
+    <p>
+      Built the C++/roscpp acquisition stack to synchronize four asynchronous streams on a common clock while sustaining full-rate
+      LiDAR and stereo capture without dropped frames. Used FAST-LIO to map two seven-floor GPS-denied buildings, then merged
+      per-robot segments into a drift-resistant 3D reconstruction.
+    </p>
+  </div>
+</div>

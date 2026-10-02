@@ -3,383 +3,1145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohith Poola | Robotics Portfolio</title>
+    <title>Rohith Poola — Robotics Researcher</title>
+    <meta name="description" content="Rohith Poola — robotics researcher at Northeastern University working on risk-aware planning and safety-critical autonomy: contingency MPPI, SLAM, and real-world ROS2 deployment.">
+
+    <!-- Open Graph / social -->
+    <meta property="og:title" content="Rohith Poola — Robotics Researcher">
+    <meta property="og:description" content="Robotics researcher at Northeastern University working on risk-aware planning and safety-critical autonomy: contingency MPPI, SLAM, and real-world ROS2 deployment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rohith18p.github.io/">
+    <meta property="og:image" content="https://rohith18p.github.io/images/My_Pic.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="images/My_Pic.png">
+    <link rel="preload" as="image" href="images/bg_big2.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- ── NAVBAR ──────────────────────────────── -->
     <header id="navbar">
-        <nav class="nav-container">
+        <a href="#hero" class="nav-brand">RP</a>
+        <nav aria-label="Primary navigation">
             <ul class="nav-list">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience-section">Experience</a></li>
-            <li><a href="#projects-section">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience-section">Experience</a></li>
+                <li><a href="#projects-section">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills-section">Skills</a></li>
             </ul>
         </nav>
     </header>
-    <a href="https://rohith18p.github.io/#projects-section" target="_blank">Go to Projects</a>
-    <!-- HERO SECTION -->
+
+    <!-- ── HERO ────────────────────────────────── -->
     <section id="hero">
         <div class="hero-bg"></div>
-        <div class="profile-info">
-            <img src="images/My_Pic.png" alt="Rohith Profile Picture" class="profile-pic">
-            <!-- Optional name & tagline -->
-            <!--
-            <div class="intro-text">
-                <h1>Rohith Poola</h1>
-                <p>Robotics Engineer | Control & Perception</p>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-eyebrow">Robotics Researcher · Autonomy Engineer</p>
+                <h1 class="hero-name">Rohith Poola</h1>
+                <div class="hero-terminal-line">
+                    <span class="prompt">$</span>
+                    <span id="typed-text"></span><span class="cursor">|</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="hero-cta primary" href="#projects-section">
+                        Explore projects <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                    </a>
+                    <a class="hero-cta" href="data/Rohith_Resume_Gen.pdf" target="_blank" rel="noopener noreferrer">
+                        View résumé <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                    <div class="hero-socials" aria-label="Contact and professional profiles">
+                        <a href="mailto:poola.r@northeastern.edu" title="Email" aria-label="Email Rohith Poola">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Rohith Poola on LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/rohith18p" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Rohith Poola on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            -->
+
+            <div class="hero-image">
+                <img src="images/My_Pic_hero.jpg" alt="Rohith Poola with a Boston Dynamics Spot robot" class="profile-pic" width="600" height="720" fetchpriority="high" decoding="async">
+            </div>
         </div>
-        <div class="scroll-down">
-            <span>&#8595;</span>
-        </div>
+
+        <a href="#about" class="scroll-hint" aria-label="Scroll down">
+            <span class="scroll-line"></span>
+        </a>
     </section>
 
-   <!-- ABOUT ME SECTION -->
+    <!-- ── ABOUT ────────────────────────────────── -->
     <section id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <hr class="about-underline">
-                <hr class="section-divider">
-                <p>
-                    I’m a robotics researcher focused on developing autonomy stack that enable robots to act intelligently 
-                    and adaptively in the real world. My path into robotics began with building — mobile robots, manipulators, bionic hands, and competition-ready 
-                    platforms. These early experiences laid the foundation for deeper research into robot learning, real-time planning, SLAM, 
-                    and perception. Over the years, I’ve engineered systems that blend hardware and algorithms — from autonomous harvesters 
-                    in vertical farms to multi-robot SLAM deployments using Spot, AgileX, and Unitree robots.
-                    
-                </p><br>
-                <p>
-                    Currently, at the Autonomy and Intelligence Lab at Northeastern University, I work on risk-aware trajectory planning, 
-                    and safety guaranteed control strategies with contingency planning. My work emphasizes real-world deployment 
-                    and robustness under uncertainty, combining ROS2 and hardware-in-the-loop systems. My long-term vision is to 
-                    build robust, generalizable autonomy stacks that operate safely, intelligently, and 
-                    adaptively — from structured labs to chaotic real-world environments.
-                </p>
-            </div>
-            <!-- <div class="about-gif">
-                <div class="terminal">
-                    <span class="prompt">$</span><span id="typed-text"></span><span class="cursor">|</span>
-                </div>
-            </div> -->
-            <div class="about-gif">
-            <div class="terminal-wrapper">
-                <div class="terminal">
-                <span class="prompt">$</span><span id="typed-text"></span><span class="cursor">|</span>
-                </div>
-                <div class="contact-icons-inline">
-                <a href="mailto:poola.r@northeastern.edu" target="_blank" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/rohith18p" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://drive.google.com/file/d/1_MLck9owBeWnSa0E2mP3yk4duMXLLHDV/view?usp=drive_link" target="_blank" title="Resume">
-                    <i class="fas fa-file-alt"></i>
-                </a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
+        <div class="section-container">
+            <p class="section-eyebrow">01 — About</p>
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience-section" class="white-section">
-        <div class="experience-container">
-            <!-- LEFT SIDEBAR -->
-            <div class="experience-sidebar">
-                <div class="experience-icon-circle">
-                    <span class="experience-icon">&#9881;</span>
-                </div>
-                <h2>Experience</h2>
-            </div>
-
-            <!-- RIGHT EXPERIENCE CONTENT -->
-            <div class="experience-content">
-                <h3>Professional</h3>
-
-                <!-- PROFESSIONAL TILE -->
-                <div class="experience-tile" data-file="projects/cg.html">
-                    <div class="tile-logo">
-                        <img src="images/cg.png" alt="Capgemini Logo">
-                    </div>
-                    <div class="tile-details">
-                        <p><strong>Associate 2 Software Engineer</strong></p>
-                        <p>Capgemini – Stellantis</p>
-                        <p>Sep 2022 - Aug 2024</p>
-                    </div>
-                </div>
-                <br>
-                <h3>Research</h3>
-
-                <!-- RESEARCH TILE 1 -->
-                <div class="experience-tile" data-file="projects/nail.html">
-                    <div class="tile-logo">
-                        <img src="images/neu.png" alt="NU Logo">
-                    </div>
-                    <div class="tile-details">
-                        <p><strong>Research Assistant</strong></p>
-                        <p>Autonomy & Intelligence Lab</p>
-                        <p>Apr 2025 - Present</p>
-                    </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Building autonomy for the<br>uncertainty of the real world.</h2>
+                    <p class="about-lead">
+                        I'm a robotics researcher at Northeastern University's Autonomy &amp; Intelligence Lab, building
+                        systems that help robots plan and act safely when the world is only partially known. My current
+                        work spans risk-aware motion planning, contingency control, and learned traversability estimation
+                        for off-road autonomy.
+                    </p>
+                    <p>
+                        My work spans the full autonomy stack, from perception and state estimation to planning,
+                        control, and ROS 2 deployment. With a foundation in mechanical design, fabrication, and
+                        manipulation, I approach algorithms with the physical system in mind—sensor limitations,
+                        compute constraints, robot dynamics, and the demands of reliable hardware deployment.
+                    </p>
                 </div>
 
-                <!-- RESEARCH TILE 2 -->
-                <div class="experience-tile" data-file="projects/rrc.html">
-                    <div class="tile-logo">
-                        <img src="images/iiith.png" alt="IIITH Logo">
+                <div class="about-aside">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <span class="t-dot r"></span>
+                            <span class="t-dot y"></span>
+                            <span class="t-dot g"></span>
+                            <span class="terminal-title">profile.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="t-cmd">$ whoami</span>
+                            <span class="t-out"><span class="t-key">robotics_researcher</span></span>
+                            <span class="t-out">autonomy_engineer</span>
+                            <span class="t-blank"></span>
+                            <span class="t-cmd">$ focus --areas</span>
+                            <span class="t-out">→ risk_aware_planning</span>
+                            <span class="t-out">→ learned_traversability</span>
+                            <span class="t-out">→ robot_manipulation</span>
+                            <span class="t-blank"></span>
+                            <span class="t-cmd">$ stack --deployment</span>
+                            <span class="t-out">→ ros2 · jax · pytorch · cpp</span>
+                            <span class="t-out">→ spot · agilex · custom_robots</span>
+                            <span class="t-blank"></span>
+                            <span class="t-cmd">$ echo $AFFILIATION</span>
+                            <span class="t-out"><span class="t-key">NAIL @ Northeastern</span></span>
+                        </div>
                     </div>
-                    <div class="tile-details">
-                        <p><strong>Graduate Researcher (Part time)</strong></p>
-                        <p>Robotics Research Center</p>
-                        <p>May 2022 - Jul 2024</p>
-                    </div>
-                </div>
 
-                <!-- RESEARCH TILE 3 -->
-                <div class="experience-tile" data-file="projects/rig.html">
-                    <div class="tile-logo">
-                        <img src="images/nitc.png" alt="NITC Logo">
+                    <div class="about-actions">
+                        <a class="about-action primary" href="data/Rohith_Resume_Gen.pdf" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                            <span>View résumé</span>
+                        </a>
+                        <a class="about-action" href="mailto:poola.r@northeastern.edu">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>Email me</span>
+                        </a>
                     </div>
-                    <div class="tile-details">
-                        <p><strong>Under Graduate Researcher</strong></p>
-                        <p>Robotics Lab</p>
-                        <p>May 2019 - May 2022</p>
+                    <div class="about-profile-links" aria-label="Professional profiles">
+                        <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" rel="noopener noreferrer">
+                            LinkedIn <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/rohith18p" target="_blank" rel="noopener noreferrer">
+                            GitHub <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects-section" class="white-section">
-        <div class="projects-container">
+    <!-- ── EXPERIENCE ───────────────────────────── -->
+    <section id="experience-section">
+        <div class="section-container">
+            <p class="section-eyebrow">02 — Experience</p>
+            <h2 class="section-title">Where I've worked</h2>
 
-            <h2 class="projects-title">Projects</h2>
+            <div class="experience-board">
+                <div class="experience-lane research-lane">
+                    <div class="experience-lane-label">
+                        <span>Research</span>
+                    </div>
 
-            <!-- CATEGORY: M Sc -->
-            <div class="project-category">
-                <h3 class="project-category-title">M.Sc.</h3>
-                <hr class="project-subdivider">
-                <div class="project-grid">
-                    <div class="project-tile" id="project36" data-file="projects/p_cmppi.html">
-                        <p class="project-title">Contingency MPPI</p>
-                        <img src="images/p_cmppi1.png" alt="CMPPI Project">
+                    <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/nail.html">
+                        <span class="experience-date">Apr 2025 — Present</span>
+                        <div class="experience-card-main">
+                            <div class="org-logo-wrap org-logo-neu">
+                                <img src="images/neu.png" alt="Northeastern University" loading="lazy" decoding="async">
+                            </div>
+                            <div class="timeline-info">
+                                <h4>Research Assistant</h4>
+                                <p>Autonomy &amp; Intelligence Lab · Northeastern University</p>
+                                <span class="tag-chip">Risk-aware Planning</span>
+                                <span class="tag-chip">Safety Control</span>
+                                <span class="tag-chip">ROS2</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-tile" id="project35" data-file="projects/p_spot.html">
-                        <p class="project-title">SLAM with SPOT</p>
-                        <img src="images/p_spot1.png" alt="SPOT Project">
+
+                    <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/rrc.html">
+                        <span class="experience-date">May 2022 — Jul 2024</span>
+                        <div class="experience-card-main">
+                            <div class="org-logo-wrap org-logo-iiith">
+                                <img src="images/iiith.png" alt="IIIT Hyderabad" loading="lazy" decoding="async">
+                            </div>
+                            <div class="timeline-info">
+                                <h4>Graduate Researcher</h4>
+                                <p>Robotics Research Center · IIIT Hyderabad</p>
+                                <span class="tag-chip">Manipulation</span>
+                                <span class="tag-chip">Control</span>
+                                <span class="tag-chip">Imitation Learning</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-tile" id="project34" data-file="projects/p_pincher.html">
-                        <p class="project-title">Obstacle-Aware Manipulation</p>
-                        <img src="images/p_pincher1.png" alt="Pincher Project">
-                    </div>
-                    <div class="project-tile" id="project33" data-file="projects/p_dead.html">
-                        <p class="project-title">Dead Reckoning (GPS + IMU)</p>
-                        <img src="images/p_dead1.png" alt="Dead Reckoning">
-                    </div>
-                    <div class="project-tile" id="project32" data-file="projects/p_npm.html">
-                        <p class="project-title">Non-Prehensile Manipulation (MPPI + IssacGym)</p>
-                        <img src="images/p_npm1.png" alt="SPOT Project">
-                    </div>
-                    <div class="project-tile" id="project31" data-file="projects/p_acrobot.html">
-                        <p class="project-title">Acrobot Swing up Control</p>
-                        <img src="images/p_acrobot1.png" alt="Pincher Project">
+
+                    <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/rig.html">
+                        <span class="experience-date">May 2019 — May 2022</span>
+                        <div class="experience-card-main">
+                            <div class="org-logo-wrap org-logo-nitc">
+                                <img src="images/nitc.png" alt="NIT Calicut" loading="lazy" decoding="async">
+                            </div>
+                            <div class="timeline-info">
+                                <h4>Undergraduate Researcher</h4>
+                                <p>Robotics Lab · NIT Calicut</p>
+                                <span class="tag-chip">Mobile Robots</span>
+                                <span class="tag-chip">Manipulation</span>
+                                <span class="tag-chip">Robocon</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- CATEGORY: RA -->
-            <div class="project-category">
-                <h3 class="project-category-title">RA</h3>
-                <hr class="project-subdivider">
-                <div class="project-grid">
-                    <div class="project-tile" id="project23" data-file="projects/p_hand.html">
-                        <p class="project-title">Bionic Hand</p>
-                        <img src="images/p_hand1.jpg" alt="Bionic Hand">
-                    </div>
-                    <div class="project-tile" id="project22" data-file="projects/p_mechanisms.html">
-                        <p class="project-title">Mechanisms</p>
-                        <img src="images/p_mechanism1.png" alt="Mechanisms">
-                    </div>
-                    <div class="project-tile" id="project21" data-file="projects/p_manipulators.html">
-                        <p class="project-title">Manipulator</p>
-                        <img src="images/p_manipulator1.png" alt="Manipulator">
-                    </div>
+                <div class="experience-spine" aria-hidden="true">
+                    <svg viewBox="0 0 88 1000" preserveAspectRatio="none">
+                        <path class="spine-path" d="M44 100 C18 150 18 250 44 300 S70 450 44 500 S18 650 44 700 S70 850 44 900"></path>
+                        <circle cx="44" cy="100" r="5"></circle>
+                        <circle cx="44" cy="300" r="5"></circle>
+                        <circle cx="44" cy="500" r="5"></circle>
+                        <circle cx="44" cy="700" r="5"></circle>
+                        <circle cx="44" cy="900" r="5"></circle>
+                    </svg>
                 </div>
-            </div>
 
-            <!-- CATEGORY: UG -->
-            <div class="project-category">
-                <h3 class="project-category-title">UG</h3>
-                <hr class="project-subdivider">
-                <div class="project-grid">
-                    <div class="project-tile" id="project15" data-file="projects/p_major.html">
-                        <p class="project-title">Vertical Farm Harvester</p>
-                        <img src="images/p_major01.png" alt="Farm Project">
+                <div class="experience-lane industry-lane">
+                    <div class="experience-lane-label">
+                        <span>Industry</span>
                     </div>
-                    <div class="project-tile" id="project14" data-file="projects/p_rc21.html">
-                        <p class="project-title">Robocon 2021</p>
-                        <img src="images/p_robocon1.png" alt="RC21">
+
+                    <div class="experience-card experience-tile featured-experience" tabindex="0" role="button" data-file="projects/medtronic.html">
+                        <span class="experience-date">Jan 2026 — Aug 2026</span>
+                        <div class="experience-card-main">
+                            <div class="org-logo-wrap org-logo-medtronic">
+                                <img src="images/medtronic-logo.svg" alt="Medtronic" loading="lazy" decoding="async">
+                            </div>
+                            <div class="timeline-info">
+                                <h4>Robotics Software Engineer</h4>
+                                <p>Medtronic</p>
+                                <span class="tag-chip">Surgical Robotics</span>
+                                <span class="tag-chip">Controls</span>
+                                <span class="tag-chip">Robot Learning</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-tile" id="project13" data-file="projects/p_bases.html">
-                        <p class="project-title">Holonomic Mobile Bases</p>
-                        <img src="images/p_bases01.png" alt="Bases">
-                    </div>
-                    <div class="project-tile" id="project12" data-file="projects/p_bfr.html">
-                        <p class="project-title">Ball Following Robot</p>
-                        <img src="images/p_bfr01.png" alt="BFR">
-                    </div>
-                    <div class="project-tile" id="project11" data-file="projects/p_crutch.html">
-                        <p class="project-title">Multi-Functional Crutch</p>
-                        <img src="images/p_crutch01.png" alt="Crutch">
+
+                    <div class="experience-card experience-tile" tabindex="0" role="button" data-file="projects/cg.html">
+                        <span class="experience-date">Sep 2022 — Aug 2024</span>
+                        <div class="experience-card-main">
+                            <div class="org-logo-wrap org-logo-capgemini">
+                                <img src="images/cg.png" alt="Capgemini" loading="lazy" decoding="async">
+                            </div>
+                            <div class="timeline-info">
+                                <h4>Associate Software Engineer</h4>
+                                <p>Capgemini – Stellantis</p>
+                                <span class="tag-chip">Embedded Systems</span>
+                                <span class="tag-chip">Automotive</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ── PROJECTS ──────────────────────────────── -->
+    <section id="projects-section">
+        <div class="section-container">
+            <p class="section-eyebrow">03 — Projects</p>
+            <h2 class="section-title">Selected work</h2>
+
+            <div class="project-filter-bar" role="toolbar" aria-label="Filter projects by robotics domain">
+                <button class="project-filter is-active" type="button" data-filter="featured" aria-pressed="true"
+                    data-description="Flagship work across safe autonomy, perception, manipulation, and integrated robotic systems.">Featured</button>
+                <button class="project-filter" type="button" data-filter="manipulation" aria-pressed="false"
+                    data-description="Planning and hardware for robots that physically interact with the world.">Manipulation</button>
+                <button class="project-filter" type="button" data-filter="planning" aria-pressed="false"
+                    data-description="Trajectory generation, collision avoidance, and decision-making under uncertainty.">Planning</button>
+                <button class="project-filter" type="button" data-filter="perception" aria-pressed="false"
+                    data-description="Mapping, localization, sensing, and learning-based scene understanding.">Perception &amp; Learning</button>
+                <button class="project-filter" type="button" data-filter="control" aria-pressed="false"
+                    data-description="Model-based and feedback control across dynamic robotic systems.">Control</button>
+                <button class="project-filter" type="button" data-filter="systems" aria-pressed="false"
+                    data-description="End-to-end robots spanning hardware, software, sensing, and deployment.">Robotic Systems</button>
+            </div>
+
+            <div class="project-view-intro">
+                <p class="project-view-label" id="project-view-label">Featured projects</p>
+                <p class="project-view-description" id="project-view-description" aria-live="polite">Flagship work across safe autonomy, perception, manipulation, and integrated robotic systems.</p>
+            </div>
+
+            <div class="project-grid project-selected-grid" id="project-selected-grid">
+                <div class="project-tile project-lead" tabindex="0" role="button" id="project36"
+                    data-file="projects/p_cmppi.html" data-domains="featured planning control">
+                    <div class="project-media">
+                        <img src="images/thumb-cmppi-v2.jpg" alt="Contingency trajectories generated by the MPPI planner" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Planning · Control</span><span>Hardware + simulation</span></div>
+                        <h3>Contingency MPPI</h3>
+                        <p>Risk-aware motion planning with nominal and backup trajectories for safe navigation under uncertainty.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project38"
+                    data-file="projects/p_multi_robot_slam.html" data-domains="featured perception systems">
+                    <div class="project-media">
+                        <img src="images/thumb-multi-robot-slam-v1.jpg" alt="Heterogeneous robot fleet used for large-scale multi-robot mapping" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Perception · Systems</span><span>5 robots · 14 floors</span></div>
+                        <h3>Multi-Robot SLAM</h3>
+                        <p>Synchronized four sensor streams across five heterogeneous robots to map two seven-floor GPS-denied buildings with FAST-LIO.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project35"
+                    data-file="projects/p_spot.html" data-domains="featured perception systems">
+                    <div class="project-media">
+                        <img src="images/thumb-spot-v1.jpg" alt="Boston Dynamics Spot used for indoor mapping" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Perception</span><span>Robot deployment</span></div>
+                        <h3>3D SLAM with Spot</h3>
+                        <p>Large-scale indoor data collection and 3D mapping using Spot, LiDAR, stereo cameras, and RTAB-Map.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project23"
+                    data-file="projects/p_hand.html" data-domains="featured manipulation control systems">
+                    <div class="project-media">
+                        <img src="images/thumb-bionic-hand-v1.jpg" alt="Three-finger dexterous bionic hand prototype" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Manipulation</span><span>Research prototype</span></div>
+                        <h3>Dexterous Bionic Hand</h3>
+                        <p>A custom dexterous hand designed for in-hand manipulation and adaptive pick-and-place tasks.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project15"
+                    data-file="projects/p_major.html" data-domains="featured perception manipulation systems">
+                    <div class="project-media">
+                        <img src="images/thumb-vertical-harvester-v1.jpg" alt="Autonomous mobile manipulator for vertical farming" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Robotic Systems</span><span>Working prototype</span></div>
+                        <h3>Vertical Farm Harvester</h3>
+                        <p>An autonomous mobile manipulator combining crop perception, mobility, gripping, and precision cutting.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="project-collection-divider">
+                <span>More projects</span>
+            </div>
+
+            <div class="project-grid project-archive-grid" id="project-archive-grid">
+
+                <div class="project-tile" tabindex="0" role="button" id="project37"
+                    data-file="projects/p_sfm.html" data-domains="perception">
+                    <div class="project-media">
+                        <img src="images/thumb-sfm-buddha-v3.jpg" alt="Buddha input image transitioning into its correctly oriented sparse 3D reconstruction" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Perception · 3D Vision</span><span>Custom pipeline</span></div>
+                        <h3>Structure from Motion from Scratch</h3>
+                        <p>An end-to-end reconstruction pipeline spanning feature extraction and matching, robust pose estimation, point-cloud generation, and bundle adjustment.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project34"
+                    data-file="projects/p_pincher.html" data-domains="planning manipulation">
+                    <div class="project-media">
+                        <img src="images/thumb-obstacle-aware-v1.jpg" alt="Manipulator planning a collision-free path around obstacles" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Planning · Manipulation</span><span>Simulation</span></div>
+                        <h3>Obstacle-Aware Manipulation</h3>
+                        <p>Collision-free manipulator trajectories using inverse kinematics, geometric avoidance, and A* search.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project33"
+                    data-file="projects/p_dead.html" data-domains="systems">
+                    <div class="project-media">
+                        <img src="images/thumb-dead-reckoning-v1.jpg" alt="Instrumented vehicle and GPS–IMU trajectory visualization" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Localization</span><span>ROS 2 field tests</span></div>
+                        <h3>GPS–IMU Dead Reckoning</h3>
+                        <p>Vehicle-state estimation through GPS–IMU calibration, sensor characterization, filtering, and fusion.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project32"
+                    data-file="projects/p_npm.html" data-domains="manipulation control">
+                    <div class="project-media">
+                        <img src="images/thumb-non-prehensile-v1.jpg" alt="Robot performing non-prehensile manipulation with MPPI" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Manipulation · Control</span><span>Simulation</span></div>
+                        <h3>Non-Prehensile Manipulation</h3>
+                        <p>Simulator-in-the-loop MPPI for sampling-based control of complex, high-DOF manipulation tasks.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project31"
+                    data-file="projects/p_acrobot.html" data-domains="planning control">
+                    <div class="project-media">
+                        <img src="images/thumb-acrobot-v1.jpg" alt="Acrobot swing-up and stabilization simulation" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Control</span><span>Nonlinear dynamics</span></div>
+                        <h3>Acrobot Swing-Up Control</h3>
+                        <p>Energy shaping and LQR stabilization connected through a switching controller for an underactuated system.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project22"
+                    data-file="projects/p_mechanisms.html" data-domains="manipulation systems">
+                    <div class="project-media">
+                        <img src="images/thumb-hand-mechanisms-v1.jpg" alt="Tendon-driven finger and robotic wrist mechanisms" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Manipulation</span><span>Mechanical design</span></div>
+                        <h3>Dexterous Mechanisms</h3>
+                        <p>Human-inspired tendon-driven fingers and a wrist mechanism designed for compact, expressive motion.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project21"
+                    data-file="projects/p_manipulators.html" data-domains="manipulation control systems">
+                    <div class="project-media">
+                        <img src="images/thumb-bionic-hand-manipulator-v1.jpg" alt="Custom robotic manipulator with bionic hand end-effector" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Manipulation · Control</span><span>Custom hardware</span></div>
+                        <h3>Bionic Hand Manipulator</h3>
+                        <p>A custom arm integrating the bionic hand with PID and impedance control for adaptive manipulation.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project14"
+                    data-file="projects/p_rc21.html" data-domains="planning control systems">
+                    <div class="project-media">
+                        <img src="images/thumb-dual-robot-arrow-v1.jpg" alt="Robocon 2021 dual-robot arrow-throwing system" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Robotic Systems</span><span>Competition robot</span></div>
+                        <h3>Dual-Robot Arrow-Throwing System</h3>
+                        <p>A coordinated dual-robot system combining target detection, navigation, and pneumatic actuation.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project13"
+                    data-file="projects/p_bases.html" data-domains="control systems">
+                    <div class="project-media">
+                        <img src="images/thumb-holonomic-bases-v1.jpg" alt="Three custom holonomic mobile robot bases" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Control · Systems</span><span>Custom hardware</span></div>
+                        <h3>Holonomic Mobile Bases</h3>
+                        <p>Three omnidirectional platforms with encoder feedback and PID control for responsive planar motion.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project12"
+                    data-file="projects/p_bfr.html" data-domains="perception control systems">
+                    <div class="project-media">
+                        <img src="images/thumb-ball-following-v1.jpg" alt="Vision-guided ball-following mobile robot" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Perception · Control</span><span>Working prototype</span></div>
+                        <h3>Ball-Following Robot</h3>
+                        <p>A compact vision-guided robot using contour detection and Wi-Fi motor control for autonomous tracking.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-tile" tabindex="0" role="button" id="project11"
+                    data-file="projects/p_crutch.html" data-domains="systems">
+                    <div class="project-media">
+                        <img src="images/thumb-crutch-v1.jpg" alt="Multi-functional height-adjustable crutch prototype" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta"><span>Robotic Systems</span><span>Product design</span></div>
+                        <h3>Multi-Functional Crutch</h3>
+                        <p>An assistive device combining automatic height adjustment, shock absorption, and stability mechanisms.</p>
+                        <span class="project-open" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── PUBLICATIONS ──────────────────────────── -->
     <section id="publications">
-        <h1>Publications</h1>
+        <div class="section-container">
+            <p class="section-eyebrow">04 — Research &amp; IP</p>
+            <h2 class="section-title">Publications &amp; patents</h2>
 
-        <div class="subsection">
-            <h2>Patents</h2>
-            <ul>
-            <li class="publication-item">
-                <span class="icon"><i class="fas fa-scroll"></i></span>
-                <span class="text">
-                Robotic System for Harvesting Crops in Vertical Farms and Method Thereof  
-                <br><small>(Patent Application Number: 202441084733)</small>
-                </span>
-            </li>
-            <li class="publication-item">
-                <span class="icon"><i class="fas fa-scroll"></i></span>
-                <span class="text">
-                A Multi-Functional Crutch with Automatic Height Adjustment, Shock Absorption, and Alert Functions
-                </span>
-            </li>
-            </ul>
-        </div>
+            <div class="research-registry">
+                <div class="research-registry-head" aria-hidden="true">
+                    <span>Type</span>
+                    <span>Research output</span>
+                    <span>Record / links</span>
+                </div>
 
-        <div class="subsection">
-            <h2>Research Papers</h2>
-            <ul>
-            <li class="publication-item">
-                <span class="icon"><i class="fas fa-file-alt"></i></span>
-                <span class="text">
-                P. Rohith, M. Thejonath, A. Manoj, A. Sudheer —  
-                <em>“Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms.”</em>
-                <br>
-                <small>In: AIR 2023 (Advances in Robotics)</small>
-                <a href="https://doi.org/10.1145/3610419.3610451" target="_blank">https://doi.org/10.1145/3610419.3610451</a>
-                </span>
-            </li>
-            </ul>
+                <article class="research-record publication-record">
+                    <div class="research-record-type">
+                        <span class="research-index">01</span>
+                        <span class="research-kind">Preprint</span>
+                    </div>
+                    <div class="research-work">
+                        <h3>SCRAMPPI: Contingency-Constrained Planning using Hamilton-Jacobi Reachability</h3>
+                        <p>Raj Harshit Srirangam, Leonard Jung, <strong>Rohith Poola</strong>, Michael Everett</p>
+                    </div>
+                    <div class="research-record-details">
+                        <p>Submitted to IEEE ICRA · arXiv 2026</p>
+                        <div class="research-links">
+                            <a href="https://arxiv.org/abs/2603.26995" target="_blank" rel="noopener noreferrer">
+                                arXiv <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="#project36">Related project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="research-record publication-record">
+                    <div class="research-record-type">
+                        <span class="research-index">02</span>
+                        <span class="research-kind">Publication</span>
+                    </div>
+                    <div class="research-work">
+                        <h3>Mobile Robotic Manipulator Based Harvesting Inside Vertical Farms</h3>
+                        <p><strong>Rohith Poola</strong>, Thejonath Mamidi, Sai Manoj Akondi, A. P. Sudheer</p>
+                    </div>
+                    <div class="research-record-details">
+                        <p>Advances in Robotics · 2023</p>
+                        <div class="research-links">
+                            <a href="https://doi.org/10.1145/3610419.3610451" target="_blank" rel="noopener noreferrer">
+                                DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="#project15">Related project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="research-record patent-record">
+                    <div class="research-record-type">
+                        <span class="research-index">03</span>
+                        <span class="research-kind">Patent</span>
+                    </div>
+                    <div class="research-work">
+                        <h3>Robotic System for Harvesting Crops in Vertical Farms and Method Thereof</h3>
+                        <p>Vertical farming robotics</p>
+                    </div>
+                    <div class="research-record-details">
+                        <p>Application No. 202441084733</p>
+                        <div class="research-links">
+                            <a href="#project15">Related project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="research-record patent-record">
+                    <div class="research-record-type">
+                        <span class="research-index">04</span>
+                        <span class="research-kind">Patent</span>
+                    </div>
+                    <div class="research-work">
+                        <h3>A Multi-Functional Crutch with Automatic Height Adjustment, Shock Absorption, and Alert Functions</h3>
+                        <p>Assistive technology</p>
+                    </div>
+                    <div class="research-record-details">
+                        <div class="research-links">
+                            <a href="#project11">Related project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section id="skills-section" class="dark-section">
-        <div class="section-heading">
-            <h2>My Skills</h2>
-            <p>A short list of valuable skills I possess.</p>
-            <hr class="section-underline">
-        </div>
+    <!-- ── SKILLS ────────────────────────────────── -->
+    <section id="skills-section">
+        <div class="section-container">
+            <p class="section-eyebrow">05 — Capabilities</p>
+            <h2 class="section-title">Robotics across the stack</h2>
 
-        <div class="skills-grid">
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-code"></i></div>
-                <h3>Programming Languages</h3>
-                <p>Python, C++, Matlab, bash</p>
+            <div class="capability-grid">
+                <article class="capability-card">
+                    <div class="capability-heading"><span>01</span><h3>Motion Planning &amp; Autonomy</h3></div>
+                    <p>Contingency planning · MPPI · A* · Collision avoidance</p>
+                    <a class="capability-related" href="#project36">
+                        <span>Applied in</span> Contingency MPPI <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="capability-card">
+                    <div class="capability-heading"><span>02</span><h3>Perception &amp; State Estimation</h3></div>
+                    <p>SLAM · Sensor fusion · Calibration · Localization</p>
+                    <a class="capability-related" href="#project35">
+                        <span>Applied in</span> SLAM with Spot <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="capability-card">
+                    <div class="capability-heading"><span>03</span><h3>Manipulation</h3></div>
+                    <p>Dexterous hands · In-hand manipulation · Non-prehensile control</p>
+                    <a class="capability-related" href="#project23">
+                        <span>Applied in</span> Dexterous Bionic Hand <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="capability-card">
+                    <div class="capability-heading"><span>04</span><h3>Control</h3></div>
+                    <p>LQR · PID · Impedance control · Energy shaping</p>
+                    <a class="capability-related" href="#project31">
+                        <span>Applied in</span> Acrobot Swing-Up <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="capability-card">
+                    <div class="capability-heading"><span>05</span><h3>Robot Learning</h3></div>
+                    <p>Imitation learning (behavior cloning) · ACT / π0.5 VLA · Learned traversability</p>
+                    <a class="capability-related" href="#experience-section">
+                        <span>Current research</span> Off-road autonomy <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="capability-card">
+                    <div class="capability-heading"><span>06</span><h3>Robot Systems &amp; Deployment</h3></div>
+                    <p>ROS 2 deployment · Sensor integration · Embedded compute · Hardware validation</p>
+                    <a class="capability-related" href="#project15">
+                        <span>Applied in</span> Vertical Farm Harvester <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
             </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Simulation</h3>
-                <p>Gazebo, PyBullet, Isaac-Sim, Isaac-Lab</p>
+
+            <div class="toolchain-heading">
+                <span>Technical toolchain</span>
             </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fa-solid fa-file-code"></i></div>
-                <h3>Software / General Tools</h3>
-                <p>ROS2, Git, Docker, PyTorch, TensorFlow</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-                <h3>Sensors and Hardware</h3>
-                <p>LiDAR, Stereo Cameras, RTK GPS, IMU, Encoders, NVIDIA-Jetson, Raspberry-Pi</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-drafting-compass"></i></div>
-                <h3>CAD</h3>
-                <p>SolidWorks, Fusion 360, Onshape</p>
-            </div>
-            <div class="skill-tile">
-                <div class="skill-icon"><i class="fas fa-microscope"></i></div>
-                <h3>Manufacturing</h3>
-                <p>3D Printing (FDM, SLA, SLS), CNC Machining, Laser Cutting</p>
+
+            <div class="toolchain-grid">
+                <div class="tool-group">
+                    <h3>Code &amp; workflow</h3>
+                    <p>Python · C++ · MATLAB · Bash · Git · Docker</p>
+                </div>
+                <div class="tool-group">
+                    <h3>Robotics &amp; ML</h3>
+                    <p>ROS 2 · PyTorch · TensorFlow</p>
+                </div>
+                <div class="tool-group">
+                    <h3>Simulation</h3>
+                    <p>Gazebo · PyBullet · Isaac Sim · Isaac Lab</p>
+                </div>
+                <div class="tool-group">
+                    <h3>Sensing &amp; compute</h3>
+                    <p>LiDAR · Stereo cameras · RTK GPS · IMU · NVIDIA Jetson · Raspberry Pi</p>
+                </div>
+                <div class="tool-group">
+                    <h3>Design &amp; build</h3>
+                    <p>SolidWorks · Fusion 360 · Onshape · FDM / SLA / SLS · CNC · Laser cutting</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <br><br><br>
+    <!-- ── CONTACT ───────────────────────────────── -->
+    <section id="contact-section">
+        <div class="section-container">
+            <p class="section-eyebrow">06 — Contact</p>
 
-    <!-- POPUP MODAL WRAPPER -->
-    <div id="popup-overlay">
-        <div id="popup-modal">
-            <span id="popup-close">&times;</span>
-            <div id="popup-content">
-                <!-- Loaded content goes here -->
+            <div class="contact-layout">
+                <div class="contact-statement">
+                    <h2>Let’s build robots that<br>work in the real world—and<br><span>revolutionize how we live.</span></h2>
+                </div>
+
+                <div class="contact-details">
+                    <p>
+                        I’m interested in robotics and autonomy opportunities where planning, learning,
+                        control, and hardware must work together as one reliable system.
+                    </p>
+
+                    <div class="contact-actions">
+                        <a class="contact-action primary" href="mailto:poola.r@northeastern.edu">
+                            Email me <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a class="contact-action" href="data/Rohith_Resume_Gen.pdf" target="_blank" rel="noopener noreferrer">
+                            View résumé <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact-profiles" aria-label="Professional profiles">
+                        <a href="https://www.linkedin.com/in/rohith-poola" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/rohith18p" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────────── -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <a class="footer-name" href="#hero">Rohith Poola</a>
+            <div class="footer-meta">
+                <span class="footer-copy">© <span id="footer-year"></span></span>
+                <a class="footer-top" href="#hero">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── MODAL ─────────────────────────────────── -->
+    <div id="popup-overlay" aria-hidden="true">
+        <div id="popup-modal" role="dialog" aria-modal="true" aria-label="Project or experience details" tabindex="-1">
+            <button id="popup-close" aria-label="Close">&times;</button>
+            <div id="popup-content"></div>
         </div>
     </div>
+
     <script src="js/main.js"></script>
-
     <script>
-        const textArray = [
-        " Hi !!",
-        " I am <strong>Rohith Poola. </strong>",
-        " Welcome to my Website 👋🏻"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingDelay = 100;
-        const erasingDelay = 100;
-        const newTextDelay = 300;
-        const typedText = document.getElementById("typed-text");
+        // ══════════════════════════════════════════════════
+        //  SPACE CANVAS — stars · nebulae · Milky Way
+        //                 planets · galaxy · meteors
+        // ══════════════════════════════════════════════════
+        (function () {
+            const c = document.createElement('canvas');
+            c.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
+            document.body.insertBefore(c, document.body.firstChild);
+            const ctx = c.getContext('2d');
 
-        function type() {
-            const currentText = textArray[textIndex];
+            // Logical (CSS-pixel) size. The backing store is W/H * dpr;
+            // everything below draws in these logical units.
+            let W = innerWidth, H = innerHeight;
 
-            if (!isDeleting) {
-                typedText.innerHTML = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                if (charIndex < currentText.length) {
-                    setTimeout(type, typingDelay);
-                } else {
-                    isDeleting = true;
-                    setTimeout(type, newTextDelay);
-                }
-            } else {
-                typedText.innerHTML = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                if (charIndex > 0) {
-                    setTimeout(type, erasingDelay);
-                } else {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % textArray.length;
-                    setTimeout(type, typingDelay);
+            const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+            // ── Star pool ────────────────────────────────────────
+            const S = [];
+
+            // ── Nebula blobs — high opacity so they bleed through
+            //    the frosted-glass sections
+            const nebulae = [
+                { px:0.80, py:0.22, r:0.42, rgb:[0,210,255],  a:0.38, sp:0.00028, ph:0.00 },
+                { px:0.07, py:0.60, r:0.34, rgb:[0,118,215],  a:0.32, sp:0.00021, ph:2.10 },
+                { px:0.52, py:0.87, r:0.36, rgb:[0,192,188],  a:0.27, sp:0.00024, ph:4.20 },
+                { px:0.26, py:0.07, r:0.28, rgb:[75,162,255], a:0.34, sp:0.00033, ph:1.05 },
+                { px:0.65, py:0.52, r:0.28, rgb:[0,168,232],  a:0.24, sp:0.00018, ph:3.30 },
+            ];
+
+            // ── Planets ──────────────────────────────────────────
+            const planets = [
+                { px:0.83, py:0.20, r:18, inner:[0,55,100],  outer:[0,152,222], ring:true,  rScale:0.30, rW:6,  sp:0.00018, ph:0.00 },
+                { px:0.08, py:0.74, r:12, inner:[0,38,92],   outer:[0,132,202], ring:false,               sp:0.00024, ph:2.80 },
+                { px:0.62, py:0.42, r: 8, inner:[18,78,132], outer:[0,198,240], ring:false,               sp:0.00013, ph:1.40 },
+            ];
+
+            // ── Galaxy cluster ───────────────────────────────────
+            const GAL = { px:0.17, py:0.46, arms:2, maxR:80, sp:0.000082 };
+            const gStars = [];
+            function buildGalaxy() {
+                gStars.length = 0;
+                for (let i = 0; i < 90; i++) {
+                    const arm = (i % GAL.arms) * Math.PI;
+                    const d   = Math.pow(Math.random(), 0.55) * GAL.maxR;
+                    const ang = arm + d * 0.045 + (Math.random() - 0.5) * 0.85;
+                    gStars.push({ d, ang, r: Math.random() * 0.65 + 0.10, o: Math.random() * 0.22 + 0.05 });
                 }
             }
+
+            // ── Meteor ───────────────────────────────────────────
+            let meteor = null, meteorCd = 1200;
+
+            // ── Init / resize ────────────────────────────────────
+            //  Size the backing store to devicePixelRatio so sub-pixel
+            //  stars stay crisp on retina, but keep the CSS box at 100%.
+            //  dpr is capped at 2 — a 3x phone would otherwise paint 9x
+            //  the pixels for full-screen gradients every frame.
+            function resizeCanvas() {
+                const dpr = Math.min(devicePixelRatio || 1, 2);
+                W = innerWidth; H = innerHeight;
+                c.width  = Math.round(W * dpr);
+                c.height = Math.round(H * dpr);
+                c.style.width = '100%'; c.style.height = '100%';
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.scale(dpr, dpr);
+            }
+
+            function init() {
+                resizeCanvas();
+                S.length = 0;
+                const mwAngle = -Math.PI * 0.18;
+                const mwCos = Math.cos(mwAngle), mwSin = Math.sin(mwAngle);
+
+                // Regular stars (360)
+                for (let i = 0; i < 360; i++) {
+                    const h = Math.random();
+                    S.push({
+                        x:    Math.random() * W,
+                        y:    Math.random() * H,
+                        r:    Math.random() * 1.0 + 0.12,
+                        base: Math.random() * 0.55 + 0.10,
+                        sp:   (Math.random() * 1.6 + 0.4) * 0.00030,
+                        ph:   Math.random() * 6.28,
+                        col:  h > 0.88 ? '158,185,255' : h > 0.70 ? '100,220,255' : '215,228,248',
+                        hero: false
+                    });
+                }
+
+                // Milky Way band — denser faint stars (110) along diagonal
+                for (let i = 0; i < 110; i++) {
+                    const along  = (Math.random() - 0.5) * 1.5;
+                    const across = (Math.random() - 0.5) * 0.18;
+                    const bx = along * mwCos - across * mwSin + 0.5;
+                    const by = along * mwSin + across * mwCos + 0.5;
+                    S.push({
+                        x:    bx * W,
+                        y:    by * H,
+                        r:    Math.random() * 0.55 + 0.08,
+                        base: Math.random() * 0.28 + 0.06,
+                        sp:   (Math.random() * 1.0 + 0.3) * 0.00026,
+                        ph:   Math.random() * 6.28,
+                        col:  '200,218,255',
+                        hero: false
+                    });
+                }
+
+                // Hero stars — bright prominent points (7) with diffraction spikes
+                for (let i = 0; i < 7; i++) {
+                    S.push({
+                        x:    Math.random() * W,
+                        y:    Math.random() * H,
+                        r:    1.6 + Math.random() * 0.9,
+                        base: 0.55 + Math.random() * 0.30,
+                        sp:   (Math.random() * 0.7 + 0.2) * 0.00028,
+                        ph:   Math.random() * 6.28,
+                        col:  '230,242,255',
+                        hero: true
+                    });
+                }
+
+                buildGalaxy();
+            }
+
+            // ── Deep-space background (not flat black) ───────────
+            function drawBg() {
+                const bg = ctx.createRadialGradient(
+                    W * 0.45, H * 0.42, 0,
+                    W * 0.45, H * 0.42, W * 0.85);
+                bg.addColorStop(0,   '#050c1e');
+                bg.addColorStop(0.5, '#030810');
+                bg.addColorStop(1,   '#020508');
+                ctx.fillStyle = bg;
+                ctx.fillRect(0, 0, W, H);
+            }
+
+            // ── Milky Way diagonal band ───────────────────────────
+            function drawMilkyWay(t) {
+                const pulse = 0.88 + 0.12 * Math.sin(t * 0.00016 * 60);
+                ctx.save();
+                ctx.translate(W * 0.5, H * 0.5);
+                ctx.rotate(-Math.PI * 0.18);
+                const bandWidth = W * 1.6;
+                const bandHeight = Math.min(W, H) * 0.26;
+                const grd = ctx.createLinearGradient(0, -bandHeight * 0.5, 0, bandHeight * 0.5);
+                grd.addColorStop(0,    'rgba(0,0,0,0)');
+                grd.addColorStop(0.22, `rgba(18,52,145,${0.06 * pulse})`);
+                grd.addColorStop(0.42, `rgba(38,85,185,${0.11 * pulse})`);
+                grd.addColorStop(0.50, `rgba(52,102,200,${0.15 * pulse})`);
+                grd.addColorStop(0.58, `rgba(38,85,185,${0.11 * pulse})`);
+                grd.addColorStop(0.78, `rgba(18,52,145,${0.06 * pulse})`);
+                grd.addColorStop(1,    'rgba(0,0,0,0)');
+                ctx.fillStyle = grd;
+                ctx.fillRect(-bandWidth * 0.5, -bandHeight * 0.5, bandWidth, bandHeight);
+                ctx.restore();
+            }
+
+            // ── Nebula blob ───────────────────────────────────────
+            function drawNebula(n, t) {
+                const x = n.px * W, y = n.py * H;
+                const radius = n.r * Math.min(W, H);
+                const pulse  = 0.68 + 0.32 * Math.sin(n.ph + t * n.sp * 60);
+                const a = n.a * pulse;
+                const [r, g, b] = n.rgb;
+                const grd = ctx.createRadialGradient(x, y, 0, x, y, radius);
+                grd.addColorStop(0,   `rgba(${r},${g},${b},${a.toFixed(3)})`);
+                grd.addColorStop(0.35,`rgba(${r},${g},${b},${(a*0.55).toFixed(3)})`);
+                grd.addColorStop(0.70,`rgba(${r},${g},${b},${(a*0.18).toFixed(3)})`);
+                grd.addColorStop(1,   'rgba(0,0,0,0)');
+                ctx.fillStyle = grd;
+                ctx.beginPath(); ctx.arc(x, y, radius, 0, 6.283); ctx.fill();
+            }
+
+            // ── Star + optional diffraction spikes ───────────────
+            function drawStar(s, op) {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, 6.283);
+                ctx.fillStyle = 'rgba(' + s.col + ',' + op + ')';
+                ctx.fill();
+                if (s.hero) {
+                    const spike = s.r * 5;
+                    const sg = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, spike);
+                    sg.addColorStop(0, `rgba(${s.col},${(op * 0.5).toFixed(3)})`);
+                    sg.addColorStop(1, 'rgba(0,0,0,0)');
+                    ctx.fillStyle = sg;
+                    ctx.beginPath(); ctx.arc(s.x, s.y, spike, 0, 6.283); ctx.fill();
+                    ctx.strokeStyle = `rgba(${s.col},${(op * 0.28).toFixed(3)})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath(); ctx.moveTo(s.x - spike, s.y); ctx.lineTo(s.x + spike, s.y); ctx.stroke();
+                    ctx.beginPath(); ctx.moveTo(s.x, s.y - spike * 0.75); ctx.lineTo(s.x, s.y + spike * 0.75); ctx.stroke();
+                }
+            }
+
+            // ── Planet ───────────────────────────────────────────
+            function drawPlanet(p, t) {
+                const x = p.px * W, y = p.py * H;
+                const pulse = 0.88 + 0.12 * Math.sin(p.ph + t * p.sp * 60);
+                const op    = 0.34 * pulse;
+                const [ri,gi,bi] = p.inner, [ro,go,bo] = p.outer;
+
+                // Wide ambient halo
+                const halo = ctx.createRadialGradient(x, y, 0, x, y, p.r * 3.8);
+                halo.addColorStop(0, `rgba(${ro},${go},${bo},${(op*0.45).toFixed(3)})`);
+                halo.addColorStop(0.5,`rgba(${ro},${go},${bo},${(op*0.12).toFixed(3)})`);
+                halo.addColorStop(1,  'rgba(0,0,0,0)');
+                ctx.fillStyle = halo;
+                ctx.beginPath(); ctx.arc(x, y, p.r * 3.8, 0, 6.283); ctx.fill();
+
+                // Sphere with off-center highlight
+                const body = ctx.createRadialGradient(
+                    x - p.r * 0.32, y - p.r * 0.32, p.r * 0.06,
+                    x, y, p.r);
+                body.addColorStop(0,    `rgba(${ro},${go},${bo},${(op*1.5).toFixed(3)})`);
+                body.addColorStop(0.5,  `rgba(${ri},${gi},${bi},${op.toFixed(3)})`);
+                body.addColorStop(1,    `rgba(0,12,32,${(op*0.85).toFixed(3)})`);
+                ctx.fillStyle = body;
+                ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
+
+                // Limb darkening ring
+                const limb = ctx.createRadialGradient(x, y, p.r * 0.7, x, y, p.r);
+                limb.addColorStop(0, 'rgba(0,0,0,0)');
+                limb.addColorStop(1, `rgba(0,5,20,${(op*0.55).toFixed(3)})`);
+                ctx.fillStyle = limb;
+                ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
+
+                // Saturn-style rings
+                if (p.ring) {
+                    ctx.save();
+                    ctx.translate(x, y); ctx.scale(1, p.rScale);
+                    ctx.beginPath(); ctx.arc(0, 0, p.r * 2.4, 0, 6.283);
+                    ctx.strokeStyle = `rgba(0,188,238,${(op*0.85).toFixed(3)})`;
+                    ctx.lineWidth = p.rW; ctx.stroke();
+                    ctx.beginPath(); ctx.arc(0, 0, p.r * 2.95, 0, 6.283);
+                    ctx.strokeStyle = `rgba(0,162,218,${(op*0.38).toFixed(3)})`;
+                    ctx.lineWidth = p.rW * 0.5; ctx.stroke();
+                    ctx.restore();
+                }
+            }
+
+            // ── Galaxy cluster ────────────────────────────────────
+            function drawGalaxy(t) {
+                const cx = GAL.px * W, cy = GAL.py * H;
+                const rot = t * GAL.sp * 60;
+                for (const s of gStars) {
+                    const a = s.ang + rot;
+                    ctx.beginPath();
+                    ctx.arc(cx + Math.cos(a) * s.d, cy + Math.sin(a) * s.d * 0.38, s.r, 0, 6.283);
+                    ctx.fillStyle = `rgba(192,225,255,${s.o})`;
+                    ctx.fill();
+                }
+                const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, 22);
+                core.addColorStop(0, 'rgba(205,232,255,0.14)');
+                core.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = core;
+                ctx.beginPath(); ctx.arc(cx, cy, 22, 0, 6.283); ctx.fill();
+            }
+
+            // ── Meteor ───────────────────────────────────────────
+            function tickMeteor() {
+                meteorCd--;
+                if (meteorCd <= 0 && !meteor) {
+                    meteorCd = 850 + Math.random() * 750;
+                    meteor = {
+                        x: Math.random() * W * 0.38,
+                        y: Math.random() * H * 0.42,
+                        vx: 7 + Math.random() * 5, vy: 2 + Math.random() * 2.5,
+                        life: 0, max: 50 + Math.random() * 30, len: 115
+                    };
+                }
+                if (!meteor) return;
+                meteor.x += meteor.vx; meteor.y += meteor.vy; meteor.life++;
+                if (meteor.life > meteor.max) { meteor = null; return; }
+                const prog  = meteor.life / meteor.max;
+                const alpha = 0.62 * Math.sin(prog * Math.PI);
+                const f = meteor.len / Math.max(meteor.vx, 0.1);
+                const grd = ctx.createLinearGradient(meteor.x - meteor.vx*f, meteor.y - meteor.vy*f, meteor.x, meteor.y);
+                grd.addColorStop(0, 'rgba(0,0,0,0)');
+                grd.addColorStop(1, `rgba(185,242,255,${alpha.toFixed(3)})`);
+                ctx.strokeStyle = grd; ctx.lineWidth = 1.3;
+                ctx.beginPath();
+                ctx.moveTo(meteor.x - meteor.vx*f, meteor.y - meteor.vy*f);
+                ctx.lineTo(meteor.x, meteor.y); ctx.stroke();
+            }
+
+            // ── One full pass over the scene ──────────────────────
+            //  twinkle=false → stars sit at their base opacity, which is
+            //  what the reduced-motion still frame uses.
+            function drawScene(t, twinkle) {
+                drawBg();
+                drawMilkyWay(t);
+                for (const n of nebulae) drawNebula(n, t);
+                drawGalaxy(t);
+                for (const s of S) {
+                    const op = twinkle
+                        ? s.base * (0.55 + 0.45 * Math.sin(s.ph + t * s.sp * 60))
+                        : s.base;
+                    drawStar(s, op);
+                }
+                for (const p of planets) drawPlanet(p, t);
+            }
+
+            // ── Hero occlusion gate ──────────────────────────────
+            //  The canvas lives at z-index:-1 and the hero has its own
+            //  opaque background, so while the hero fills the viewport
+            //  nothing we draw is visible. Skip the work.
+            const hero = document.getElementById('hero');
+            let heroCovers = false;
+
+            function updateHeroCover() {
+                if (!hero) { heroCovers = false; return; }
+                const r = hero.getBoundingClientRect();
+                heroCovers = r.top <= 0 && r.bottom >= innerHeight;
+            }
+
+            // Without IntersectionObserver the gate stays open and the
+            // canvas simply always renders, as it did before.
+            if (hero && 'IntersectionObserver' in window) {
+                const steps = [];
+                for (let i = 0; i <= 20; i++) steps.push(i / 20);
+                new IntersectionObserver(updateHeroCover, { threshold: steps }).observe(hero);
+            }
+
+            // ── Render loop ───────────────────────────────────────
+            let t = 0;
+            function frame() {
+                requestAnimationFrame(frame);
+                if (heroCovers) return;
+                t++;
+                drawScene(t, true);
+                tickMeteor();
+            }
+
+            // ── Debounced resize ─────────────────────────────────
+            //  init() rebuilds ~570 stars plus the galaxy, and resize
+            //  fires continuously while a mobile address bar collapses.
+            let resizeTimer;
+            addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    init();
+                    updateHeroCover();
+                    if (reduceMotion.matches) drawScene(0, false);
+                }, 150);
+            });
+
+            init();
+            updateHeroCover();
+            if (reduceMotion.matches) drawScene(0, false);
+            else requestAnimationFrame(frame);
+        })();
+    </script>
+    <script>
+        // ── Typing animation ──────────────────────
+        const phrases = [
+            "contingency_mppi.run(env='real_world')",
+            "traversability.learn(terrain='off_road')",
+            "autonomy.deploy(robots=['Spot','AgileX'])"
+        ];
+        let pi = 0, ci = 0, deleting = false;
+        const el = document.getElementById("typed-text");
+
+        function type() {
+            const cur = phrases[pi];
+            el.textContent = deleting ? cur.slice(0, --ci) : cur.slice(0, ++ci);
+            let delay = deleting ? 38 : 68;
+            if (!deleting && ci === cur.length) { delay = 2000; deleting = true; }
+            else if (deleting && ci === 0)      { deleting = false; pi = (pi + 1) % phrases.length; delay = 480; }
+            setTimeout(type, delay);
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            if (textArray.length) setTimeout(type, newTextDelay);
+        // ── Navbar on scroll ──────────────────────
+        window.addEventListener("scroll", () => {
+            document.getElementById("navbar").classList.toggle("scrolled", scrollY > 50);
+        });
+
+        // ── Fade-up on scroll ─────────────────────
+        const prefersReduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+        }, { threshold: 0.08 });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (prefersReduce) {
+                el.textContent = phrases[0];
+            } else {
+                setTimeout(type, 600);
+            }
+
+            document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+            // With reduced motion the elements keep their default (visible)
+            // state — no .fade-up class, so nothing animates in.
+            if (prefersReduce) return;
+
+            document.querySelectorAll(
+                ".experience-card, .project-tile, .research-record, .capability-card, .contact-layout"
+            ).forEach((el, i) => {
+                el.classList.add("fade-up");
+                el.style.transitionDelay = `${(i % 6) * 60}ms`;
+                observer.observe(el);
+            });
         });
     </script>
 </body>

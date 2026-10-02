@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="css/projects.css">
 <div class="project-detail-content">
   <h2 class="project-title">Acrobot Swing-up Control</h2>
-  <!-- <p class="project-caption">caption</p> -->
   <hr class="project-divider">
 
   <div class="project-images">
@@ -10,15 +9,10 @@
 
   <div class="project-description">
     <p>
-        The goal of this project was to design a control strategy that enables an Acrobot to perform a swing-up maneuver 
-        from the downward stable position to the unstable upright position, and then stabilize at the top. This project 
-        demonstrates the integration of energy shaping, optimal control, and switching strategies on a highly non-linear system.
-    </p>
-    <br>
-    <p>
-        An energy-based controller was implemented to gradually increase the Acrobot’s total energy, bringing it to the 
-        upright configuration. Once near the top, control was switched to a Linear Quadratic Regulator (LQR), designed from 
-        the linearized dynamics around the equilibrium point, to stabilize the system. 
+      Designed a hybrid controller to swing an underactuated Acrobot from its stable downward configuration and stabilize the
+      unstable upright equilibrium. An energy-shaping controller injects energy during swing-up; near the target, control switches
+      to an LQR derived from locally linearized dynamics. The result demonstrates coordinated nonlinear energy control and local
+      optimal stabilization on a highly nonlinear system.
     </p>
   </div>
 </div>

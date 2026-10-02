@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="css/projects.css">
 <div class="project-detail-content">
-  <h2 class="project-title">Dead Reckoning</h2>
-  <!-- <p class="project-caption">An autonomous navigation system for indoor SLAM.</p> -->
+  <h2 class="project-title">GPS–IMU Dead Reckoning</h2>
   <hr class="project-divider">
 
   <div class="project-images">
@@ -11,17 +10,10 @@
 
   <div class="project-description">
     <p>
-        This project focused on implementing dead reckoning for vehicle trajectory estimation by fusing data from a GPS puck 
-        and a Vector VN100 IMU using custom ROS2 drivers. Extensive experiments were conducted to characterize sensor performance, 
-        including stationary and linear motion tests for GPS and Allan variance analysis for IMU noise and drift.
-        
-    </p>
-    <br>
-    <p>
-        The pipeline included IMU calibration through circular driving to correct magnetometer errors, 
-        followed by real-world street tests. A complementary filter was applied to combine IMU and GPS data, 
-        producing refined estimates of heading, velocity, and position.
-        This work highlights the integration of sensor calibration, filtering, and fusion for reliable vehicle localization.
+      Built a ROS 2 dead-reckoning pipeline for vehicle trajectory estimation using custom drivers for a GPS puck and VectorNav VN-100
+      IMU. Characterized GPS behavior through stationary and linear-motion tests and quantified IMU noise and drift with Allan variance.
+      Corrected magnetometer errors from circular-drive calibration data, then fused GPS and IMU measurements with a complementary
+      filter during street trials to estimate heading, velocity, and position.
     </p>
   </div>
 </div>
