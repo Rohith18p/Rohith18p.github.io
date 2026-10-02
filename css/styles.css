@@ -305,7 +305,7 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
 
 /* ============================================================
    EXPERIENCE
-   Frosted glass — ocean-blue nebula top-left, teal hint bottom-right
+   Frosted glass — ocean-blue nebula top-left
    ============================================================ */
 #experience-section {
   background: linear-gradient(215deg, rgba(2,8,20,0.77) 0%, rgba(3,11,25,0.75) 100%);
@@ -320,14 +320,6 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
   filter: blur(60px);
   pointer-events: none;
 }
-#experience-section::after {
-  content: ''; position: absolute; bottom: -80px; right: -80px;
-  width: 520px; height: 520px;
-  background: radial-gradient(circle, rgba(0,215,195,0.16) 0%, transparent 65%);
-  filter: blur(45px);
-  pointer-events: none;
-}
-
 .experience-board {
   display: grid; grid-template-columns: minmax(0, 1fr) 88px minmax(0, 1fr);
   grid-template-rows: 34px repeat(5, 112px); gap: 8px 0;
@@ -429,7 +421,7 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
 
 /* ============================================================
    PROJECTS
-   Frosted glass — teal-cyan nebula right-center
+   Frosted glass over the space canvas
    ============================================================ */
 #projects-section {
   background: linear-gradient(165deg, rgba(3,11,22,0.74) 0%, rgba(2,9,20,0.76) 100%);
@@ -437,14 +429,6 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
   -webkit-backdrop-filter: blur(var(--space-background-blur));
   border-bottom: 1px solid var(--b1);
 }
-#projects-section::before {
-  content: ''; position: absolute; top: 22%; right: -100px;
-  width: 640px; height: 640px;
-  background: radial-gradient(circle, rgba(0,185,238,0.22) 0%, rgba(0,155,222,0.08) 40%, transparent 66%);
-  filter: blur(58px);
-  pointer-events: none;
-}
-
 .project-filter-bar {
   display: flex; flex-wrap: wrap; gap: 8px;
   margin-bottom: 26px;
@@ -599,20 +583,13 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
 
 /* ============================================================
    PUBLICATIONS
-   Frosted glass — aqua nebula bottom-right, cool-blue top-left
+   Frosted glass — cool-blue nebula top-left
    ============================================================ */
 #publications {
   background: linear-gradient(315deg, rgba(2,7,18,0.80) 0%, rgba(3,11,24,0.78) 100%);
   backdrop-filter: blur(var(--space-background-blur));
   -webkit-backdrop-filter: blur(var(--space-background-blur));
   border-bottom: 1px solid var(--b1);
-}
-#publications::before {
-  content: ''; position: absolute; bottom: -90px; right: -75px;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(0,198,220,0.24) 0%, rgba(0,165,212,0.09) 38%, transparent 62%);
-  filter: blur(58px);
-  pointer-events: none;
 }
 #publications::after {
   content: ''; position: absolute; top: -80px; left: -90px;
@@ -659,6 +636,7 @@ section { padding: 110px 8%; position: relative; overflow: hidden; scroll-margin
   font-weight: 600; line-height: 1.42; letter-spacing: -0.012em;
 }
 .research-work p { color: var(--t3); font-size: 0.77rem; line-height: 1.55; }
+.publication-record .research-work strong { color: var(--t1); font-weight: 700; }
 .research-record-details > p {
   margin-bottom: 10px; color: var(--t2); font-size: 0.76rem; line-height: 1.5;
 }
